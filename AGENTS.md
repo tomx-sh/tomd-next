@@ -1,9 +1,8 @@
-<!-- BEGIN:nextjs-agent-rules -->
-
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+Use bun (not npm or pnpm).
+This project is a static blog using .md files.
+Use https://nextjs.org/docs/app/guides/mdx and https://github.com/vercel/next.js/tree/canary/examples/blog-starter as guides.
+Blog posts are stored in `src/content/articles` as `.md` files.
+The home page renders the content of `src/content/index.md`.
+There is a CV rendering `src/content/cv.md`.
+Posts can have a frontmatter section at the top with metadata such as title, date, and tags.
+The .md files will be loaded from an Obsidian vault GitHub repository at build time. For now, this system is not implemented so we use the existing files in `src/content`

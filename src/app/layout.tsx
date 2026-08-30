@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 import { cn } from "@/lib/utils";
 
 /**
@@ -44,7 +45,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ibmPlexMono.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <header className="p-4">
+          {/* <div className="mx-auto flex h-12 w-full max-w-3xl items-center px-6">
+            <SiteBreadcrumbs />
+          </div> */}
+          <SiteBreadcrumbs />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

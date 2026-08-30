@@ -8,6 +8,8 @@ Prefer default shadcn components over custom components. Avoid applying custom s
 
 Use `bunx --bun shadcn@latest add [component]` to install components.
 
+Typography for markdown content is handled by shadcn typeset. See https://ui.shadcn.com/docs/components/base/typography for guidance. Do not overwrite or customize fonts without checking the docs first.
+
 # Managing Markdown Files
 Use https://nextjs.org/docs/app/guides/mdx and https://github.com/vercel/next.js/tree/canary/examples/blog-starter as guides.
 

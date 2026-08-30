@@ -3,13 +3,27 @@ import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+/**
+ * Font weights for Tailwind classes:
+ * font-thin: 100
+ * font-extralight: 200
+ * font-light: 300
+ * font-normal: 400
+ * font-medium: 500
+ * font-semibold: 600
+ * font-bold: 700
+ * font-extrabold: 800
+ * font-black: 900
+ */
+
 const ibmPlexSans = IBM_Plex_Sans({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["600"],
+  weight: ["500", "600"],
   subsets: ["latin"],
   variable: "--font-mono",
 });

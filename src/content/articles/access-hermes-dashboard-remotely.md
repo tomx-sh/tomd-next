@@ -4,6 +4,7 @@ created: 2026-07-30
 ---
 
 # Access the Hermes dashboard from another computer
+#ai
 
 Hermes Agent includes a web dashboard for monitoring and managing the agent. By default, the dashboard is available only on the machine running Hermes.
 

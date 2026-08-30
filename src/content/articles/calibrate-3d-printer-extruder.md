@@ -4,6 +4,7 @@ created: 2026-07-31
 ---
 
 # Manually calibrate an FLSUN Delta extruder
+#home-lab
 
 This procedure is for an older FLSUN Delta printer whose firmware does not provide a calibration wizard or other built-in calibration tools. Instead, the extruder must be calibrated manually by connecting to the printer over USB and sending G-code commands.
 

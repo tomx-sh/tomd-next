@@ -1,5 +1,6 @@
 import path from "node:path";
 import { notFound } from "next/navigation";
+import { Markdown } from "@/components/markdown";
 import { getArticleSlugs, readMarkdownFile } from "@/lib/markdown";
 
 type ArticlePageProps = {
@@ -21,15 +22,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound();
   }
 
-  const { html } = await readMarkdownFile(path.join("articles", `${slug}.md`));
+  const { content } = await readMarkdownFile(
+    path.join("articles", `${slug}.md`),
+  );
 
   return (
     <main className="markdown-page">
-      <article
-        className="markdown"
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: remark-html sanitizes the trusted Markdown source before it reaches React.
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <article className="markdown">
+        <Markdown>{content}</Markdown>
+      </article>
     </main>
   );
 }

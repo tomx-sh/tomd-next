@@ -4,6 +4,7 @@ created: 2026-07-31
 ---
 
 # Building a polished ESP32-S3 interface: from LVGL simulator to OTA updates
+#embedded
 
 A polished embedded interface depends as much on the development loop as on the pixels on screen. If every UI change requires a flash, networking is added before memory is understood, or recovery depends on Wi-Fi, progress quickly becomes slow and unpredictable.
 

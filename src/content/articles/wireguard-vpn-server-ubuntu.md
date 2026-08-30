@@ -4,6 +4,7 @@ created: 2026-07-31
 ---
 
 # Run a WireGuard VPN server on Ubuntu 26.04
+#home-lab
 
 WireGuard provides an encrypted route into a home network without exposing individual services directly to the internet. This guide configures an Ubuntu home-lab machine as the VPN server. Laptops and phones will connect as WireGuard clients and can then reach services on the trusted LAN.
 

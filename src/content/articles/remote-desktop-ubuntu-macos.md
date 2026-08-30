@@ -4,6 +4,7 @@ created: 2026-07-30
 ---
 
 # Remote desktop from macOS to headless Ubuntu 26.04
+#home-lab
 
 Ubuntu Desktop 26.04 includes GNOME Remote Desktop, so a headless Ubuntu machine can provide a graphical login without installing another desktop environment or a third-party remote desktop server.
 

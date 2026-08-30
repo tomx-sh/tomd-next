@@ -4,6 +4,7 @@ created: 2026-07-31
 ---
 
 # Running AI models locally
+#ai
 
 Short notes on hardware, models, and the settings that make local AI more responsive.
 

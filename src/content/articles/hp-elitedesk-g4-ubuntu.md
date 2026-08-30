@@ -4,6 +4,7 @@ created: 2026-07-29
 ---
 
 # Installing Ubuntu 26.04 on an HP EliteDesk 705 G4
+#home-lab #linux
 
 Refurbished HP EliteDesk mini PCs are affordable machines with great Linux compatibility. They are suitable for home lab servers running services like [Hermes agent](https://hermes-agent.nousresearch.com), [Home Assistant](https://www.home-assistant.io) or [Coolify](https://coolify.io).
 

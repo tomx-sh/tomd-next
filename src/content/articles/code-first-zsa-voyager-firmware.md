@@ -4,6 +4,7 @@ created: 2026-08-05
 ---
 
 # A code-first workflow for ZSA Voyager firmware
+#embedded
 
 [Voyager Keyboard](https://github.com/tomx-sh/voyager-keyboard) is a custom firmware project for the ZSA Voyager split keyboard. It replaces a configuration-first workflow with a small, reproducible codebase built around QMK.
 

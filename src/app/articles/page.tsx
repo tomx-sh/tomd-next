@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   title: "Articles",
 };
 
-function getTitle(html: string, slug: string) {
-  const heading = html.match(/<h1>([\s\S]*?)<\/h1>/)?.[1];
+function getTitle(content: string, slug: string) {
+  const heading = content.match(/^#\s+(.+)$/m)?.[1];
 
-  return heading?.replace(/<[^>]+>/g, "") ?? slug.replaceAll("-", " ");
+  return heading ?? slug.replaceAll("-", " ");
 }
 
 function getCreatedDate(value: unknown) {
@@ -27,7 +27,7 @@ export default async function ArticlesPage() {
   const articles = (
     await Promise.all(
       slugs.map(async (slug) => {
-        const { frontmatter, html } = await readMarkdownFile(
+        const { frontmatter, content } = await readMarkdownFile(
           path.join("articles", `${slug}.md`),
         );
 
@@ -36,7 +36,7 @@ export default async function ArticlesPage() {
           title:
             typeof frontmatter.title === "string"
               ? frontmatter.title
-              : getTitle(html, slug),
+              : getTitle(content, slug),
           created: getCreatedDate(frontmatter.created),
           published: frontmatter.publish !== false,
         };

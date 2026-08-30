@@ -39,7 +39,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <main className="markdown-page">
-      <article className="markdown">
+      <article>
         {created ? (
           <LocalizedDate
             className="block text-sm opacity-60"

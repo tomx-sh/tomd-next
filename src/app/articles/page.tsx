@@ -51,12 +51,19 @@ export default async function ArticlesPage() {
 
   return (
     <main className="markdown-page">
-      <div className="markdown">
-        <h1>Articles</h1>
-        <ul className="list-none p-0">
+      <div className="text-foreground">
+        <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
+          Articles
+        </h1>
+        <ul className="mt-6 list-none p-0 text-lg leading-[1.8]">
           {articles.map((article) => (
             <li key={article.slug}>
-              <Link href={`/articles/${article.slug}`}>{article.title}</Link>
+              <Link
+                className="underline decoration-[0.08em] underline-offset-[0.2em] hover:opacity-70"
+                href={`/articles/${article.slug}`}
+              >
+                {article.title}
+              </Link>
               {article.created ? (
                 <time
                   className="block text-sm opacity-60"

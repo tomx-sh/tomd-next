@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main className="markdown-page">
-      <article className="markdown">
+      <article>
         <Markdown>{content}</Markdown>
       </article>
     </main>

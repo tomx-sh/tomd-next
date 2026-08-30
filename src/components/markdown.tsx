@@ -38,7 +38,7 @@ const components = {
     </blockquote>
   ),
   code: ({ children }) => (
-    <code className="rounded-sm bg-foreground/8 px-[0.35em] py-[0.15em] font-mono text-[0.9em]">
+    <code className="rounded-sm bg-muted px-[0.35em] py-[0.15em] font-mono text-[0.9em]">
       {children}
     </code>
   ),
@@ -92,7 +92,7 @@ const components = {
   ),
   pre: ({ children }) => (
     <pre
-      className={`${blockSpacingClassName} overflow-x-auto rounded-lg bg-foreground/8 p-4 leading-[1.6] [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-sm`}
+      className={`${blockSpacingClassName} overflow-x-auto rounded-lg bg-muted p-4 leading-[1.6] [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-sm`}
     >
       {children}
     </pre>

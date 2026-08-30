@@ -43,7 +43,9 @@ const components = {
     </code>
   ),
   data: ({ children }) => (
-    <Badge className="rounded-full font-mono">{children}</Badge>
+    <Badge variant="secondary" className="rounded-full font-mono">
+      {children}
+    </Badge>
   ),
   h1: ({ children }) => (
     <h1 className={`${headingClassName} text-4xl`}>{children}</h1>

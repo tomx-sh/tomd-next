@@ -98,6 +98,48 @@ body {
   color: color-mix(in srgb, var(--foreground) 75%, transparent);
 }
 
+.markdown code {
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  padding: 0.15em 0.35em;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+}
+
+.markdown pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.markdown pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.markdown table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.markdown th {
+  background: color-mix(in srgb, var(--foreground) 6%, transparent);
+  font-weight: 650;
+}
+
 @media (max-width: 640px) {
   .markdown-page {
     padding-block: 3rem;

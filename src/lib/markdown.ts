@@ -1,6 +1,6 @@
 import "server-only";
 
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
 import { remark } from "remark";
@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
 
 const contentDirectory = path.join(process.cwd(), "src/content");
+const articlesDirectory = path.join(contentDirectory, "articles");
 
 type MarkdownNode = {
   type: string;
@@ -141,4 +142,18 @@ export async function readMarkdownFile(filename: string) {
     frontmatter: data as Record<string, unknown>,
     html: rendered.toString(),
   };
+}
+
+export async function getArticleSlugs() {
+  const entries = await readdir(articlesDirectory, { withFileTypes: true });
+
+  return entries
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        entry.name.endsWith(".md") &&
+        entry.name.toLowerCase() !== "index.md",
+    )
+    .map((entry) => entry.name.slice(0, -".md".length))
+    .sort();
 }

@@ -1,8 +1,10 @@
 import path from "node:path";
 import type { Metadata } from "next";
+import { ArticleGraph } from "@/components/article-graph";
 import { LocalizedDate } from "@/components/localized-date";
 import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
+import { buildArticleGraph, getArticleTags } from "@/lib/article-graph";
 import { getArticleSlugs, readMarkdownFile } from "@/lib/markdown";
 
 export const metadata: Metadata = {
@@ -24,28 +26,6 @@ function getCreatedDate(value: unknown) {
   return Number.isNaN(date.valueOf()) ? null : date;
 }
 
-function getFirstTag(content: string) {
-  let fence: "```" | "~~~" | null = null;
-
-  for (const line of content.split("\n")) {
-    const fenceMarker = line.trimStart().slice(0, 3);
-
-    if (fenceMarker === "```" || fenceMarker === "~~~") {
-      if (!fence || fence === fenceMarker) {
-        fence = fence === fenceMarker ? null : fenceMarker;
-      }
-      continue;
-    }
-
-    if (!fence) {
-      const tag = line.match(/(?:^|\s)#([\p{L}\p{N}][\p{L}\p{N}_/-]*)\b/u)?.[1];
-      if (tag) return tag;
-    }
-  }
-
-  return null;
-}
-
 export default async function ArticlesPage() {
   const slugs = await getArticleSlugs();
   const articles = (
@@ -62,7 +42,9 @@ export default async function ArticlesPage() {
               ? frontmatter.title
               : getTitle(content, slug),
           created: getCreatedDate(frontmatter.created),
-          tag: getFirstTag(content),
+          tags: getArticleTags(content, frontmatter),
+          content,
+          frontmatter,
           published: frontmatter.publish !== false,
         };
       }),
@@ -73,10 +55,12 @@ export default async function ArticlesPage() {
       (first, second) =>
         (second.created?.valueOf() ?? 0) - (first.created?.valueOf() ?? 0),
     );
+  const graph = buildArticleGraph(articles);
 
   return (
     <main className="markdown-page">
       <div className="text-foreground">
+        <ArticleGraph data={graph} />
         <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
           Articles
         </h1>
@@ -97,9 +81,9 @@ export default async function ArticlesPage() {
               >
                 {article.title}
               </StyledLink>
-              {article.tag ? (
+              {article.tags[0] ? (
                 <Badge className="ml-auto" variant="secondary">
-                  #{article.tag}
+                  #{article.tags[0]}
                 </Badge>
               ) : null}
             </li>

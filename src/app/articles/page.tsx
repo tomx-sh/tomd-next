@@ -91,7 +91,7 @@ export default async function ArticlesPage() {
                   className="justify-self-start font-mono"
                   variant="secondary"
                 >
-                  {article.tags[0]}
+                  #{article.tags[0]}
                 </Badge>
               ) : null}
             </li>

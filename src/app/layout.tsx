@@ -3,8 +3,8 @@ import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
-import { SystemThemeToggle } from "@/components/system-theme-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
 /**
@@ -59,17 +59,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="flex min-h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          enableSystem
-          defaultTheme="system"
-          disableTransitionOnChange
-        >
-          <header className="flex items-center justify-between gap-4 p-4">
-            <SiteBreadcrumbs />
-          </header>
-          {children}
-        </ThemeProvider>
+        <TooltipProvider>
+          <ThemeProvider
+            attribute="class"
+            enableSystem
+            defaultTheme="system"
+            disableTransitionOnChange
+          >
+            <header className="flex items-center justify-between gap-4 p-4">
+              <SiteBreadcrumbs />
+            </header>
+            {children}
+          </ThemeProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

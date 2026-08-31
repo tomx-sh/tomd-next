@@ -18,6 +18,11 @@ import {
   useRef,
   useState,
 } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export type ArticleGraphNode = {
   id: string;
@@ -301,55 +306,63 @@ export function ArticleGraph({
 
           <g>
             {nodesRef.current.map((node) => (
-              <a
-                aria-label={`${node.title}. ${node.tags.length ? `Topics: ${node.tags.join(", ")}.` : "No topic."}`}
-                href={`/articles/${node.slug}`}
-                key={node.id}
-                onClick={(event) => {
-                  if (
-                    dragRef.current?.id === node.id &&
-                    dragRef.current.moved
-                  ) {
-                    event.preventDefault();
+              <Tooltip key={node.id}>
+                <TooltipTrigger
+                  render={
+                    <a
+                      aria-label={`${node.title}. ${node.tags.length ? `Topics: ${node.tags.join(", ")}.` : "No topic."}`}
+                      href={`/articles/${node.slug}`}
+                      onClick={(event) => {
+                        if (
+                          dragRef.current?.id === node.id &&
+                          dragRef.current.moved
+                        ) {
+                          event.preventDefault();
+                        }
+                        dragRef.current = null;
+                      }}
+                      onPointerDown={(event) => {
+                        event.currentTarget.setPointerCapture(event.pointerId);
+                        dragRef.current = {
+                          id: node.id,
+                          startX: event.clientX,
+                          startY: event.clientY,
+                          moved: false,
+                        };
+                        node.fx = node.x;
+                        node.fy = node.y;
+                        simulationRef.current?.alphaTarget(0.22).restart();
+                      }}
+                      onPointerMove={(event) => {
+                        if (
+                          dragRef.current?.id === node.id &&
+                          Math.hypot(
+                            event.clientX - dragRef.current.startX,
+                            event.clientY - dragRef.current.startY,
+                          ) > 3
+                        ) {
+                          dragRef.current.moved = true;
+                        }
+                        moveNode(event, node);
+                      }}
+                      onPointerUp={(event) => releaseNode(event, node)}
+                    >
+                      <g transform={`translate(${node.x ?? 0} ${node.y ?? 0})`}>
+                        <circle
+                          fill="var(--foreground)"
+                          className="hover:fill-primary"
+                          r={node.radius}
+                          stroke="var(--background)"
+                          strokeWidth="2"
+                        />
+                      </g>
+                    </a>
                   }
-                  dragRef.current = null;
-                }}
-                onPointerDown={(event) => {
-                  event.currentTarget.setPointerCapture(event.pointerId);
-                  dragRef.current = {
-                    id: node.id,
-                    startX: event.clientX,
-                    startY: event.clientY,
-                    moved: false,
-                  };
-                  node.fx = node.x;
-                  node.fy = node.y;
-                  simulationRef.current?.alphaTarget(0.22).restart();
-                }}
-                onPointerMove={(event) => {
-                  if (
-                    dragRef.current?.id === node.id &&
-                    Math.hypot(
-                      event.clientX - dragRef.current.startX,
-                      event.clientY - dragRef.current.startY,
-                    ) > 3
-                  ) {
-                    dragRef.current.moved = true;
-                  }
-                  moveNode(event, node);
-                }}
-                onPointerUp={(event) => releaseNode(event, node)}
-              >
-                <g transform={`translate(${node.x ?? 0} ${node.y ?? 0})`}>
-                  <circle
-                    fill="var(--foreground)"
-                    className="hover:fill-primary"
-                    r={node.radius}
-                    stroke="var(--background)"
-                    strokeWidth="2"
-                  />
-                </g>
-              </a>
+                />
+                <TooltipContent className="text-center">
+                  {node.title}
+                </TooltipContent>
+              </Tooltip>
             ))}
           </g>
         </svg>

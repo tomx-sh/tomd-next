@@ -87,8 +87,11 @@ export default async function ArticlesPage() {
                 {article.title}
               </StyledLink>
               {article.tags[0] ? (
-                <Badge className="justify-self-start" variant="secondary">
-                  #{article.tags[0]}
+                <Badge
+                  className="justify-self-start font-mono"
+                  variant="secondary"
+                >
+                  {article.tags[0]}
                 </Badge>
               ) : null}
             </li>

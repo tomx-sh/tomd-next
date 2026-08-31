@@ -58,7 +58,7 @@ export default async function ArticlesPage() {
         </h1>
         <ul className="mt-6 list-none p-0 text-lg leading-[1.8]">
           {articles.map((article) => (
-            <li key={article.slug}>
+            <li className="flex items-baseline" key={article.slug}>
               {article.created ? (
                 <LocalizedDate
                   className="mr-2 font-mono text-sm opacity-60"
@@ -66,7 +66,11 @@ export default async function ArticlesPage() {
                   format="numeric"
                 />
               ) : null}
-              <StyledLink href={`/articles/${article.slug}`}>
+              <StyledLink
+                className="min-w-0 truncate"
+                href={`/articles/${article.slug}`}
+                title={article.title}
+              >
                 {article.title}
               </StyledLink>
             </li>

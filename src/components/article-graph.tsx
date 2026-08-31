@@ -109,6 +109,20 @@ function getNodeRadius(length: number, min: number, max: number) {
   return 4 + normalized * 6;
 }
 
+function keepNodesInBounds(nodes: PositionedNode[], dimensions: Dimensions) {
+  const padding = 2;
+
+  for (const node of nodes) {
+    const minX = node.radius + padding;
+    const maxX = Math.max(minX, dimensions.width - node.radius - padding);
+    const minY = node.radius + padding;
+    const maxY = Math.max(minY, dimensions.height - node.radius - padding);
+
+    node.x = Math.min(maxX, Math.max(minX, node.x ?? minX));
+    node.y = Math.min(maxY, Math.max(minY, node.y ?? minY));
+  }
+}
+
 export function ArticleGraph({
   className,
   data,
@@ -215,9 +229,13 @@ export function ArticleGraph({
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       simulation.stop();
       for (let index = 0; index < 180; index += 1) simulation.tick();
+      keepNodesInBounds(nodes, dimensions);
       renderTick((tick) => tick + 1);
     } else {
-      simulation.on("tick", () => renderTick((tick) => tick + 1));
+      simulation.on("tick", () => {
+        keepNodesInBounds(nodes, dimensions);
+        renderTick((tick) => tick + 1);
+      });
     }
 
     return () => {
@@ -230,8 +248,14 @@ export function ArticleGraph({
     const bounds = containerRef.current?.getBoundingClientRect();
     if (!bounds) return;
 
-    node.fx = event.clientX - bounds.left;
-    node.fy = event.clientY - bounds.top;
+    node.fx = Math.min(
+      dimensions.width - node.radius - 2,
+      Math.max(node.radius + 2, event.clientX - bounds.left),
+    );
+    node.fy = Math.min(
+      dimensions.height - node.radius - 2,
+      Math.max(node.radius + 2, event.clientY - bounds.top),
+    );
   }
 
   function releaseNode(

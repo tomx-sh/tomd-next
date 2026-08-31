@@ -12,6 +12,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { cn } from "@/lib/utils";
+
+// Pixolletta's capital glyphs occupy 800 of its 1000 em units.
+const CAP_HEIGHT = "0.8em";
+const BASELINE_CORRECTION = "0.14em";
 
 function formatSegment(segment: string) {
   return decodeURIComponent(segment)
@@ -19,7 +24,7 @@ function formatSegment(segment: string) {
     .replace(/\b\w/g, (character) => character.toUpperCase());
 }
 
-export function SiteBreadcrumbs() {
+export function SiteBreadcrumbsPixel({ className }: { className?: string }) {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
   const crumbs = [
@@ -31,28 +36,42 @@ export function SiteBreadcrumbs() {
   ];
 
   return (
-    <Breadcrumb className="font-mono uppercase">
-      <BreadcrumbList>
+    <Breadcrumb className={cn("uppercase", className)}>
+      <BreadcrumbList style={{ fontSize: "inherit", lineHeight: CAP_HEIGHT }}>
         {crumbs.map((crumb, index) => {
           const isCurrentPage = index === crumbs.length - 1;
           const content =
             index === 0 ? (
               <>
-                <MiniIcon name="house" size={8} />
+                <MiniIcon name="house" size={CAP_HEIGHT} />
                 <span className="sr-only">Home</span>
               </>
             ) : (
-              crumb.label
+              <span
+                className="inline-block"
+                style={{ transform: `translateY(${BASELINE_CORRECTION})` }}
+              >
+                {crumb.label}
+              </span>
             );
 
           return (
             <Fragment key={crumb.href}>
-              {index > 0 ? <BreadcrumbSeparator /> : null}
+              {index > 0 ? (
+                <BreadcrumbSeparator className="flex items-center">
+                  <MiniIcon name="chevron-right" size={CAP_HEIGHT} />
+                </BreadcrumbSeparator>
+              ) : null}
               <BreadcrumbItem>
                 {isCurrentPage ? (
-                  <BreadcrumbPage>{content}</BreadcrumbPage>
+                  <BreadcrumbPage className="flex items-center">
+                    {content}
+                  </BreadcrumbPage>
                 ) : (
-                  <BreadcrumbLink render={<Link href={crumb.href} />}>
+                  <BreadcrumbLink
+                    className="flex items-center"
+                    render={<Link href={crumb.href} />}
+                  >
                     {content}
                   </BreadcrumbLink>
                 )}

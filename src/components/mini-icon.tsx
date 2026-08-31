@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type MiniIconProps = Omit<ComponentProps<"span">, "children"> & {
   name: string;
-  size?: number;
+  size?: CSSProperties["width"];
 };
 
 export function MiniIcon({

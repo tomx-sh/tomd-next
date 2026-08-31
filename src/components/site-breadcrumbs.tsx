@@ -1,9 +1,7 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
-import { MiniIcon } from "@/components/mini-icon";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -35,15 +33,7 @@ export function SiteBreadcrumbs() {
       <BreadcrumbList>
         {crumbs.map((crumb, index) => {
           const isCurrentPage = index === crumbs.length - 1;
-          const content =
-            index === 0 ? (
-              <>
-                <MiniIcon name="house" size={8} />
-                <span className="sr-only">Home</span>
-              </>
-            ) : (
-              crumb.label
-            );
+          const content = index === 0 ? <span>Home</span> : crumb.label;
 
           return (
             <Fragment key={crumb.href}>

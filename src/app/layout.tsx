@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SiteBreadcrumbsPixel } from "@/components/site-breadcrumbs-pixel";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 import { SystemThemeToggle } from "@/components/system-theme-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
@@ -66,8 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           disableTransitionOnChange
         >
           <header className="flex items-center justify-between gap-4 p-4">
-            <SiteBreadcrumbsPixel className="font-pixel text-base" />
-            <SystemThemeToggle />
+            <SiteBreadcrumbs />
           </header>
           {children}
         </ThemeProvider>

@@ -1,11 +1,10 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
+import { StyledLink } from "@/components/styled-link";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -42,9 +41,7 @@ export function SiteBreadcrumbs() {
                 {isCurrentPage ? (
                   <BreadcrumbPage>{content}</BreadcrumbPage>
                 ) : (
-                  <BreadcrumbLink render={<Link href={crumb.href} />}>
-                    {content}
-                  </BreadcrumbLink>
+                  <StyledLink href={crumb.href}>{content}</StyledLink>
                 )}
               </BreadcrumbItem>
             </Fragment>

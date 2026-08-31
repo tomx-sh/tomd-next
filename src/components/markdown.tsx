@@ -1,6 +1,6 @@
-import Link from "next/link";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
 import { remarkObsidianSyntax } from "@/lib/remark-obsidian";
 
@@ -11,9 +11,9 @@ const components = {
     }
 
     return (
-      <Link href={href} title={title}>
+      <StyledLink href={href} title={title}>
         {children}
-      </Link>
+      </StyledLink>
     );
   },
   data: ({ children }) => (

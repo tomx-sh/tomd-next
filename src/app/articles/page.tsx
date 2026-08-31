@@ -1,6 +1,7 @@
 import path from "node:path";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LocalizedDate } from "@/components/localized-date";
+import { StyledLink } from "@/components/styled-link";
 import { getArticleSlugs, readMarkdownFile } from "@/lib/markdown";
 
 export const metadata: Metadata = {
@@ -58,23 +59,16 @@ export default async function ArticlesPage() {
         <ul className="mt-6 list-none p-0 text-lg leading-[1.8]">
           {articles.map((article) => (
             <li key={article.slug}>
-              <Link
-                className="underline decoration-[0.08em] underline-offset-[0.2em] hover:opacity-70"
-                href={`/articles/${article.slug}`}
-              >
-                {article.title}
-              </Link>
               {article.created ? (
-                <time
-                  className="block text-sm opacity-60"
-                  dateTime={article.created.toISOString()}
-                >
-                  {article.created.toLocaleDateString("en", {
-                    dateStyle: "long",
-                    timeZone: "UTC",
-                  })}
-                </time>
+                <LocalizedDate
+                  className="mr-2 font-mono text-sm opacity-60"
+                  date={article.created.toISOString()}
+                  format="numeric"
+                />
               ) : null}
+              <StyledLink href={`/articles/${article.slug}`}>
+                {article.title}
+              </StyledLink>
             </li>
           ))}
         </ul>

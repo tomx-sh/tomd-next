@@ -61,19 +61,24 @@ export default async function ArticlesPage() {
     <main className="markdown-page pt-0!">
       <div className="text-foreground">
         <ArticleGraph className="h-48 sm:h-56" data={graph} />
-        <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
+        {/* <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
           Articles
-        </h1>
-        <ul className="mt-6 list-none p-0 text-lg leading-[1.8]">
+        </h1> */}
+        <ul className="grid list-none grid-cols-[auto_minmax(0,1fr)_auto] gap-x-2">
           {articles.map((article) => (
-            <li className="flex items-baseline" key={article.slug}>
+            <li
+              className="col-span-3 grid grid-cols-subgrid items-baseline"
+              key={article.slug}
+            >
               {article.created ? (
                 <LocalizedDate
-                  className="mr-2 font-mono text-sm opacity-60"
+                  className="font-mono text-sm opacity-60"
                   date={article.created.toISOString()}
                   format="numeric"
                 />
-              ) : null}
+              ) : (
+                <span aria-hidden="true" />
+              )}
               <StyledLink
                 className="min-w-0 truncate"
                 href={`/articles/${article.slug}`}
@@ -82,7 +87,7 @@ export default async function ArticlesPage() {
                 {article.title}
               </StyledLink>
               {article.tags[0] ? (
-                <Badge className="ml-auto" variant="secondary">
+                <Badge className="justify-self-start" variant="secondary">
                   #{article.tags[0]}
                 </Badge>
               ) : null}

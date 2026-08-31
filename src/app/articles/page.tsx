@@ -58,7 +58,7 @@ export default async function ArticlesPage() {
   const graph = buildArticleGraph(articles);
 
   return (
-    <main className="markdown-page">
+    <main className="markdown-page pt-0!">
       <div className="text-foreground">
         <ArticleGraph data={graph} />
         <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">

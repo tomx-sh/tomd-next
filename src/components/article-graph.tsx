@@ -243,7 +243,7 @@ export function ArticleGraph({ data }: { data: ArticleGraphData }) {
   if (!data.nodes.length) return null;
 
   return (
-    <section aria-label="Article map" className="mt-4">
+    <section aria-label="Article map">
       <div
         className="relative h-96 overflow-hidden sm:h-[28rem]"
         ref={containerRef}

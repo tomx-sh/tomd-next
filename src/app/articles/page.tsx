@@ -60,7 +60,7 @@ export default async function ArticlesPage() {
   return (
     <main className="markdown-page pt-0!">
       <div className="text-foreground">
-        <ArticleGraph data={graph} />
+        <ArticleGraph className="mt-4 h-64 sm:h-72" data={graph} />
         <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
           Articles
         </h1>

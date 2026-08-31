@@ -104,12 +104,18 @@ function getNodeTarget(
 }
 
 function getNodeRadius(length: number, min: number, max: number) {
-  if (min === max) return 9;
+  if (min === max) return 7;
   const normalized = Math.sqrt((length - min) / (max - min));
-  return 6 + normalized * 8;
+  return 4 + normalized * 6;
 }
 
-export function ArticleGraph({ data }: { data: ArticleGraphData }) {
+export function ArticleGraph({
+  className,
+  data,
+}: {
+  className?: string;
+  data: ArticleGraphData;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<{
     id: string;
@@ -147,7 +153,7 @@ export function ArticleGraph({ data }: { data: ArticleGraphData }) {
     const updateDimensions = () => {
       setDimensions({
         width: Math.max(container.clientWidth, 280),
-        height: Math.max(container.clientHeight, 320),
+        height: Math.max(container.clientHeight, 160),
       });
     };
     const observer = new ResizeObserver(updateDimensions);
@@ -243,11 +249,8 @@ export function ArticleGraph({ data }: { data: ArticleGraphData }) {
   if (!data.nodes.length) return null;
 
   return (
-    <section aria-label="Article map">
-      <div
-        className="relative h-96 overflow-hidden sm:h-[28rem]"
-        ref={containerRef}
-      >
+    <section aria-label="Article map" className={className}>
+      <div className="relative h-full overflow-hidden" ref={containerRef}>
         <svg
           aria-label="Force-directed map of articles grouped by topic"
           className="block size-full touch-none"
@@ -316,6 +319,7 @@ export function ArticleGraph({ data }: { data: ArticleGraphData }) {
                 <g transform={`translate(${node.x ?? 0} ${node.y ?? 0})`}>
                   <circle
                     fill="var(--foreground)"
+                    className="hover:fill-primary"
                     r={node.radius}
                     stroke="var(--background)"
                     strokeWidth="2"

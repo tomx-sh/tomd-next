@@ -17,7 +17,7 @@ const components = {
     );
   },
   data: ({ children }) => (
-    <Badge variant="secondary" className="not-typeset rounded-full font-mono">
+    <Badge variant="secondary" className="not-typeset font-mono">
       {children}
     </Badge>
   ),

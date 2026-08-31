@@ -58,8 +58,13 @@ export function SiteBreadcrumbsPixel({ className }: { className?: string }) {
           return (
             <Fragment key={crumb.href}>
               {index > 0 ? (
-                <BreadcrumbSeparator className="flex items-center">
-                  <MiniIcon name="chevron-right" size={CAP_HEIGHT} />
+                <BreadcrumbSeparator className="flex items-center font-pixel">
+                  <span
+                    className="inline-block"
+                    style={{ transform: `translateY(${BASELINE_CORRECTION})` }}
+                  >
+                    {">"}
+                  </span>
                 </BreadcrumbSeparator>
               ) : null}
               <BreadcrumbItem>

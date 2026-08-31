@@ -3,6 +3,8 @@ import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SiteBreadcrumbsPixel } from "@/components/site-breadcrumbs-pixel";
+import { SystemThemeToggle } from "@/components/system-theme-toggle";
+import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 /**
@@ -47,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
@@ -56,13 +59,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="flex min-h-full flex-col">
-        <header className="p-4">
-          {/* <div className="mx-auto flex h-12 w-full max-w-3xl items-center px-6">
-            <SiteBreadcrumbsPixel />
-          </div> */}
-          <SiteBreadcrumbsPixel className="font-pixel text-base" />
-        </header>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="flex items-center justify-between gap-4 p-4">
+            <SiteBreadcrumbsPixel className="font-pixel text-base" />
+            <SystemThemeToggle />
+          </header>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

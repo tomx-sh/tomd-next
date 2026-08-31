@@ -35,6 +35,7 @@ const pixolletta = localFont({
   weight: "400",
   style: "normal",
   display: "swap",
+  variable: "--font-pixolleta",
 });
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "antialiased",
         ibmPlexSans.variable,
         ibmPlexMono.variable,
+        pixolletta.variable,
       )}
     >
       <body className="flex min-h-full flex-col">
@@ -58,9 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {/* <div className="mx-auto flex h-12 w-full max-w-3xl items-center px-6">
             <SiteBreadcrumbsPixel />
           </div> */}
-          <SiteBreadcrumbsPixel
-            className={cn(pixolletta.className, "text-base")}
-          />
+          <SiteBreadcrumbsPixel className="font-pixel text-base" />
         </header>
         {children}
       </body>

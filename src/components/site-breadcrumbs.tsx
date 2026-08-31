@@ -18,6 +18,12 @@ function formatSegment(segment: string) {
 
 export function SiteBreadcrumbs() {
   const pathname = usePathname();
+
+  // If home, don't render breadcrumbs.
+  if (pathname === "/") {
+    return null;
+  }
+
   const segments = pathname.split("/").filter(Boolean);
   const crumbs = [
     { href: "/", label: "Home" },
@@ -28,18 +34,20 @@ export function SiteBreadcrumbs() {
   ];
 
   return (
-    <Breadcrumb className="font-mono uppercase">
+    <Breadcrumb className="font-mono uppercase text-base">
       <BreadcrumbList>
         {crumbs.map((crumb, index) => {
           const isCurrentPage = index === crumbs.length - 1;
-          const content = index === 0 ? <span>Home</span> : crumb.label;
+          const content = index === 0 ? "Home" : crumb.label;
 
           return (
             <Fragment key={crumb.href}>
               {index > 0 ? <BreadcrumbSeparator /> : null}
               <BreadcrumbItem>
                 {isCurrentPage ? (
-                  <BreadcrumbPage>{content}</BreadcrumbPage>
+                  <BreadcrumbPage className="text-muted-foreground">
+                    {content}
+                  </BreadcrumbPage>
                 ) : (
                   <StyledLink href={crumb.href}>{content}</StyledLink>
                 )}

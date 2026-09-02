@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Geist_Pixel, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
@@ -40,6 +39,14 @@ const pixolletta = localFont({
   variable: "--font-pixolleta",
 });
 
+export const geistPixel = Geist_Pixel({
+  subsets: ["latin"],
+  axes: ["ELSH"], // keep the shape axis variable
+  variable: "--font-geist-pixel",
+  display: "swap",
+  adjustFontFallback: false,
+});
+
 export const metadata: Metadata = {
   title: "tomd",
   description: "Software Engineer",
@@ -56,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ibmPlexSans.variable,
         ibmPlexMono.variable,
         pixolletta.variable,
+        geistPixel.variable,
       )}
     >
       <body className="flex min-h-full flex-col">
@@ -66,9 +74,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             defaultTheme="system"
             disableTransitionOnChange
           >
-            <header className="flex items-center justify-between gap-4 p-4">
-              <SiteBreadcrumbs />
-            </header>
             {children}
           </ThemeProvider>
         </TooltipProvider>

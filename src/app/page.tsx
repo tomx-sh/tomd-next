@@ -5,8 +5,8 @@ export default async function Home() {
   const { content } = await readMarkdownFile("index.md");
 
   return (
-    <main className="markdown-page">
-      <article className="relative z-10">
+    <main>
+      <article>
         <Markdown>{content}</Markdown>
       </article>
     </main>

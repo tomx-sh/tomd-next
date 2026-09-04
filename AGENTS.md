@@ -15,11 +15,11 @@ Use https://nextjs.org/docs/app/guides/mdx and https://github.com/vercel/next.js
 
 Blog posts are stored in `src/content/articles` as `.md` files.
 
-The .md files will be loaded from an Obsidian vault GitHub repository at build time. For now, this system is not implemented so we use the existing files in `src/content`
+The production .md files will be loaded from an Obsidian vault GitHub repository at build time.
 
 The home page renders the content of `src/content/index.md`.
 
-There is a CV rendering `src/content/cv.md`.
+(To be implemented later: There is a CV rendering `src/content/cv.md`.)
 
 Posts can have a frontmatter section at the top with metadata such as title, date, and tags.
 

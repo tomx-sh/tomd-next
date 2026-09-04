@@ -1,15 +1,15 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { BlueNoiseFluid } from "react-floyd-steinberg";
+import { BlueNoiseLenia } from "react-floyd-steinberg";
 import { cn } from "@/lib/utils";
 
 const LIGHT_COLOR = {
-  FOR_LIGHT_MODE: "--chart-1",
-  FOR_DARK_MODE: "--chart-3",
+  FOR_LIGHT_MODE: "--chart-4",
+  FOR_DARK_MODE: "--chart-2",
 };
 
-export function DitheredFluid({ className }: { className?: string }) {
+export function Lenia({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme();
   const [colors, setColors] = useState({
     light: "oklch(0.967 0.001 286.375)",
@@ -40,13 +40,13 @@ export function DitheredFluid({ className }: { className?: string }) {
   }, [resolvedTheme]);
 
   return (
-    <BlueNoiseFluid
+    <BlueNoiseLenia
       pixelScale={1}
       patternSize={256}
-      className={cn("size-full", className)}
-      quantity="temperature"
-      contrast={1.08}
-      viscosity={10}
+      className={cn("size-full border-t", className)}
+      //quantity="temperature"
+      preset="orbium-unicaudatus-solo-up"
+      contrast={1}
       light={colors.light}
       dark={colors.dark}
     />

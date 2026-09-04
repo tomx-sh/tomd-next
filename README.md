@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# tomd-next
 
-## Getting Started
+A Next.js static blog whose content comes from the public
+[`tomx-sh/tomd-obsidian-vault`](https://github.com/tomx-sh/tomd-obsidian-vault)
+Obsidian vault.
 
-First, run the development server:
+The vault is the single source of truth. Markdown and attachments are copied to
+gitignored generated directories before Next.js starts:
+
+```text
+Obsidian vault
+├── index.md            → .obsidian-content/index.md
+├── articles/*.md       → .obsidian-content/articles/*.md
+└── images/**           → public/obsidian-images/**
+```
+
+Obsidian configuration, `not-published`, and other vault files are never
+copied.
+
+## Development
+
+Development syncs from a local Obsidian vault, including changes that have not
+been committed or pushed yet.
+
+Create `.env.local` from the provided example and set the absolute vault path:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+cp .env.example .env.local
+```
+
+```dotenv
+OBSIDIAN_VAULT_PATH="/Users/you/path/to/your/obsidian/vault"
+```
+
+Then install dependencies and start the site:
+
+```bash
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`bun dev` performs a local sync before starting Next.js. When the dev server is
+already running, sync new Obsidian edits from another terminal with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun run sync-content:local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Refresh the browser after a manual sync to see the new content. This avoids
+maintaining a second, committed copy of the vault. Make sure iCloud has
+downloaded the vault files locally before syncing.
 
-## Learn More
+## Production and Vercel
 
-To learn more about Next.js, take a look at the following resources:
+`bun run build` always ignores the local vault setting and shallow-clones the
+configured GitHub branch. This ensures deployments contain only content that
+has been committed and pushed:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bun run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The remote source defaults to:
 
-## Deploy on Vercel
+```dotenv
+OBSIDIAN_VAULT_REPOSITORY="https://github.com/tomx-sh/tomd-obsidian-vault.git"
+OBSIDIAN_VAULT_REF="main"
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+These variables can be overridden in Vercel if the repository or branch
+changes. The repository must be publicly cloneable unless authentication is
+added to the sync script.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Each deployment downloads the latest vault commit. A push to the separate vault
+repository does not automatically redeploy this project, so configure a Vercel
+deploy hook or another trigger if every vault push should be published.
+
+## Generated data
+
+The following directories are generated and must not be committed:
+
+- `.obsidian-content`
+- `public/obsidian-images`
+
+Regular site assets remain in `public/images`, separate from vault-owned
+attachments. `bun run sync-content` selects the local vault when
+`OBSIDIAN_VAULT_PATH` is set and otherwise uses GitHub. The explicit `:local`
+and `:remote` commands are preferable in scripts because they cannot choose the
+wrong source accidentally.

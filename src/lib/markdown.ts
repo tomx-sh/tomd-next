@@ -4,7 +4,7 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
 
-const contentDirectory = path.join(process.cwd(), "src/content");
+const contentDirectory = path.join(process.cwd(), ".obsidian-content");
 const articlesDirectory = path.join(contentDirectory, "articles");
 
 export async function readMarkdownFile(filename: string) {

@@ -15,7 +15,7 @@ const obsidianSyntaxPattern =
 
 function imageUrl(target: string) {
   const normalizedTarget = target.replace(/^\.?\/?images\//, "");
-  return `/images/${normalizedTarget
+  return `/obsidian-images/${normalizedTarget
     .split("/")
     .map((segment) => encodeURIComponent(segment))
     .join("/")}`;

@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "bun run sync-content:local && next dev",
+    "build": "bun run sync-content:remote && next build",
+    "sync-content": "bun scripts/sync-obsidian-vault.ts --auto",
+    "sync-content:local": "bun scripts/sync-obsidian-vault.ts --local",
+    "sync-content:remote": "bun scripts/sync-obsidian-vault.ts --remote",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"

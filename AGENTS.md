@@ -13,14 +13,23 @@ Typography for markdown content is handled by shadcn typeset. See https://ui.sha
 # Managing Markdown Files
 Use https://nextjs.org/docs/app/guides/mdx and https://github.com/vercel/next.js/tree/canary/examples/blog-starter as guides.
 
-Blog posts are stored in `src/content/articles` as `.md` files.
+The Obsidian vault is the single source of truth. Do not edit or commit the
+generated `.obsidian-content` or `public/obsidian-images` directories.
 
-The production .md files will be loaded from an Obsidian vault GitHub repository at build time.
+For development, `bun dev` syncs `.md` files and images from the local vault
+configured by `OBSIDIAN_VAULT_PATH` in `.env.local`. Run
+`bun run sync-content:local` to refresh content while the dev server is running.
 
-The home page renders the content of `src/content/index.md`.
+For production, `bun run build` always syncs from the public Obsidian vault
+GitHub repository before building.
 
-(To be implemented later: There is a CV rendering `src/content/cv.md`.)
+The home page renders the generated `.obsidian-content/index.md`. Blog posts
+come from `.obsidian-content/articles`.
+
+(To be implemented later: render `cv.md` from the vault.)
 
 Posts can have a frontmatter section at the top with metadata such as title, date, and tags.
 
-Image files embedded in the markdown files are stored in `public/images`, whereas in the source Obsidian vault they are stored in `/images`.
+Image files embedded in Markdown are stored in the vault's `/images` directory
+and generated into `public/obsidian-images`. Regular site-owned images remain
+in `public/images`.

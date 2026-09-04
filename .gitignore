@@ -19,6 +19,12 @@
 
 # production
 /build
+/.obsidian-content/
+/.obsidian-content-next-*/
+
+# Generated from the Obsidian vault
+/public/obsidian-images/
+/public/.obsidian-images-next-*/
 
 # misc
 .DS_Store
@@ -32,6 +38,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel

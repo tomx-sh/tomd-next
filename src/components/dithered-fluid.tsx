@@ -26,7 +26,7 @@ export function DitheredFluid({ className }: { className?: string }) {
     const syncColors = () => {
       const styles = getComputedStyle(root);
       setColors({
-        dark: styles.getPropertyValue("--background").trim(),
+        dark: styles.getPropertyValue("--card").trim(),
         light: styles.getPropertyValue(lightColor).trim(),
       });
     };

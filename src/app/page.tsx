@@ -13,7 +13,7 @@ export default async function Home() {
   const { content } = await readMarkdownFile("index.md");
 
   return (
-    <main className="relative h-dvh w-full overflow-hidden">
+    <main className="relative h-lvh w-full overflow-hidden">
       <article className="safe-area-padding relative z-10">
         <MarkdownHome>{content}</MarkdownHome>
       </article>

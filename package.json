@@ -26,6 +26,7 @@
     "react-dom": "19.2.8",
     "react-floyd-steinberg": "github:tomx-sh/react-floyd-steinberg",
     "react-markdown": "^10.1.0",
+    "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.1",
     "shadcn": "^4.21.0",
     "tailwind-merge": "^3.6.0",

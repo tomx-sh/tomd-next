@@ -1,4 +1,5 @@
 import ReactMarkdown, { type Components } from "react-markdown";
+import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import { StyledLink } from "@/components/styled-link";
 import { remarkObsidianSyntax } from "@/lib/remark-obsidian";
@@ -27,7 +28,7 @@ export function MarkdownHome({ children }: MarkdownHomeProps) {
     <div className="font-mono [&>p:first-child]:font-bold">
       <ReactMarkdown
         components={components}
-        remarkPlugins={[remarkGfm, remarkObsidianSyntax]}
+        remarkPlugins={[remarkGfm, remarkBreaks, remarkObsidianSyntax]}
       >
         {children}
       </ReactMarkdown>

@@ -1,4 +1,5 @@
 import ReactMarkdown, { type Components } from "react-markdown";
+import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
@@ -49,7 +50,7 @@ export function Markdown({ children }: MarkdownProps) {
     <div className="typeset typeset-article max-w-[42em]">
       <ReactMarkdown
         components={components}
-        remarkPlugins={[remarkGfm, remarkObsidianSyntax]}
+        remarkPlugins={[remarkGfm, remarkBreaks, remarkObsidianSyntax]}
       >
         {children}
       </ReactMarkdown>

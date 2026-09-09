@@ -5,9 +5,12 @@ import { BlueNoiseFluid } from "react-floyd-steinberg";
 import { cn } from "@/lib/utils";
 
 const LIGHT_COLOR = {
-  FOR_LIGHT_MODE: "--chart-1",
+  FOR_LIGHT_MODE: "oklch(0.8 0.005 56.366)",
   FOR_DARK_MODE: "--chart-3",
 };
+
+const resolveColor = (styles: CSSStyleDeclaration, value: string) =>
+  value.startsWith("--") ? styles.getPropertyValue(value).trim() : value;
 
 export function DitheredFluid({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme();
@@ -26,8 +29,8 @@ export function DitheredFluid({ className }: { className?: string }) {
     const syncColors = () => {
       const styles = getComputedStyle(root);
       setColors({
-        dark: styles.getPropertyValue("--background").trim(),
-        light: styles.getPropertyValue(lightColor).trim(),
+        dark: resolveColor(styles, "--background"),
+        light: resolveColor(styles, lightColor),
       });
     };
 
@@ -41,7 +44,7 @@ export function DitheredFluid({ className }: { className?: string }) {
 
   return (
     <BlueNoiseFluid
-      pixelScale={1}
+      pixelScale={2}
       patternSize={256}
       className={cn("size-full", className)}
       quantity="temperature"

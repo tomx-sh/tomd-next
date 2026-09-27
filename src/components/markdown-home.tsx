@@ -55,8 +55,9 @@ type MarkdownHomeProps = {
 
 export function MarkdownHome({ children }: MarkdownHomeProps) {
   // [&>p:not(:first-child)]:text-muted-foreground
+  //  [&>p:first-child]:font-bold
   return (
-    <div className="font-mono [&>p:first-child]:font-bold">
+    <div className="font-mono">
       <ReactMarkdown
         components={components}
         remarkPlugins={[remarkGfm, remarkBreaks, remarkObsidianSyntax]}

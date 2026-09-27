@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 const LIGHT_COLOR = {
   FOR_LIGHT_MODE: "oklch(0.8 0.005 56.366)",
   FOR_DARK_MODE: "--chart-3",
+  // FOR_LIGHT_MODE: "--foreground",
+  // FOR_DARK_MODE: "--foreground",
 };
 
 const resolveColor = (styles: CSSStyleDeclaration, value: string) =>

@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { BlueNoiseFluid } from "react-floyd-steinberg";
+import { BlueNoisePaint } from "react-floyd-steinberg";
 import { cn } from "@/lib/utils";
 
 const LIGHT_COLOR = {
@@ -14,7 +14,7 @@ const LIGHT_COLOR = {
 const resolveColor = (styles: CSSStyleDeclaration, value: string) =>
   value.startsWith("--") ? styles.getPropertyValue(value).trim() : value;
 
-export function DitheredFluid({ className }: { className?: string }) {
+export function DitheredPaint({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme();
   const [colors, setColors] = useState({
     light: "oklch(0.967 0.001 286.375)",
@@ -45,13 +45,11 @@ export function DitheredFluid({ className }: { className?: string }) {
   }, [resolvedTheme]);
 
   return (
-    <BlueNoiseFluid
+    <BlueNoisePaint
       pixelScale={2}
       patternSize={256}
       className={cn("size-full", className)}
-      quantity="temperature"
       contrast={1.08}
-      viscosity={10}
       light={colors.light}
       dark={colors.dark}
     />

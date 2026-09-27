@@ -1,4 +1,4 @@
-import { DitheredFluid } from "@/components/dithered-fluid";
+import { DitheredPaint } from "@/components/dithered-paint";
 
 function Grid() {
   return (
@@ -15,7 +15,7 @@ function Grid() {
           </span>
         </p>
       </article>
-      <DitheredFluid className="min-h-0 min-w-0" />
+      <DitheredPaint className="min-h-0 min-w-0" />
     </main>
   );
 }
@@ -23,7 +23,7 @@ function Grid() {
 function Full() {
   return (
     <main className="h-dvh min-h-0 w-full overflow-hidden markdown-page">
-      <DitheredFluid className="absolute inset-0 z-0 size-full" />
+      <DitheredPaint className="absolute inset-0 z-0 size-full" />
       <article className="font-mono relative z-10">
         <p>
           Hi! <br />

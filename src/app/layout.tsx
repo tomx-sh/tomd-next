@@ -58,7 +58,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "h-full",
         "antialiased",
         ibmPlexSans.variable,
         ibmPlexMono.variable,
@@ -66,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistPixel.variable,
       )}
     >
-      <body className="flex min-h-full flex-col">
+      <body>
         <TooltipProvider>
           <ThemeProvider
             attribute="class"

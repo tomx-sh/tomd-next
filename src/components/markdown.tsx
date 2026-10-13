@@ -2,12 +2,15 @@ import { isValidElement } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
+import { MarkdownBlockquote } from "@/components/markdown-blockquote";
 import { MarkdownCodeBlock } from "@/components/markdown-code-block";
 import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
 import { remarkObsidianSyntax } from "@/lib/remark-obsidian";
+import { remarkObsidianCallouts } from "@/lib/remark-obsidian-callouts";
 
 const components = {
+  blockquote: MarkdownBlockquote,
   a: ({ children, href, title }) => {
     if (!href) {
       return children;
@@ -81,7 +84,12 @@ export function Markdown({ children }: MarkdownProps) {
     <div className="typeset typeset-article max-w-[42em]">
       <ReactMarkdown
         components={components}
-        remarkPlugins={[remarkGfm, remarkBreaks, remarkObsidianSyntax]}
+        remarkPlugins={[
+          remarkGfm,
+          remarkObsidianCallouts,
+          remarkBreaks,
+          remarkObsidianSyntax,
+        ]}
       >
         {children}
       </ReactMarkdown>

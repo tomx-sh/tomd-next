@@ -10,12 +10,26 @@ gitignored generated directories before Next.js starts:
 ```text
 Obsidian vault
 ├── index.md            → .obsidian-content/index.md
+├── cv.md               → .obsidian-content/cv.md
 ├── articles/*.md       → .obsidian-content/articles/*.md
 └── images/**           → public/obsidian-images/**
 ```
 
 Obsidian configuration, `not-published`, and other vault files are never
 copied.
+
+`GET /cv-md` returns the complete `cv.md` file with
+`Content-Type: text/markdown; charset=utf-8`. The response is generated at build
+time, so production CV updates require a new deployment.
+If the source vault has no `cv.md`, the route returns 404.
+
+`GET /cv-rich` displays the CV in a terminal with ANSI colors, headings,
+emphasis, links, and wrapped text. Frontmatter is hidden and Obsidian callouts
+are formatted as quotes. It uses the same build-time content and 404 behavior.
+
+```bash
+curl -sS http://localhost:3000/cv-rich
+```
 
 ## Development
 

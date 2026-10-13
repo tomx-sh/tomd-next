@@ -229,6 +229,16 @@ async function syncVault() {
       path.join(source.directory, "index.md"),
       path.join(stagedContentDirectory, "index.md"),
     );
+    try {
+      await copyFile(
+        path.join(source.directory, "cv.md"),
+        path.join(stagedContentDirectory, "cv.md"),
+      );
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+        throw error;
+      }
+    }
 
     const [articleFiles, imageFiles] = await Promise.all([
       copyFiles(

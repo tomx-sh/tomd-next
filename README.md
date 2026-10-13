@@ -89,6 +89,29 @@ Each deployment downloads the latest vault commit. A push to the separate vault
 repository does not automatically redeploy this project, so configure a Vercel
 deploy hook or another trigger if every vault push should be published.
 
+## Code quality
+
+Biome is pinned in `package.json`, with a matching schema version in
+`biome.json`. It checks formatting, recommended lint rules (including React and
+Next.js), and import/export ordering. Warnings also fail the check.
+
+```bash
+bun run lint
+bun run lint:fix
+bun run format
+```
+
+`lint:fix` applies safe lint fixes, formatting, and import ordering. `format`
+only formats files. Review changes before committing.
+
+Biome respects `.gitignore` and excludes build output. Upstream shadcn UI,
+Kibo UI, and `src/app/typeset.css` are excluded from linting and formatting to
+preserve their generated source. TypeScript and the production build still
+check the UI components.
+
+When upgrading Biome, update its pinned package and schema together, then run
+`bunx --bun biome migrate --write` and `bun run lint`.
+
 ## Generated data
 
 The following directories are generated and must not be committed:

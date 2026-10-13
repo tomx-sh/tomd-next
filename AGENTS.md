@@ -26,7 +26,8 @@ GitHub repository before building.
 The home page renders the generated `.obsidian-content/index.md`. Blog posts
 come from `.obsidian-content/articles`.
 
-(To be implemented later: render `cv.md` from the vault.)
+The CV page renders the generated `.obsidian-content/cv.md` with the same
+Markdown renderer as articles.
 
 Posts can have a frontmatter section at the top with metadata such as title, date, and tags.
 

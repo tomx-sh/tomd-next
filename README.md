@@ -18,6 +18,10 @@ Obsidian vault
 Obsidian configuration, `not-published`, and other vault files are never
 copied.
 
+The home page renders `index.md`, and `/cv` renders `cv.md` with the same
+Markdown renderer as articles. All other posts are discovered automatically
+from `articles/*.md` and rendered at `/articles/[slug]`.
+
 `GET /cv-md` returns the complete `cv.md` file with
 `Content-Type: text/markdown; charset=utf-8`. The response is generated at build
 time, so production CV updates require a new deployment.

@@ -14,7 +14,6 @@ function save(messages: ChatMessage[]) {
 }
 
 export function Chat() {
-  const termRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -51,8 +50,7 @@ export function Chat() {
   }, [busy]);
 
   useEffect(() => {
-    const term = termRef.current;
-    if (term) term.scrollTop = term.scrollHeight;
+    window.scrollTo(0, document.documentElement.scrollHeight);
   });
 
   async function send(event: FormEvent<HTMLFormElement>) {
@@ -107,10 +105,9 @@ export function Chat() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-3xl p-4">
+    <main className="w-full">
       <div
-        ref={termRef}
-        className="h-[70vh] overflow-y-auto whitespace-pre-wrap rounded-lg bg-muted p-4 font-mono text-sm leading-relaxed text-muted-foreground"
+        className="min-h-dvh whitespace-pre-wrap p-4 font-mono text-sm leading-relaxed text-muted-foreground"
         onPointerUp={() => {
           if (!window.getSelection()?.toString()) inputRef.current?.focus();
         }}

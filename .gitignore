@@ -26,9 +26,6 @@
 /public/obsidian-images/
 /public/.obsidian-images-next-*/
 
-# Copied from libfx by prepare:chat
-/public/fx/
-
 # misc
 .DS_Store
 *.pem

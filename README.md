@@ -37,6 +37,18 @@ curl -sS http://localhost:3000/cv-rich
 
 ## Development
 
+`/chat` embeds the [fx WebAssembly terminal](https://fx.sh/docs/lib/terminal)
+with xterm.js and uses `gemma4:e2b-it-qat` at `https://chat.tomd.sh/v1`.
+No provider API key is needed. `/api/chat` adapts fx's Gateway stream to OpenAI
+Chat Completions and proxies model discovery, avoiding browser CORS requirements.
+The terminal requires browser JSPI support, such as current Chrome or Edge.
+Conversations live in the page's memory and reset on reload.
+
+`prepare:chat` copies the installed SDK's terminal WASM into a gitignored public
+asset directory before development and production builds. `libfx` is pinned to
+its published development build for its TypeScript declarations; the terminal
+transport is adapted because it currently supports only Gateway in WASM.
+
 Development syncs from a local Obsidian vault, including changes that have not
 been committed or pushed yet.
 

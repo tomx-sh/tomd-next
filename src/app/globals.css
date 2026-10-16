@@ -159,6 +159,47 @@
   }
 }
 
+.chat-spinner::before {
+  content: "⣷";
+  display: inline-block;
+  width: 1ch;
+  animation: chat-spinner 0.8s steps(1, end) infinite;
+}
+
+@keyframes chat-spinner {
+  0%,
+  100% {
+    content: "⣷";
+  }
+  12.5% {
+    content: "⣯";
+  }
+  25% {
+    content: "⣟";
+  }
+  37.5% {
+    content: "⡿";
+  }
+  50% {
+    content: "⢿";
+  }
+  62.5% {
+    content: "⣻";
+  }
+  75% {
+    content: "⣽";
+  }
+  87.5% {
+    content: "⣾";
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-spinner::before {
+    animation: none;
+  }
+}
+
 /* globals.css with Tailwind CSS */
 @utility font-pixel-square {
   font-family: var(--font-geist-pixel);

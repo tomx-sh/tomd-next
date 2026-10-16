@@ -12,7 +12,9 @@ test("requires a server API key and authenticates the upstream stream", async ()
       method: "POST",
       body: JSON.stringify({ messages }),
     });
-  const stream = 'data: {"choices":[{"delta":{"content":"Hello"}}]}\n\n';
+  const stream =
+    'data: {"choices":[{"delta":{"reasoning":"Let me think."}}]}\n\n' +
+    'data: {"choices":[{"delta":{"content":"Hello"}}]}\n\n';
   let called = false;
 
   try {

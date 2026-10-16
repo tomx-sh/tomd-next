@@ -19,6 +19,7 @@ export function Chat() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [reply, setReply] = useState("");
+  const [reasoning, setReasoning] = useState("");
   const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -74,16 +75,24 @@ export function Chat() {
     setMessages(history);
     setBusy(true);
     let answer = "";
+    let thinking = "";
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
+        body: JSON.stringify({
+          messages: history.map(({ role, content }) => ({ role, content })),
+        }),
         signal: controller.signal,
       });
       for await (const delta of readChatStream(response)) {
-        answer += delta;
-        setReply(answer);
+        if (delta.type === "reasoning") {
+          thinking += delta.text;
+          setReasoning(thinking);
+        } else {
+          answer += delta.text;
+          setReply(answer);
+        }
       }
       if (!answer) throw new Error("Empty reply.");
     } catch (error) {
@@ -93,12 +102,21 @@ export function Chat() {
           : `[error] ${error instanceof Error ? error.message : "Unable to send message."}`,
       );
     } finally {
-      const next: ChatMessage[] = answer
-        ? [...history, { role: "assistant", content: answer }]
-        : messages;
+      const next: ChatMessage[] =
+        answer || thinking
+          ? [
+              ...history,
+              {
+                role: "assistant",
+                content: answer,
+                ...(thinking ? { reasoning: thinking } : {}),
+              },
+            ]
+          : messages;
       setMessages(next);
       save(next);
       setReply("");
+      setReasoning("");
       setBusy(false);
       abortRef.current = null;
     }
@@ -113,17 +131,46 @@ export function Chat() {
         }}
       >
         <div role="log" aria-label="Conversation" aria-busy={busy}>
+          <div className="mb-4 font-bold text-foreground">
+            Hi! I am a small Gemma 4 model running on a home lab Raspberry Pi.
+          </div>
           {messages.map((message, index) => (
             <div
               key={`${index}-${message.role}`}
               className={message.role === "user" ? "text-foreground" : "mb-4"}
             >
-              {message.role === "user"
-                ? `>>> ${message.content}`
-                : message.content}
+              {message.role === "user" ? (
+                `>>> ${message.content}`
+              ) : (
+                <>
+                  {message.reasoning && (
+                    <div className="mb-2 text-muted-foreground/70">
+                      {message.reasoning}
+                    </div>
+                  )}
+                  <div className="font-bold text-foreground">
+                    {message.content}
+                  </div>
+                </>
+              )}
             </div>
           ))}
-          {busy && <div className="mb-4">{reply || "…"}</div>}
+          {busy && (
+            <div className="mb-4">
+              {!reply && !reasoning && (
+                <div className="text-muted-foreground/70">
+                  <span aria-hidden="true" className="chat-spinner" />{" "}
+                  <span className="shimmer">Thinking...</span>
+                </div>
+              )}
+              {reasoning && (
+                <div className="mb-2 text-muted-foreground/70">{reasoning}</div>
+              )}
+              {reply && (
+                <div className="font-bold text-foreground">{reply}</div>
+              )}
+            </div>
+          )}
           {notice && <div className="mb-4">{notice}</div>}
         </div>
         {!busy && (

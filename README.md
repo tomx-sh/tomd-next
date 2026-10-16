@@ -38,8 +38,10 @@ curl -sS http://localhost:3000/cv-rich
 ## Development
 
 `/chat` is a minimal streaming chat with `gemma4:e2b-it-qat` at
-`https://chat.tomd.sh/v1`. No API key is needed. `/api/chat` proxies Chat
-Completions to avoid browser CORS requirements. History is saved in localStorage;
+`https://chat.tomd.sh/v1`. Set `CHAT_API_KEY` in `.env` (and in your hosting
+environment for production). `/api/chat` adds the key as a Bearer token on the
+server and proxies Chat Completions to avoid browser CORS requirements. The key
+is never sent to the browser. History is saved in localStorage;
 `/clear` resets it and Ctrl+C cancels a reply.
 
 Development syncs from a local Obsidian vault, including changes that have not

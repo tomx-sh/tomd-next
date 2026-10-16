@@ -17,10 +17,18 @@ export async function POST(request: Request) {
     return new Response("Invalid conversation.", { status: 400 });
   }
 
+  const apiKey = process.env.CHAT_API_KEY?.trim();
+  if (!apiKey) {
+    return new Response("Chat provider is not configured.", { status: 500 });
+  }
+
   try {
     const response = await fetch(`${CHAT_BASE_URL}/chat/completions`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
       body: JSON.stringify({ model: CHAT_MODEL, messages, stream: true }),
       signal: request.signal,
     });

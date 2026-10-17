@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Markdown } from "@/components/markdown";
 import { readMarkdownFile } from "@/lib/markdown";
 import { CvHeader } from "./header";
+import "./print.css";
 
 export default async function CvPage() {
   let content: string;
@@ -15,7 +16,7 @@ export default async function CvPage() {
   return (
     <>
       <CvHeader />
-      <main className="markdown-page">
+      <main className="markdown-page print:max-w-none print:p-0">
         <article>
           <Markdown variant="cv">{content}</Markdown>
         </article>

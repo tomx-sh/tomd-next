@@ -13,9 +13,14 @@ import {
 
 export function CvHeader() {
   return (
-    <header className="flex justify-end p-3">
+    <header className="flex justify-end p-3 print:hidden">
       <ButtonGroup aria-label="Resume downloads">
-        <Button variant="outline" disabled>
+        <Button
+          variant="outline"
+          nativeButton={false}
+          render={<a href="/cv-tomd.pdf" download="cv-tomd.pdf" />}
+          aria-label="Download resume as PDF"
+        >
           <DownloadIcon />
           PDF
         </Button>
@@ -33,7 +38,9 @@ export function CvHeader() {
           />
           <DropdownMenuContent align="end" className="w-max whitespace-nowrap">
             <DropdownMenuGroup>
-              <DropdownMenuItem render={<a href="/cv-md" download="cv.md" />}>
+              <DropdownMenuItem
+                render={<a href="/cv-md" download="cv-tomd.md" />}
+              >
                 <DownloadIcon />
                 .md
               </DropdownMenuItem>

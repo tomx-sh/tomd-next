@@ -1,0 +1,14 @@
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  .typeset-cv :is(h1, h2, h3) {
+    break-after: avoid;
+  }
+
+  .typeset-cv :is(p, li) {
+    break-inside: avoid;
+  }
+}

@@ -22,17 +22,26 @@ The home page renders `index.md`, and `/cv` renders `cv.md` with the same
 Markdown renderer as articles. All other posts are discovered automatically
 from `articles/*.md` and rendered at `/articles/[slug]`.
 
-`GET /cv-md` returns the complete `cv.md` file with
+`GET /cv-md` returns the Markdown body of `cv.md`, without frontmatter, with
 `Content-Type: text/markdown; charset=utf-8`. The response is generated at build
 time, so production CV updates require a new deployment.
 If the source vault has no `cv.md`, the route returns 404.
 
-`GET /cv-rich` displays the CV in a terminal with ANSI colors, headings,
-emphasis, links, and wrapped text. Frontmatter is hidden and Obsidian callouts
-are formatted as quotes. It uses the same build-time content and 404 behavior.
+`GET /cv-tomd.pdf` downloads a static PDF generated into gitignored `public/cv-tomd.pdf`
+after `next build`. Playwright prints the built `/cv` page in light mode with
+A4 print styles at 85% scale, reusing its Markdown renderer, typography, and links. The
+download header is hidden. No PDF generation runs in the browser or on requests.
+Missing CV content skips generation and removes any stale PDF.
+
+The build installs Playwright's Chromium headless shell. Linux build machines
+must have its system libraries installed (on supported Debian/Ubuntu hosts:
+`bunx playwright install-deps chromium`). The deployed site only serves the PDF;
+it does not need Chromium.
+
+To refresh the PDF from an already running local dev server after a content sync:
 
 ```bash
-curl -sS http://localhost:3000/cv-rich
+bun run pdf:generate http://localhost:3000
 ```
 
 ## Development
@@ -74,6 +83,16 @@ bun run sync-content:local
 Refresh the browser after a manual sync to see the new content. This avoids
 maintaining a second, committed copy of the vault. Make sure iCloud has
 downloaded the vault files locally before syncing.
+
+For a full local build, including the CV PDF, use:
+
+```bash
+bun run build:local
+```
+
+This syncs from the local vault, including uncommitted edits. Use it for local
+build checks so the running dev server keeps the local content. `bun run build`
+uses GitHub content and replaces the same generated content directory.
 
 ## Production and Vercel
 

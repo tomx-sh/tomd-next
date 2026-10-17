@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Pixel, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import localFont from "next/font/local";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -31,22 +30,6 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
 });
 
-const pixolletta = localFont({
-  src: "./fonts/Pixolletta8px.ttf",
-  weight: "400",
-  style: "normal",
-  display: "swap",
-  variable: "--font-pixolleta",
-});
-
-export const geistPixel = Geist_Pixel({
-  subsets: ["latin"],
-  axes: ["ELSH"], // keep the shape axis variable
-  variable: "--font-geist-pixel",
-  display: "swap",
-  adjustFontFallback: false,
-});
-
 export const metadata: Metadata = {
   title: "tomd",
   description: "Software Engineer",
@@ -57,13 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        "antialiased",
-        ibmPlexSans.variable,
-        ibmPlexMono.variable,
-        pixolletta.variable,
-        geistPixel.variable,
-      )}
+      className={cn("antialiased", ibmPlexSans.variable, ibmPlexMono.variable)}
     >
       <body>
         <TooltipProvider>

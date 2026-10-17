@@ -1,7 +1,9 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import postcssOklabFunction from "@csstools/postcss-oklab-function";
 import init, { HtmlConverter } from "ironpress/node";
 import postcss from "postcss";
+import postcssLogical from "postcss-logical";
 import postcssNesting from "postcss-nesting";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
@@ -34,10 +36,11 @@ const markdown = unified()
   .use(rehypeStringify);
 
 export async function renderCvPdf(content: string) {
-  const [body, typeset, typography, ...fonts] = await Promise.all([
+  const [body, typeset, typography, theme, ...fonts] = await Promise.all([
     markdown.process(content),
     readFile(path.join(process.cwd(), "src/app/typeset.css"), "utf8"),
     readFile(path.join(process.cwd(), "src/app/markdown.css"), "utf8"),
+    readFile(path.join(process.cwd(), "src/app/globals.css"), "utf8"),
     ...fontFaces.map((weight) =>
       readFile(
         path.join(
@@ -48,9 +51,46 @@ export async function renderCvPdf(content: string) {
     ),
   ]);
 
-  // The shared Typeset CSS uses nesting, which Ironpress does not interpret.
-  const styles = await postcss([postcssNesting()]).process(
-    `${typeset}\n${typography}`,
+  const lightTheme = postcss
+    .parse(theme)
+    .nodes.filter((node) => node.type === "rule" && node.selector === ":root")
+    .map((node) => node.toString())
+    .join("\n");
+
+  // Keep the page's styles, translating CSS features Ironpress cannot parse.
+  const styles = await postcss([
+    postcssNesting(),
+    postcssLogical(),
+    postcssOklabFunction({
+      enableProgressiveCustomProperties: false,
+      subFeatures: { displayP3: false },
+    }),
+  ]).process(
+    `
+${lightTheme}
+* { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+${typeset}
+${typography}
+:root {
+  --font-ibm-plex-sans: "IBM Plex Sans Regular";
+  --font-ibm-plex-mono: monospace;
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  font-size: ${16 * pdfScale}px;
+}
+body { font-family: "IBM Plex Sans Regular", sans-serif; }
+.typeset { font-size: ${15 * pdfScale}px; max-width: 42em; }
+.typeset > :first-child { margin-top: 0; }
+.typeset :is(h1, h2, h3, h4, h5, h6) { font-family: "IBM Plex Sans SemiBold"; }
+.typeset :is(strong, b) { font-family: "IBM Plex Sans Bold"; }
+.typeset :is(em, i) { font-family: "IBM Plex Sans Italic"; font-style: normal; }
+.typeset a { color: var(--color-primary); font-weight: inherit; text-decoration: none; }
+.typeset-cv h2::after { border-top: 1px solid currentColor; opacity: 0.6; }
+h1, h2, h3 { break-after: avoid; }
+p, li { break-inside: avoid; }
+`,
     { from: undefined },
   );
 
@@ -68,21 +108,6 @@ export async function renderCvPdf(content: string) {
 <html lang="en"><head><meta charset="utf-8"><title>Thomas — CV</title>
 <style>
 ${styles.css}
-:root {
-  --font-ibm-plex-sans: "IBM Plex Sans Regular";
-  --font-ibm-plex-mono: monospace;
-  --color-foreground: #252525;
-  --color-muted-foreground: #737373;
-  --color-border: #d4d4d4;
-  font-size: ${16 * pdfScale}px;
-}
-body { margin: 0; font-family: "IBM Plex Sans Regular", sans-serif; }
-.typeset { font-size: ${15 * pdfScale}px; max-width: 42em; }
-.typeset :is(h1, h2, h3, h4, h5, h6) { font-family: "IBM Plex Sans SemiBold"; }
-.typeset :is(strong, b) { font-family: "IBM Plex Sans Bold"; }
-.typeset :is(em, i) { font-family: "IBM Plex Sans Italic"; font-style: normal; }
-h1, h2, h3 { break-after: avoid; }
-p, li { break-inside: avoid; }
 </style></head><body>
 <main class="typeset typeset-article typeset-cv">${body}</main>
 </body></html>`);

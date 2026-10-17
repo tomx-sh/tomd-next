@@ -1,59 +1,8 @@
 @import "tailwindcss";
 @import "./typeset.css";
+@import "./markdown.css";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-
-.typeset-article {
-  --typeset-font-body: var(--font-ibm-plex-sans);
-  --typeset-font-heading: var(--font-ibm-plex-sans);
-  --typeset-font-mono: var(--font-ibm-plex-mono);
-  --typeset-size: 15px;
-  --typeset-leading: 1.6;
-  --typeset-flow: 1.25em;
-}
-
-.typeset-cv h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.75em;
-}
-
-.typeset-cv h2 > span {
-  min-width: 0;
-}
-
-.typeset-cv h2::after {
-  content: "";
-  flex: 1;
-  min-width: 1em;
-  border-block-start: 1px solid
-    color-mix(in oklab, currentColor 60%, transparent);
-}
-
-.typeset-cv > h2 ~ :not(h1, h2) {
-  margin-inline-start: 2rem;
-}
-
-.typeset-cv h3 + * {
-  margin-block-start: 0;
-}
-
-.typeset-cv em {
-  color: var(--typeset-muted);
-}
-
-.typeset-cv ul {
-  line-height: 1.4;
-}
-
-.typeset-cv ul > li::marker {
-  font-size: 0.7em;
-}
-
-.typeset-cv ul > li,
-.typeset-cv ul > li > :is(p, ul, ol):not(:first-child) {
-  margin-block-start: 0.25em;
-}
 
 @custom-variant dark (&:is(.dark *));
 

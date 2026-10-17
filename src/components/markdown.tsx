@@ -1,13 +1,10 @@
 import { isValidElement } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
-import remarkBreaks from "remark-breaks";
-import remarkGfm from "remark-gfm";
 import { MarkdownBlockquote } from "@/components/markdown-blockquote";
 import { MarkdownCodeBlock } from "@/components/markdown-code-block";
 import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
-import { remarkObsidianSyntax } from "@/lib/remark-obsidian";
-import { remarkObsidianCallouts } from "@/lib/remark-obsidian-callouts";
+import { markdownPlugins } from "@/lib/markdown-plugins";
 import { cn } from "@/lib/utils";
 
 const components = {
@@ -100,12 +97,7 @@ export function Markdown({ children, variant = "article" }: MarkdownProps) {
     >
       <ReactMarkdown
         components={variant === "cv" ? cvComponents : components}
-        remarkPlugins={[
-          remarkGfm,
-          remarkObsidianCallouts,
-          remarkBreaks,
-          remarkObsidianSyntax,
-        ]}
+        remarkPlugins={markdownPlugins}
       >
         {children}
       </ReactMarkdown>

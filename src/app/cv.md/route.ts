@@ -8,6 +8,9 @@ export async function GET() {
   if (content === null) return new Response("CV not found", { status: 404 });
 
   return new Response(matter(content).content, {
-    headers: { "Content-Type": "text/markdown; charset=utf-8" },
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Content-Disposition": 'attachment; filename="cv-tomd.md"',
+    },
   });
 }

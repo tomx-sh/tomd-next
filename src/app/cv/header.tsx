@@ -18,7 +18,7 @@ export function CvHeader() {
         <Button
           variant="outline"
           nativeButton={false}
-          render={<a href="/cv-tomd.pdf" download="cv-tomd.pdf" />}
+          render={<a href="/cv.pdf" download="cv-tomd.pdf" />}
           aria-label="Download resume as PDF"
         >
           <DownloadIcon />
@@ -39,7 +39,7 @@ export function CvHeader() {
           <DropdownMenuContent align="end" className="w-max whitespace-nowrap">
             <DropdownMenuGroup>
               <DropdownMenuItem
-                render={<a href="/cv-md" download="cv-tomd.md" />}
+                render={<a href="/cv.md" download="cv-tomd.md" />}
               >
                 <DownloadIcon />
                 .md

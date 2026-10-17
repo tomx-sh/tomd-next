@@ -22,27 +22,24 @@ The home page renders `index.md`, and `/cv` renders `cv.md` with the same
 Markdown renderer as articles. All other posts are discovered automatically
 from `articles/*.md` and rendered at `/articles/[slug]`.
 
-`GET /cv-md` returns the Markdown body of `cv.md`, without frontmatter, with
+`GET /cv.md` downloads `cv-tomd.md`, the Markdown body of `cv.md` without frontmatter, with
 `Content-Type: text/markdown; charset=utf-8`. The response is generated at build
 time, so production CV updates require a new deployment.
 If the source vault has no `cv.md`, the route returns 404.
 
-`GET /cv-tomd.pdf` downloads a static PDF generated into gitignored `public/cv-tomd.pdf`
-after `next build`. Playwright prints the built `/cv` page in light mode with
-A4 print styles at 85% scale, reusing its Markdown renderer, typography, and links. The
-download header is hidden. No PDF generation runs in the browser or on requests.
-Missing CV content skips generation and removes any stale PDF.
+`GET /cv.pdf` downloads `cv-tomd.pdf`. Like `/cv.md`, its route uses
+`force-static`: Next.js generates the response during the build and serves the
+saved PDF in production. Ironpress runs as server-side WebAssembly without
+Chromium or system libraries. Rendering errors fail the build; missing `cv.md`
+returns 404.
 
-The build installs Playwright's Chromium headless shell. Linux build machines
-must have its system libraries installed (on supported Debian/Ubuntu hosts:
-`bunx playwright install-deps chromium`). The deployed site only serves the PDF;
-it does not need Chromium.
+The PDF uses the same Markdown plugins and shared typography CSS as the page,
+with A4 margins and 85% text sizing. IBM Plex Sans TrueType fonts are bundled
+under `src/assets/cv-fonts` with their SIL Open Font License. The WASM renderer
+receives these bytes directly and needs no network or installed fonts.
 
-To refresh the PDF from an already running local dev server after a content sync:
-
-```bash
-bun run pdf:generate http://localhost:3000
-```
+In development, refresh the PDF download after `bun run sync-content:local` to
+render the latest local content. There is no separate PDF generation command.
 
 ## Development
 

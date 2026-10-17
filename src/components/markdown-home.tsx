@@ -1,12 +1,9 @@
 import { isValidElement } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
-import remarkBreaks from "remark-breaks";
-import remarkGfm from "remark-gfm";
 import { MarkdownBlockquote } from "@/components/markdown-blockquote";
 import { MarkdownCodeBlock } from "@/components/markdown-code-block";
 import { StyledLink } from "@/components/styled-link";
-import { remarkObsidianSyntax } from "@/lib/remark-obsidian";
-import { remarkObsidianCallouts } from "@/lib/remark-obsidian-callouts";
+import { markdownPlugins } from "@/lib/markdown-plugins";
 
 const components = {
   blockquote: MarkdownBlockquote,
@@ -61,15 +58,7 @@ export function MarkdownHome({ children }: MarkdownHomeProps) {
   //  [&>p:first-child]:font-bold
   return (
     <div className="font-mono font-medium">
-      <ReactMarkdown
-        components={components}
-        remarkPlugins={[
-          remarkGfm,
-          remarkObsidianCallouts,
-          remarkBreaks,
-          remarkObsidianSyntax,
-        ]}
-      >
+      <ReactMarkdown components={components} remarkPlugins={markdownPlugins}>
         {children}
       </ReactMarkdown>
     </div>

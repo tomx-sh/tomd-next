@@ -14,7 +14,7 @@ export default async function CvPage() {
   return (
     <main className="markdown-page">
       <article>
-        <Markdown>{content}</Markdown>
+        <Markdown variant="cv">{content}</Markdown>
       </article>
     </main>
   );

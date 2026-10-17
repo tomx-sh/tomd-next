@@ -8,6 +8,7 @@ import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
 import { remarkObsidianSyntax } from "@/lib/remark-obsidian";
 import { remarkObsidianCallouts } from "@/lib/remark-obsidian-callouts";
+import { cn } from "@/lib/utils";
 
 const components = {
   blockquote: MarkdownBlockquote,
@@ -75,15 +76,30 @@ const components = {
   },
 } satisfies Components;
 
+const cvComponents = {
+  ...components,
+  h2: ({ children }) => (
+    <h2>
+      <span>{children}</span>
+    </h2>
+  ),
+} satisfies Components;
+
 type MarkdownProps = {
   children: string;
+  variant?: "article" | "cv";
 };
 
-export function Markdown({ children }: MarkdownProps) {
+export function Markdown({ children, variant = "article" }: MarkdownProps) {
   return (
-    <div className="typeset typeset-article max-w-[42em]">
+    <div
+      className={cn(
+        "typeset typeset-article max-w-[42em]",
+        variant === "cv" && "typeset-cv",
+      )}
+    >
       <ReactMarkdown
-        components={components}
+        components={variant === "cv" ? cvComponents : components}
         remarkPlugins={[
           remarkGfm,
           remarkObsidianCallouts,

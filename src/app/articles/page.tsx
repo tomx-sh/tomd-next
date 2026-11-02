@@ -63,27 +63,20 @@ export default async function ArticlesPage() {
         {/* <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
           Articles
         </h1> */}
-        <ul className="grid list-none grid-cols-[minmax(0,1fr)_auto] gap-x-2">
+        <ul className="flex list-none flex-col gap-6">
           {articles.map((article) => (
-            <li
-              className="col-span-2 grid grid-cols-subgrid items-baseline"
-              key={article.slug}
-            >
+            <li className="flex flex-col items-start gap-2" key={article.slug}>
+              {article.tags[0] ? (
+                <Badge className="h-6 font-mono text-sm" variant="secondary">
+                  #{article.tags[0]}
+                </Badge>
+              ) : null}
               <StyledLink
-                className="min-w-0 truncate"
                 href={`/articles/${article.slug}`}
                 title={article.title}
               >
                 {article.title}
               </StyledLink>
-              {article.tags[0] ? (
-                <Badge
-                  className="h-6 justify-self-start font-mono text-sm"
-                  variant="secondary"
-                >
-                  #{article.tags[0]}
-                </Badge>
-              ) : null}
             </li>
           ))}
         </ul>

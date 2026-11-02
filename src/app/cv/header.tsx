@@ -13,30 +13,31 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function CvHeader() {
+  const [isOpen, setIsOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
 
   useEffect(() => {
-    if (!copyStatus) return;
+    if (!isOpen || copyStatus !== "Copied") return;
 
-    const timeout = setTimeout(() => setCopyStatus(""), 3000);
+    const timeout = setTimeout(() => {
+      setIsOpen(false);
+      setCopyStatus("");
+    }, 2000);
     return () => clearTimeout(timeout);
-  }, [copyStatus]);
+  }, [isOpen, copyStatus]);
 
   async function copyCommand() {
     setCopyStatus("");
     try {
       await navigator.clipboard.writeText("curl cv.tomd.sh");
-      setCopyStatus("Command copied!");
+      setCopyStatus("Copied");
     } catch {
-      setCopyStatus("Could not copy command. Please try again.");
+      setCopyStatus("Could not copy. Try again.");
     }
   }
 
   return (
-    <header className="flex items-center justify-end gap-3 p-3 print:hidden">
-      <span role="status" className="text-sm text-muted-foreground">
-        {copyStatus}
-      </span>
+    <header className="flex justify-end p-3 print:hidden">
       <ButtonGroup aria-label="Resume downloads">
         <Button
           variant="outline"
@@ -47,7 +48,13 @@ export function CvHeader() {
           <DownloadIcon />
           PDF
         </Button>
-        <DropdownMenu>
+        <DropdownMenu
+          open={isOpen}
+          onOpenChange={(open) => {
+            setIsOpen(open);
+            setCopyStatus("");
+          }}
+        >
           <DropdownMenuTrigger
             render={
               <Button
@@ -68,11 +75,18 @@ export function CvHeader() {
                 .md
               </DropdownMenuItem>
               <DropdownMenuItem
-                aria-label="Copy terminal command: curl cv.tomd.sh"
+                aria-label={
+                  copyStatus || "Copy terminal command: curl cv.tomd.sh"
+                }
+                closeOnClick={false}
                 onClick={copyCommand}
               >
                 <ChevronRightIcon className="translate-y-px" />
-                <code className="font-mono">curl cv.tomd.sh</code>
+                <span aria-live="polite">
+                  {copyStatus || (
+                    <code className="font-mono">curl cv.tomd.sh</code>
+                  )}
+                </span>
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>

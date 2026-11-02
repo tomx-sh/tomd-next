@@ -1,82 +1,61 @@
 "use client";
 
-import type { BundledLanguage } from "shiki";
-import { bundledLanguages } from "shiki";
+import { type ComponentProps, isValidElement } from "react";
 import {
   CodeBlock,
-  CodeBlockBody,
+  CodeBlockActions,
   CodeBlockContent,
   CodeBlockCopyButton,
-  CodeBlockFilename,
-  CodeBlockFiles,
   CodeBlockHeader,
-  CodeBlockItem,
-} from "@/components/kibo-ui/code-block";
-
-const FALLBACK_LANGUAGE = "text";
-
-// Shiki spells some common languages differently than the info strings
-// Obsidian authors write in code fences.
-const languageAliases: Record<string, string> = {
-  "c++": "cpp",
-  "c#": "csharp",
-  "f#": "fsharp",
-};
-
-function resolveLanguage(language: string | undefined): {
-  language: string;
-  syntaxHighlighting: boolean;
-} {
-  if (!language) {
-    return { language: FALLBACK_LANGUAGE, syntaxHighlighting: false };
-  }
-
-  const normalized =
-    languageAliases[language.trim().toLowerCase()] ??
-    language.trim().toLowerCase();
-
-  if (Object.hasOwn(bundledLanguages, normalized)) {
-    return { language: normalized, syntaxHighlighting: true };
-  }
-
-  return { language: FALLBACK_LANGUAGE, syntaxHighlighting: false };
-}
+  CodeBlockLine,
+  CodeBlockTitle,
+} from "@/components/ui/code-block";
+import { useHighlightedCode } from "@/hooks/use-highlighted-code";
 
 type MarkdownCodeBlockProps = {
   code: string;
   language?: string;
 };
 
-export function MarkdownCodeBlock({ code, language }: MarkdownCodeBlockProps) {
-  const { language: resolved, syntaxHighlighting } = resolveLanguage(language);
-  const data = [{ language: resolved, filename: resolved, code }];
+function MarkdownCodeBlock({
+  code,
+  language = "text",
+}: MarkdownCodeBlockProps) {
+  const lines = useHighlightedCode(code, language);
 
   return (
-    <CodeBlock className="not-typeset" data={data} defaultValue={resolved}>
-      <CodeBlockHeader className="justify-between">
-        <CodeBlockFiles>
-          {(item) => (
-            <CodeBlockFilename key={item.language} value={item.language}>
-              {item.filename}
-            </CodeBlockFilename>
-          )}
-        </CodeBlockFiles>
-        <CodeBlockCopyButton />
+    <CodeBlock className="not-typeset">
+      <CodeBlockHeader>
+        <CodeBlockTitle>{language}</CodeBlockTitle>
+        <CodeBlockActions>
+          <CodeBlockCopyButton value={code} />
+        </CodeBlockActions>
       </CodeBlockHeader>
-      <CodeBlockBody>
-        {(item) => (
-          <CodeBlockItem key={item.language} value={item.language}>
-            <CodeBlockContent
-              language={
-                syntaxHighlighting ? (resolved as BundledLanguage) : undefined
-              }
-              syntaxHighlighting={syntaxHighlighting}
-            >
-              {item.code}
-            </CodeBlockContent>
-          </CodeBlockItem>
-        )}
-      </CodeBlockBody>
+      <CodeBlockContent>
+        {lines.map((line, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: Code lines have a fixed order and may repeat.
+          <CodeBlockLine key={index}>{line}</CodeBlockLine>
+        ))}
+      </CodeBlockContent>
     </CodeBlock>
   );
+}
+
+// Block code is identified by its pre wrapper, so fences without a language
+// get the same controls while inline code remains a normal code element.
+export function MarkdownPre({ children, ...props }: ComponentProps<"pre">) {
+  if (isValidElement<ComponentProps<"code">>(children)) {
+    const { children: source, className } = children.props;
+    if (typeof source === "string") {
+      const language = /language-([\w.+#-]+)/.exec(className ?? "")?.[1];
+      return (
+        <MarkdownCodeBlock
+          code={source.replace(/\n$/, "")}
+          language={language}
+        />
+      );
+    }
+  }
+
+  return <pre {...props}>{children}</pre>;
 }

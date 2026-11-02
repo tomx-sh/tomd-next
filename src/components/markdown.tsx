@@ -1,7 +1,6 @@
-import { isValidElement } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import { MarkdownBlockquote } from "@/components/markdown-blockquote";
-import { MarkdownCodeBlock } from "@/components/markdown-code-block";
+import { MarkdownPre } from "@/components/markdown-code-block";
 import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
 import { markdownPlugins } from "@/lib/markdown-plugins";
@@ -42,35 +41,7 @@ const components = {
       <table>{children}</table>
     </div>
   ),
-  code: ({ children, className }) => {
-    const match = /language-([\w.+#-]+)/.exec(className ?? "");
-
-    if (match) {
-      const source = (
-        Array.isArray(children) ? children.join("") : String(children)
-      ).replace(/\n$/, "");
-
-      return <MarkdownCodeBlock code={source} language={match[1]} />;
-    }
-
-    return <code className={className}>{children}</code>;
-  },
-  pre: ({ children }) => {
-    // Fenced code blocks render our MarkdownCodeBlock as a <div>, so drop the
-    // default <pre> wrapper that would otherwise style it twice.
-    if (
-      isValidElement(children) &&
-      typeof (children.props as { className?: unknown }).className ===
-        "string" &&
-      /language-[\w.+#-]+/.test(
-        (children.props as { className?: unknown }).className as string,
-      )
-    ) {
-      return children;
-    }
-
-    return <pre>{children}</pre>;
-  },
+  pre: MarkdownPre,
 } satisfies Components;
 
 const cvComponents = {

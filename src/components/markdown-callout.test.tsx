@@ -76,7 +76,8 @@ describe("Obsidian callouts", () => {
     assert.ok(html.includes("<ul>"));
     assert.ok(html.includes("<table>"));
     assert.ok(html.includes('src="/obsidian-images/example.png"'));
-    assert.ok(html.includes("<pre><code>[!warning] literal code"));
+    assert.ok(html.includes('data-slot="code-block-content"'));
+    assert.ok(html.includes(">[!warning] literal code</span>"));
     assert.ok(html.includes('data-callout="success"'));
     assert.ok(html.includes("<p>Nested body</p>"));
   });

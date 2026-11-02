@@ -1,3 +1,4 @@
+import { Children } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import { MarkdownBlockquote } from "@/components/markdown-blockquote";
 import { MarkdownPre } from "@/components/markdown-code-block";
@@ -20,8 +21,10 @@ const components = {
     );
   },
   data: ({ children }) => (
-    <Badge variant="secondary" className="not-typeset font-mono">
-      {children}
+    <Badge variant="secondary" className="not-typeset h-6 font-mono text-sm">
+      {Children.map(children, (child) =>
+        typeof child === "string" ? child.replace(/^#/, "") : child,
+      )}
     </Badge>
   ),
   img: ({ alt, height, src, title, width }) => (

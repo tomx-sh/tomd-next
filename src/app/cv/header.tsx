@@ -82,10 +82,24 @@ export function CvHeader() {
                 onClick={copyCommand}
               >
                 <ChevronRightIcon className="translate-y-px" />
-                <span aria-live="polite">
-                  {copyStatus || (
-                    <code className="font-mono">curl cv.tomd.sh</code>
-                  )}
+                <span className="grid">
+                  <code
+                    aria-hidden="true"
+                    className="invisible col-start-1 row-start-1 font-mono"
+                  >
+                    curl cv.tomd.sh
+                  </code>
+                  <span
+                    aria-hidden="true"
+                    className="invisible col-start-1 row-start-1"
+                  >
+                    Could not copy. Try again.
+                  </span>
+                  <span aria-live="polite" className="col-start-1 row-start-1">
+                    {copyStatus || (
+                      <code className="font-mono">curl cv.tomd.sh</code>
+                    )}
+                  </span>
                 </span>
               </DropdownMenuItem>
             </DropdownMenuGroup>

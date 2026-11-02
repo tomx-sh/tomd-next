@@ -22,7 +22,7 @@
         "postcss-nesting": "^14.0.3",
         "react": "19.3.1",
         "react-dom": "19.3.1",
-        "react-floyd-steinberg": "github:tomx-sh/react-floyd-steinberg",
+        "react-floyd-steinberg": "github:tomx-sh/react-floyd-steinberg#v0.7.0",
         "react-icons": "^5.7.0",
         "react-markdown": "^10.1.0",
         "rehype-stringify": "^10.0.1",
@@ -43,6 +43,7 @@
         "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
         "babel-plugin-react-compiler": "1.0.0",
+        "playwright": "^1.64.1",
         "shadcn": "^4.23.0",
         "tailwindcss": "^4.3.3",
         "typescript": "^7.0.2",
@@ -825,6 +826,10 @@
 
     "pkg-up": ["pkg-up@3.1.0", "", { "dependencies": { "find-up": "^3.0.0" } }, "sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA=="],
 
+    "playwright": ["playwright@1.64.1", "", { "dependencies": { "playwright-core": "1.64.1" }, "bin": { "playwright": "cli.js" } }, "sha512-HCrVhHr5QQuwYoswEUGTb7gGp522yflbv/ST8nF4sFWGuLjQCt17Q/EubpGGSNKYn1tsTCPZxqHhHCfVURu7UA=="],
+
+    "playwright-core": ["playwright-core@1.64.1", "", { "bin": { "playwright-core": "cli.js" } }, "sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ=="],
+
     "postcss": ["postcss@8.5.32", "", { "dependencies": { "nanoid": "^3.3.20", "picocolors": "^1.1.1", "source-map-js": "^1.2.2" } }, "sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g=="],
 
     "postcss-logical": ["postcss-logical@9.0.2", "", { "dependencies": { "postcss-value-parser": "^4.2.0" }, "peerDependencies": { "postcss": "^8.4" } }, "sha512-hcAp6ThkFhTaUaJExyvCX+Qot5tD5JD0A5IKT8CLymPcRYMDQnjhYEkyY7FKary5XLz1Ji/ystLqPIp6rl3P5w=="],
@@ -849,7 +854,7 @@
 
     "react-dom": ["react-dom@19.3.1", "", { "dependencies": { "scheduler": "^0.28.0" }, "peerDependencies": { "react": "^19.3.1" } }, "sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ=="],
 
-    "react-floyd-steinberg": ["react-floyd-steinberg@github:tomx-sh/react-floyd-steinberg#72e4f1c", { "peerDependencies": { "react": ">=19.0.0", "react-dom": ">=19.0.0" } }, "tomx-sh-react-floyd-steinberg-72e4f1c", "sha512-Np3odA9IZOzxgX+k3D5AxqKE89Me/OIeUDAXColJEm2DfvSzxuS2KAHYm3kOui6yEKEXzkqDbaeZmQAVT+eZTg=="],
+    "react-floyd-steinberg": ["react-floyd-steinberg@github:tomx-sh/react-floyd-steinberg#5fc2606", { "peerDependencies": { "react": ">=19.0.0", "react-dom": ">=19.0.0" } }, "tomx-sh-react-floyd-steinberg-5fc2606", "sha512-FM4zL8RS/n0Dnz/xC458WYHL4Efq3prBToYkwKBspV70zPb+lKNu+7yq8lV9GMgEZGI+lNnzqeUHJQ5Z9KNnmQ=="],
 
     "react-icons": ["react-icons@5.7.0", "", { "peerDependencies": { "react": "*" } }, "sha512-LBLy340Rzqy6+/yVhZKT3B/QpP1BZaesGqasf09HPOBzRarcDIFH0WwXlXQfE7q7ipxK4MSiC5DIBWURCny6fw=="],
 

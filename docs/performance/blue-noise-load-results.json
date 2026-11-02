@@ -1,0 +1,3166 @@
+{
+  "metric": "navigation to first GPU frame; caches disabled",
+  "desktop": {
+    "url": "http://localhost:3102",
+    "profile": "desktop",
+    "runs": [
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 317,
+            "end": 402.80000001192093
+          },
+          {
+            "name": "requestDevice",
+            "start": 402.80000001192093,
+            "end": 411.80000001192093
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 413.19999998807907,
+            "end": 413.4000000357628
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 413.4000000357628,
+            "end": 418.60000002384186
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 413.5,
+            "end": 413.5
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 413.5,
+            "end": 419
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 419.9000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 420.4000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 420.4000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 420.4000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 420.4000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 420.4000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 420.4000000357628,
+            "end": 420.4000000357628
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 420.4000000357628,
+            "end": 421.10000002384186
+          },
+          {
+            "name": "submit",
+            "start": 435.60000002384186,
+            "end": 435.60000002384186
+          }
+        ],
+        "longTasks": [],
+        "ready": 465.4000000357628,
+        "canvas": 196.19999998807907,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 280.9000000357628,
+          "navigationId": 8170,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 75.19999998807907,
+          "domainLookupStart": 86,
+          "domainLookupEnd": 86.80000001192093,
+          "connectStart": 86.80000001192093,
+          "secureConnectionStart": 0,
+          "connectEnd": 87.60000002384186,
+          "requestStart": 87.90000003576279,
+          "responseStart": 121.60000002384186,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 121.60000002384186,
+          "responseEnd": 124.40000003576279,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 201.4000000357628,
+          "domContentLoadedEventStart": 201.4000000357628,
+          "domContentLoadedEventEnd": 201.5,
+          "domComplete": 280.9000000357628,
+          "loadEventStart": 280.9000000357628,
+          "loadEventEnd": 280.9000000357628,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 200,
+            "duration": 0,
+            "navigationId": 8170,
+            "paintTime": 193.5,
+            "presentationTime": 200
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 292,
+            "duration": 0,
+            "navigationId": 8170,
+            "paintTime": 263.60000002384186,
+            "presentationTime": 292
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 140.9000000357628,
+            "end": 160.60000002384186,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 141.30000001192093,
+            "end": 161.60000002384186,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 141.5,
+            "end": 162.80000001192093,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 141.60000002384186,
+            "end": 164.60000002384186,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 141.69999998807907,
+            "end": 166,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 141.80000001192093,
+            "end": 168,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 142,
+            "end": 174.4000000357628,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 142.10000002384186,
+            "end": 175.4000000357628,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 142.19999998807907,
+            "end": 185.5,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 142.30000001192093,
+            "end": 176,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 142.30000001192093,
+            "end": 183,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 142.5,
+            "end": 177.10000002384186,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 142.5,
+            "end": 181.4000000357628,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 142.60000002384186,
+            "end": 182.10000002384186,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 142.69999998807907,
+            "end": 182.69999998807907,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 142.69999998807907,
+            "end": 184.5,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 142.69999998807907,
+            "end": 191,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 142.9000000357628,
+            "end": 192.80000001192093,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 335.80000001192093,
+            "end": 436.19999998807907,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 336.10000002384186,
+            "end": 436.60000002384186,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 336.4000000357628,
+            "end": 430.19999998807907,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 443.80000001192093,
+            "end": 451.9000000357628,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 445,
+            "end": 451.69999998807907,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 446.19999998807907,
+            "end": 452.10000002384186,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3qaibms30c2bt.js",
+            "start": 454.10000002384186,
+            "end": 457.5,
+            "transfer": 6164,
+            "bytes": 14616,
+            "encoded": 5864
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0da1mh-iq2u-6.js",
+            "start": 454.60000002384186,
+            "end": 458.10000002384186,
+            "transfer": 7284,
+            "bytes": 18338,
+            "encoded": 6984
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3powuygw0d2k-.js",
+            "start": 457.69999998807907,
+            "end": 465.4000000357628,
+            "transfer": 5428,
+            "bytes": 12719,
+            "encoded": 5128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2085cz-zzw5xh.js",
+            "start": 458.10000002384186,
+            "end": 468.30000001192093,
+            "transfer": 24074,
+            "bytes": 70618,
+            "encoded": 23774
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      },
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 215.5,
+            "end": 287.9000000357628
+          },
+          {
+            "name": "requestDevice",
+            "start": 288.10000002384186,
+            "end": 289.9000000357628
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 290.10000002384186,
+            "end": 290.10000002384186
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 290.10000002384186,
+            "end": 293.4000000357628
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 290.2000000476837,
+            "end": 290.2000000476837
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 290.2000000476837,
+            "end": 293.9000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 294.10000002384186,
+            "end": 294.10000002384186
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 294.10000002384186,
+            "end": 294.10000002384186
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 294.10000002384186,
+            "end": 294.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 294.2000000476837,
+            "end": 294.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 294.2000000476837,
+            "end": 294.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 294.2000000476837,
+            "end": 294.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 294.2000000476837,
+            "end": 294.2000000476837
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 294.2000000476837,
+            "end": 294.30000001192093
+          },
+          {
+            "name": "submit",
+            "start": 305.10000002384186,
+            "end": 305.10000002384186
+          }
+        ],
+        "longTasks": [],
+        "ready": 328.4000000357628,
+        "canvas": 118.40000003576279,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 187.60000002384186,
+          "navigationId": 6360,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 72.80000001192093,
+          "domainLookupStart": 76.10000002384186,
+          "domainLookupEnd": 76.40000003576279,
+          "connectStart": 76.40000003576279,
+          "secureConnectionStart": 0,
+          "connectEnd": 76.60000002384186,
+          "requestStart": 76.80000001192093,
+          "responseStart": 79.30000001192093,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 79.30000001192093,
+          "responseEnd": 80.10000002384186,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 121.40000003576279,
+          "domContentLoadedEventStart": 121.40000003576279,
+          "domContentLoadedEventEnd": 121.5,
+          "domComplete": 187.60000002384186,
+          "loadEventStart": 187.60000002384186,
+          "loadEventEnd": 187.60000002384186,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 132,
+            "duration": 0,
+            "navigationId": 6360,
+            "paintTime": 117.30000001192093,
+            "presentationTime": 132
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 156,
+            "duration": 0,
+            "navigationId": 6360,
+            "paintTime": 133.9000000357628,
+            "presentationTime": 156
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 85.90000003576279,
+            "end": 95.80000001192093,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 86.20000004768372,
+            "end": 96.40000003576279,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 86.30000001192093,
+            "end": 96.80000001192093,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 86.40000003576279,
+            "end": 97.20000004768372,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 86.5,
+            "end": 98,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 86.70000004768372,
+            "end": 99.20000004768372,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 86.80000001192093,
+            "end": 106.70000004768372,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 86.80000001192093,
+            "end": 109.40000003576279,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 87,
+            "end": 126.40000003576279,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 87.10000002384186,
+            "end": 111.40000003576279,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 87.10000002384186,
+            "end": 118.90000003576279,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 87.20000004768372,
+            "end": 112.10000002384186,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 87.30000001192093,
+            "end": 112.60000002384186,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 87.30000001192093,
+            "end": 115.30000001192093,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 87.40000003576279,
+            "end": 124,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 87.5,
+            "end": 118.20000004768372,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 87.60000002384186,
+            "end": 129.9000000357628,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 87.70000004768372,
+            "end": 134.60000002384186,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 218,
+            "end": 297.30000001192093,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 231.9000000357628,
+            "end": 302.5,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 232.10000002384186,
+            "end": 302.7000000476837,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 309.9000000357628,
+            "end": 318.80000001192093,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 311.10000002384186,
+            "end": 318.9000000357628,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 312.2000000476837,
+            "end": 319.7000000476837,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3qaibms30c2bt.js",
+            "start": 320.7000000476837,
+            "end": 324.80000001192093,
+            "transfer": 6164,
+            "bytes": 14616,
+            "encoded": 5864
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0da1mh-iq2u-6.js",
+            "start": 321,
+            "end": 324.9000000357628,
+            "transfer": 7284,
+            "bytes": 18338,
+            "encoded": 6984
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3powuygw0d2k-.js",
+            "start": 324.9000000357628,
+            "end": 330,
+            "transfer": 5428,
+            "bytes": 12719,
+            "encoded": 5128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2085cz-zzw5xh.js",
+            "start": 325.10000002384186,
+            "end": 332.60000002384186,
+            "transfer": 24074,
+            "bytes": 70618,
+            "encoded": 23774
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      },
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 221,
+            "end": 291.19999998807907
+          },
+          {
+            "name": "requestDevice",
+            "start": 291.19999998807907,
+            "end": 292
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 292.19999998807907,
+            "end": 292.30000001192093
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 292.30000001192093,
+            "end": 297.10000002384186
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 292.30000001192093,
+            "end": 292.30000001192093
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 292.30000001192093,
+            "end": 297.19999998807907
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 297.39999997615814,
+            "end": 297.39999997615814
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 297.39999997615814,
+            "end": 297.5
+          },
+          {
+            "name": "submit",
+            "start": 307.69999998807907,
+            "end": 307.69999998807907
+          }
+        ],
+        "longTasks": [],
+        "ready": 330,
+        "canvas": 119.10000002384186,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 191.69999998807907,
+          "navigationId": 6649,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 73,
+          "domainLookupStart": 76.39999997615814,
+          "domainLookupEnd": 76.80000001192093,
+          "connectStart": 76.80000001192093,
+          "secureConnectionStart": 0,
+          "connectEnd": 77,
+          "requestStart": 77.10000002384186,
+          "responseStart": 79.19999998807907,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 79.19999998807907,
+          "responseEnd": 80,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 122.30000001192093,
+          "domContentLoadedEventStart": 122.30000001192093,
+          "domContentLoadedEventEnd": 122.39999997615814,
+          "domComplete": 191.69999998807907,
+          "loadEventStart": 191.69999998807907,
+          "loadEventEnd": 191.69999998807907,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "high"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 156,
+            "duration": 0,
+            "navigationId": 6649,
+            "paintTime": 139.10000002384186,
+            "presentationTime": 156
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 156,
+            "duration": 0,
+            "navigationId": 6649,
+            "paintTime": 139.10000002384186,
+            "presentationTime": 156
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 85.89999997615814,
+            "end": 99.80000001192093,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 86.19999998807907,
+            "end": 103.10000002384186,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 86.30000001192093,
+            "end": 103.69999998807907,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 86.39999997615814,
+            "end": 104.5,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 86.60000002384186,
+            "end": 104.60000002384186,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 86.69999998807907,
+            "end": 108.10000002384186,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 86.80000001192093,
+            "end": 106.5,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 86.89999997615814,
+            "end": 107.30000001192093,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 87,
+            "end": 117.89999997615814,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 87,
+            "end": 121.60000002384186,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 87.10000002384186,
+            "end": 109.39999997615814,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 87.19999998807907,
+            "end": 111.60000002384186,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 87.19999998807907,
+            "end": 112.39999997615814,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 87.30000001192093,
+            "end": 113.10000002384186,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 87.39999997615814,
+            "end": 120.89999997615814,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 87.5,
+            "end": 120.5,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 87.60000002384186,
+            "end": 128.30000001192093,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 87.69999998807907,
+            "end": 129.39999997615814,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 204.30000001192093,
+            "end": 208.10000002384186,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 231,
+            "end": 301.80000001192093,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 231.19999998807907,
+            "end": 301.89999997615814,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 312.10000002384186,
+            "end": 322.80000001192093,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 313.19999998807907,
+            "end": 324.19999998807907,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 314.30000001192093,
+            "end": 332.80000001192093,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3qaibms30c2bt.js",
+            "start": 326.60000002384186,
+            "end": 335.80000001192093,
+            "transfer": 6164,
+            "bytes": 14616,
+            "encoded": 5864
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0da1mh-iq2u-6.js",
+            "start": 326.89999997615814,
+            "end": 336.60000002384186,
+            "transfer": 7284,
+            "bytes": 18338,
+            "encoded": 6984
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3powuygw0d2k-.js",
+            "start": 334.60000002384186,
+            "end": 338.30000001192093,
+            "transfer": 5428,
+            "bytes": 12719,
+            "encoded": 5128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2085cz-zzw5xh.js",
+            "start": 334.89999997615814,
+            "end": 340,
+            "transfer": 24074,
+            "bytes": 70618,
+            "encoded": 23774
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      },
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 216.69999998807907,
+            "end": 290.80000001192093
+          },
+          {
+            "name": "requestDevice",
+            "start": 290.9000000357628,
+            "end": 295
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 295.30000001192093,
+            "end": 295.4000000357628
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 295.4000000357628,
+            "end": 302.60000002384186
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 295.4000000357628,
+            "end": 295.4000000357628
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 295.4000000357628,
+            "end": 302.60000002384186
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 302.80000001192093,
+            "end": 302.80000001192093
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 302.80000001192093,
+            "end": 302.9000000357628
+          },
+          {
+            "name": "submit",
+            "start": 312.30000001192093,
+            "end": 312.4000000357628
+          }
+        ],
+        "longTasks": [],
+        "ready": 334,
+        "canvas": 119.90000003576279,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 179.9000000357628,
+          "navigationId": 7598,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 72.69999998807907,
+          "domainLookupStart": 75.30000001192093,
+          "domainLookupEnd": 75.60000002384186,
+          "connectStart": 75.60000002384186,
+          "secureConnectionStart": 0,
+          "connectEnd": 75.80000001192093,
+          "requestStart": 76.10000002384186,
+          "responseStart": 78.5,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 78.5,
+          "responseEnd": 79.19999998807907,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 124.60000002384186,
+          "domContentLoadedEventStart": 124.60000002384186,
+          "domContentLoadedEventEnd": 124.80000001192093,
+          "domComplete": 179.80000001192093,
+          "loadEventStart": 179.9000000357628,
+          "loadEventEnd": 179.9000000357628,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 132,
+            "duration": 0,
+            "navigationId": 7598,
+            "paintTime": 119.19999998807907,
+            "presentationTime": 132
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 148,
+            "duration": 0,
+            "navigationId": 7598,
+            "paintTime": 135.5,
+            "presentationTime": 148
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 85.30000001192093,
+            "end": 94.80000001192093,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 85.60000002384186,
+            "end": 95,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 85.60000002384186,
+            "end": 95.30000001192093,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 85.80000001192093,
+            "end": 95.80000001192093,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 85.90000003576279,
+            "end": 97.10000002384186,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 86,
+            "end": 98.30000001192093,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 86.19999998807907,
+            "end": 106.60000002384186,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 86.30000001192093,
+            "end": 110,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 86.30000001192093,
+            "end": 120.90000003576279,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 86.40000003576279,
+            "end": 110.30000001192093,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 86.40000003576279,
+            "end": 118.30000001192093,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 86.60000002384186,
+            "end": 111.19999998807907,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 86.60000002384186,
+            "end": 111.19999998807907,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 86.69999998807907,
+            "end": 116.30000001192093,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 86.80000001192093,
+            "end": 118.5,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 86.90000003576279,
+            "end": 116.90000003576279,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 86.90000003576279,
+            "end": 127.30000001192093,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 87,
+            "end": 134.19999998807907,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 208,
+            "end": 211.5,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 232.4000000357628,
+            "end": 296.9000000357628,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 232.69999998807907,
+            "end": 297,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 300,
+            "end": 303.5,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 301.19999998807907,
+            "end": 303.80000001192093,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 302.19999998807907,
+            "end": 305.80000001192093,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3qaibms30c2bt.js",
+            "start": 316.60000002384186,
+            "end": 319.10000002384186,
+            "transfer": 6164,
+            "bytes": 14616,
+            "encoded": 5864
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0da1mh-iq2u-6.js",
+            "start": 316.80000001192093,
+            "end": 319.5,
+            "transfer": 7284,
+            "bytes": 18338,
+            "encoded": 6984
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3powuygw0d2k-.js",
+            "start": 319.30000001192093,
+            "end": 323,
+            "transfer": 5428,
+            "bytes": 12719,
+            "encoded": 5128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2085cz-zzw5xh.js",
+            "start": 319.60000002384186,
+            "end": 324.80000001192093,
+            "transfer": 24074,
+            "bytes": 70618,
+            "encoded": 23774
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      },
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 217.39999997615814,
+            "end": 287.89999997615814
+          },
+          {
+            "name": "requestDevice",
+            "start": 287.89999997615814,
+            "end": 288.69999998807907
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 288.89999997615814,
+            "end": 288.89999997615814
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 288.89999997615814,
+            "end": 292.19999998807907
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 289,
+            "end": 289
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 289,
+            "end": 292.30000001192093
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 292.39999997615814,
+            "end": 292.39999997615814
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 292.5,
+            "end": 292.60000002384186
+          },
+          {
+            "name": "submit",
+            "start": 303.80000001192093,
+            "end": 303.80000001192093
+          }
+        ],
+        "longTasks": [],
+        "ready": 327.30000001192093,
+        "canvas": 120.60000002384186,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 180.69999998807907,
+          "navigationId": 3778,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 72.80000001192093,
+          "domainLookupStart": 75.30000001192093,
+          "domainLookupEnd": 75.60000002384186,
+          "connectStart": 75.60000002384186,
+          "secureConnectionStart": 0,
+          "connectEnd": 75.80000001192093,
+          "requestStart": 76,
+          "responseStart": 77.80000001192093,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 77.80000001192093,
+          "responseEnd": 78.69999998807907,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 125.69999998807907,
+          "domContentLoadedEventStart": 125.69999998807907,
+          "domContentLoadedEventEnd": 125.80000001192093,
+          "domComplete": 180.60000002384186,
+          "loadEventStart": 180.69999998807907,
+          "loadEventEnd": 180.69999998807907,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 132,
+            "duration": 0,
+            "navigationId": 3778,
+            "paintTime": 119.5,
+            "presentationTime": 132
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 148,
+            "duration": 0,
+            "navigationId": 3778,
+            "paintTime": 135.60000002384186,
+            "presentationTime": 148
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 84.80000001192093,
+            "end": 94.10000002384186,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 85,
+            "end": 94.60000002384186,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 85.19999998807907,
+            "end": 95.19999998807907,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 85.19999998807907,
+            "end": 95.60000002384186,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 85.39999997615814,
+            "end": 95.89999997615814,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 85.5,
+            "end": 98.10000002384186,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 85.60000002384186,
+            "end": 107,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 85.69999998807907,
+            "end": 109.10000002384186,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 85.80000001192093,
+            "end": 119.5,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 85.89999997615814,
+            "end": 110.69999998807907,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 85.89999997615814,
+            "end": 117.89999997615814,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 86,
+            "end": 112.60000002384186,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 86.10000002384186,
+            "end": 113.80000001192093,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 86.19999998807907,
+            "end": 115.10000002384186,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 86.19999998807907,
+            "end": 119,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 86.39999997615814,
+            "end": 117.60000002384186,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 86.5,
+            "end": 130.60000002384186,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 86.5,
+            "end": 133.69999998807907,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 208.80000001192093,
+            "end": 212.19999998807907,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 233.10000002384186,
+            "end": 297.69999998807907,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 233.30000001192093,
+            "end": 297.89999997615814,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 308.10000002384186,
+            "end": 312,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 309.30000001192093,
+            "end": 312.69999998807907,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 310.39999997615814,
+            "end": 315.10000002384186,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3qaibms30c2bt.js",
+            "start": 314.60000002384186,
+            "end": 319.19999998807907,
+            "transfer": 6164,
+            "bytes": 14616,
+            "encoded": 5864
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0da1mh-iq2u-6.js",
+            "start": 314.89999997615814,
+            "end": 320,
+            "transfer": 7284,
+            "bytes": 18338,
+            "encoded": 6984
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3powuygw0d2k-.js",
+            "start": 319.19999998807907,
+            "end": 325.10000002384186,
+            "transfer": 5428,
+            "bytes": 12719,
+            "encoded": 5128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2085cz-zzw5xh.js",
+            "start": 319.5,
+            "end": 326.69999998807907,
+            "transfer": 24074,
+            "bytes": 70618,
+            "encoded": 23774
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      }
+    ]
+  },
+  "throttled": {
+    "url": "http://localhost:3102",
+    "profile": "throttled",
+    "runs": [
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 855.6999999880791,
+            "end": 917.8000000119209
+          },
+          {
+            "name": "requestDevice",
+            "start": 918.6000000238419,
+            "end": 924.3000000119209
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 925.6000000238419,
+            "end": 925.6000000238419
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 925.6000000238419,
+            "end": 928.3999999761581
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 925.6000000238419,
+            "end": 925.6000000238419
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 925.6000000238419,
+            "end": 929.3000000119209
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 929.6000000238419,
+            "end": 929.8999999761581
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 929.8999999761581,
+            "end": 929.8999999761581
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 929.8999999761581,
+            "end": 929.8999999761581
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 929.8999999761581,
+            "end": 929.8999999761581
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 929.8999999761581,
+            "end": 930.1000000238419
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 930.1000000238419,
+            "end": 930.1000000238419
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 930.1000000238419,
+            "end": 930.1000000238419
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 930.1999999880791,
+            "end": 930.1999999880791
+          },
+          {
+            "name": "submit",
+            "start": 966,
+            "end": 966.6999999880791
+          }
+        ],
+        "longTasks": [
+          {
+            "start": 493.80000001192093,
+            "duration": 157
+          }
+        ],
+        "ready": 1003.3999999761581,
+        "canvas": 278.60000002384186,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 692.1999999880791,
+          "navigationId": 4719,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 78.69999998807907,
+          "domainLookupStart": 82.80000001192093,
+          "domainLookupEnd": 83.10000002384186,
+          "connectStart": 83.10000002384186,
+          "secureConnectionStart": 0,
+          "connectEnd": 83.30000001192093,
+          "requestStart": 83.60000002384186,
+          "responseStart": 87.80000001192093,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 87.80000001192093,
+          "responseEnd": 128.19999998807907,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 281.19999998807907,
+          "domContentLoadedEventStart": 281.19999998807907,
+          "domContentLoadedEventEnd": 281.60000002384186,
+          "domComplete": 691.6999999880791,
+          "loadEventStart": 692.1999999880791,
+          "loadEventEnd": 692.1999999880791,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 364,
+            "duration": 0,
+            "navigationId": 4719,
+            "paintTime": 351.89999997615814,
+            "presentationTime": 364
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 364,
+            "duration": 0,
+            "navigationId": 4719,
+            "paintTime": 351.89999997615814,
+            "presentationTime": 364
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 147.10000002384186,
+            "end": 246,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 148.19999998807907,
+            "end": 281.60000002384186,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 148.80000001192093,
+            "end": 248,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 149.30000001192093,
+            "end": 249.10000002384186,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 149.80000001192093,
+            "end": 250.30000001192093,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 150.5,
+            "end": 261.19999998807907,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 151,
+            "end": 288.80000001192093,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 151.39999997615814,
+            "end": 312.69999998807907,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 151.5,
+            "end": 492.69999998807907,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 152.10000002384186,
+            "end": 427,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 152.60000002384186,
+            "end": 319,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 152.69999998807907,
+            "end": 336.69999998807907,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 153.19999998807907,
+            "end": 356.19999998807907,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 153.69999998807907,
+            "end": 392.10000002384186,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 153.80000001192093,
+            "end": 447.30000001192093,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 154.69999998807907,
+            "end": 399.30000001192093,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 155.19999998807907,
+            "end": 560.1999999880791,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 155.30000001192093,
+            "end": 658.6000000238419,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 732,
+            "end": 780,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 884.6000000238419,
+            "end": 964.5,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 885.3999999761581,
+            "end": 965.8999999761581,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 988.6000000238419,
+            "end": 1039.1000000238419,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 993.3999999761581,
+            "end": 1037.199999988079,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 997.6999999880791,
+            "end": 1042.6000000238419,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      },
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 844.5999999642372,
+            "end": 906.5
+          },
+          {
+            "name": "requestDevice",
+            "start": 906.5999999642372,
+            "end": 912.5999999642372
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 913.8999999761581,
+            "end": 914
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 914,
+            "end": 917.5
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 914,
+            "end": 914
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 914,
+            "end": 917.5999999642372
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 917.6999999880791,
+            "end": 917.6999999880791
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 917.6999999880791,
+            "end": 917.6999999880791
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 918.3999999761581,
+            "end": 918.3999999761581
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 918.3999999761581,
+            "end": 918.3999999761581
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 918.3999999761581,
+            "end": 918.5
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 918.5,
+            "end": 918.5
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 918.5,
+            "end": 918.5
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 918.5,
+            "end": 918.5999999642372
+          },
+          {
+            "name": "submit",
+            "start": 954,
+            "end": 954.5
+          }
+        ],
+        "longTasks": [
+          {
+            "start": 484.69999998807907,
+            "duration": 159
+          }
+        ],
+        "ready": 992.3000000119209,
+        "canvas": 267.39999997615814,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 683.3000000119209,
+          "navigationId": 6407,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 72.80000001192093,
+          "domainLookupStart": 76.19999998807907,
+          "domainLookupEnd": 76.5,
+          "connectStart": 76.5,
+          "secureConnectionStart": 0,
+          "connectEnd": 76.69999998807907,
+          "requestStart": 77,
+          "responseStart": 79.39999997615814,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 79.39999997615814,
+          "responseEnd": 129.69999998807907,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 270.39999997615814,
+          "domContentLoadedEventStart": 270.39999997615814,
+          "domContentLoadedEventEnd": 270.5,
+          "domComplete": 683.3000000119209,
+          "loadEventStart": 683.3000000119209,
+          "loadEventEnd": 683.3000000119209,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 348,
+            "duration": 0,
+            "navigationId": 6407,
+            "paintTime": 337.80000001192093,
+            "presentationTime": 348
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 348,
+            "duration": 0,
+            "navigationId": 6407,
+            "paintTime": 337.80000001192093,
+            "presentationTime": 348
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 145.80000001192093,
+            "end": 233.5999999642372,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 147.30000001192093,
+            "end": 270.69999998807907,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 147.39999997615814,
+            "end": 237,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 148.5,
+            "end": 238.69999998807907,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 149.30000001192093,
+            "end": 239.69999998807907,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 150.39999997615814,
+            "end": 250.5,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 151,
+            "end": 275.5999999642372,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 151,
+            "end": 297.5,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 152,
+            "end": 483.0999999642372,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 152.5999999642372,
+            "end": 306.69999998807907,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 152.5999999642372,
+            "end": 413.69999998807907,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 152.69999998807907,
+            "end": 327.39999997615814,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 153.5999999642372,
+            "end": 345.19999998807907,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 153.69999998807907,
+            "end": 375.5,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 153.80000001192093,
+            "end": 435.0999999642372,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 154.5999999642372,
+            "end": 388.5999999642372,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 155.19999998807907,
+            "end": 549.5,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 155.19999998807907,
+            "end": 646.1999999880791,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 721.8999999761581,
+            "end": 766.5,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 872.5999999642372,
+            "end": 952.6999999880791,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 873.1999999880791,
+            "end": 954.0999999642372,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 970.6999999880791,
+            "end": 1017.3999999761581,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 976.3000000119209,
+            "end": 1018.8999999761581,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 979.6999999880791,
+            "end": 1024.5,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      },
+      {
+        "events": [
+          {
+            "name": "requestAdapter",
+            "start": 839,
+            "end": 902.2000000476837
+          },
+          {
+            "name": "requestDevice",
+            "start": 902.3000000119209,
+            "end": 908.1000000238419
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Fluid simulation WGSL",
+            "start": 909.8000000119209,
+            "end": 909.8000000119209
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 909.8000000119209,
+            "end": 912.5
+          },
+          {
+            "name": "createShaderModule",
+            "label": "Blue-noise fluid WGSL",
+            "start": 909.8000000119209,
+            "end": 909.8000000119209
+          },
+          {
+            "name": "getCompilationInfo",
+            "start": 909.8000000119209,
+            "end": 912.9000000357628
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Initialize fluid",
+            "start": 913.1000000238419,
+            "end": 913.1000000238419
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Clear fluid scalar field",
+            "start": 913.1000000238419,
+            "end": 913.1000000238419
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Resample fluid state",
+            "start": 913.1000000238419,
+            "end": 913.1000000238419
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Advect fluid",
+            "start": 913.1000000238419,
+            "end": 913.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Measure fluid divergence",
+            "start": 913.2000000476837,
+            "end": 913.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Solve fluid pressure",
+            "start": 913.2000000476837,
+            "end": 913.2000000476837
+          },
+          {
+            "name": "createComputePipeline",
+            "label": "Project fluid velocity",
+            "start": 913.2000000476837,
+            "end": 913.2000000476837
+          },
+          {
+            "name": "createRenderPipeline",
+            "label": "Blue-noise fluid display",
+            "start": 914,
+            "end": 914.1000000238419
+          },
+          {
+            "name": "submit",
+            "start": 949.1000000238419,
+            "end": 949.1000000238419
+          }
+        ],
+        "longTasks": [
+          {
+            "start": 481.7000000476837,
+            "duration": 156
+          }
+        ],
+        "ready": 988.2000000476837,
+        "canvas": 265.10000002384186,
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "navigation": {
+          "name": "http://localhost:3102/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 678.3000000119209,
+          "navigationId": 1615,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "gzip",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 72.10000002384186,
+          "domainLookupStart": 75.40000003576279,
+          "domainLookupEnd": 75.70000004768372,
+          "connectStart": 75.70000004768372,
+          "secureConnectionStart": 0,
+          "connectEnd": 75.90000003576279,
+          "requestStart": 76.20000004768372,
+          "responseStart": 78,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 78,
+          "responseEnd": 126.30000001192093,
+          "transferSize": 3819,
+          "encodedBodySize": 3519,
+          "decodedBodySize": 12621,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 267.9000000357628,
+          "domContentLoadedEventStart": 267.9000000357628,
+          "domContentLoadedEventEnd": 267.9000000357628,
+          "domComplete": 678.3000000119209,
+          "loadEventStart": 678.3000000119209,
+          "loadEventEnd": 678.3000000119209,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 348,
+            "duration": 0,
+            "navigationId": 1615,
+            "paintTime": 331.9000000357628,
+            "presentationTime": 348
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 348,
+            "duration": 0,
+            "navigationId": 1615,
+            "paintTime": 331.9000000357628,
+            "presentationTime": 348
+          }
+        ],
+        "resources": [
+          {
+            "url": "http://localhost:3102/_next/static/media/2880e9b87afbd5d9-s.p.226pwps5o-gq_.woff2",
+            "start": 144,
+            "end": 234.20000004768372,
+            "transfer": 10420,
+            "bytes": 10120,
+            "encoded": 10120
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2",
+            "start": 145.10000002384186,
+            "end": 269.7000000476837,
+            "transfer": 40540,
+            "bytes": 40240,
+            "encoded": 40240
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/69121a461e26d515-s.p.3y9b8znjr2455.woff2",
+            "start": 145.4000000357628,
+            "end": 236.20000004768372,
+            "transfer": 10428,
+            "bytes": 10128,
+            "encoded": 10128
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/916cd8a3bde3edf8-s.p.0oace-s_gkfks.woff2",
+            "start": 145.9000000357628,
+            "end": 237.80000001192093,
+            "transfer": 10360,
+            "bytes": 10060,
+            "encoded": 10060
+          },
+          {
+            "url": "http://localhost:3102/_next/static/media/d6c1ff7e86974212-s.p.40sczeszzbjw1.woff2",
+            "start": 146.9000000357628,
+            "end": 238.60000002384186,
+            "transfer": 10352,
+            "bytes": 10052,
+            "encoded": 10052
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/07zfhqyfes-bm.css",
+            "start": 147.70000004768372,
+            "end": 249.20000004768372,
+            "transfer": 15293,
+            "bytes": 92212,
+            "encoded": 14993
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/310vm2bl3xxpt.js",
+            "start": 148.70000004768372,
+            "end": 279.30000001192093,
+            "transfer": 2270,
+            "bytes": 5364,
+            "encoded": 1970
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3stj_6j28yxy9.js",
+            "start": 149.30000001192093,
+            "end": 302.4000000357628,
+            "transfer": 8982,
+            "bytes": 32997,
+            "encoded": 8682
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3f9adhwm0ww_b.js",
+            "start": 149.80000001192093,
+            "end": 479.7000000476837,
+            "transfer": 72048,
+            "bytes": 229287,
+            "encoded": 71748
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2-k1bp-mzg57u.js",
+            "start": 150.20000004768372,
+            "end": 414.9000000357628,
+            "transfer": 45820,
+            "bytes": 165565,
+            "encoded": 45520
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "start": 150.30000001192093,
+            "end": 306.9000000357628,
+            "transfer": 4654,
+            "bytes": 11199,
+            "encoded": 4354
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/3on94antazerp.js",
+            "start": 151,
+            "end": 324.9000000357628,
+            "transfer": 5238,
+            "bytes": 17548,
+            "encoded": 4938
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1o3-slxu4a8v9.js",
+            "start": 151.10000002384186,
+            "end": 347.7000000476837,
+            "transfer": 9132,
+            "bytes": 28012,
+            "encoded": 8832
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/1f_1f4ofvs9co.js",
+            "start": 151.20000004768372,
+            "end": 383.9000000357628,
+            "transfer": 11036,
+            "bytes": 29303,
+            "encoded": 10736
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/0a3q0kcnlr3v3.js",
+            "start": 151.9000000357628,
+            "end": 435.4000000357628,
+            "transfer": 26108,
+            "bytes": 73513,
+            "encoded": 25808
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2m7flg12yooee.js",
+            "start": 152,
+            "end": 388.4000000357628,
+            "transfer": 5311,
+            "bytes": 12437,
+            "encoded": 5011
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/2_kuxzrd1t043.js",
+            "start": 152.10000002384186,
+            "end": 549.4000000357628,
+            "transfer": 75716,
+            "bytes": 220897,
+            "encoded": 75416
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/19vo9sutt8cyx.js",
+            "start": 152.9000000357628,
+            "end": 648,
+            "transfer": 185930,
+            "bytes": 273046,
+            "encoded": 185630
+          },
+          {
+            "url": "http://localhost:3102/icon.png?icon.0rprge0uk2_fi.png",
+            "start": 758.3000000119209,
+            "end": 803.9000000357628,
+            "transfer": 633,
+            "bytes": 333,
+            "encoded": 333
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=5CB68i4pnAekjehf",
+            "start": 868.1000000238419,
+            "end": 947.8000000119209,
+            "transfer": 660,
+            "bytes": 785,
+            "encoded": 360
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=5CB68i4pnAekjehf",
+            "start": 868.9000000357628,
+            "end": 949.4000000357628,
+            "transfer": 675,
+            "bytes": 833,
+            "encoded": 375
+          },
+          {
+            "url": "http://localhost:3102/articles?_rsc=BVehnWCYng9YI2VT",
+            "start": 965.7000000476837,
+            "end": 1014.2000000476837,
+            "transfer": 3729,
+            "bytes": 21351,
+            "encoded": 3429
+          },
+          {
+            "url": "http://localhost:3102/_next/static/chunks/29xaqp5p0i0d_.css",
+            "start": 970.4000000357628,
+            "end": 1012.7000000476837,
+            "transfer": 426,
+            "bytes": 126,
+            "encoded": 126
+          },
+          {
+            "url": "http://localhost:3102/cv?_rsc=6lFqg80HCXDDpK25",
+            "start": 974.6000000238419,
+            "end": 1019.9000000357628,
+            "transfer": 3159,
+            "bytes": 8731,
+            "encoded": 2859
+          }
+        ],
+        "canvasSize": {
+          "width": 2880,
+          "height": 1800
+        },
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+        "errors": []
+      }
+    ]
+  }
+}

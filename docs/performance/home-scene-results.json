@@ -1,0 +1,2894 @@
+{
+  "date": "2026-11-02",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "hardware": {
+    "os": "macOS 15.8.2",
+    "gpuVendor": "intel",
+    "gpuArchitecture": "gen-9",
+    "isFallbackAdapter": false
+  },
+  "cache": "Fresh browser per run; HTTP cache and GPU shader disk cache disabled; service workers blocked",
+  "metric": "Navigation to data-webgpu-status=ready, after first frame GPU work completion",
+  "measurements": [
+    {
+      "label": "Live, before",
+      "url": "https://tomd.sh",
+      "profile": "desktop",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "runs": [
+        {
+          "firstGpuFrameMs": 1207.9000000357628,
+          "canvasPresentMs": 236.9000000357628,
+          "firstContentfulPaintMs": 264,
+          "loadMs": 308.80000001192093,
+          "ttfbMs": 173.4000000357628,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 336.5,
+              "duration": 824
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1159,
+              "end": 1168
+            },
+            {
+              "name": "requestDevice",
+              "start": 1168.1000000238419,
+              "end": 1174.1000000238419
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1174.4000000357628,
+              "end": 1174.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1174.4000000357628,
+              "end": 1177.4000000357628
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1174.4000000357628,
+              "end": 1174.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1174.4000000357628,
+              "end": 1177.7000000476837
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1177.800000011921,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1177.9000000357628,
+              "end": 1177.9000000357628
+            },
+            {
+              "name": "submit",
+              "start": 1186.9000000357628,
+              "end": 1187
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1311.1000000238419,
+          "canvasPresentMs": 255.19999998807907,
+          "firstContentfulPaintMs": 276,
+          "loadMs": 411.9000000357628,
+          "ttfbMs": 184.19999998807907,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 438.4000000357628,
+              "duration": 828
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1264.4000000357628,
+              "end": 1273.800000011921
+            },
+            {
+              "name": "requestDevice",
+              "start": 1273.9000000357628,
+              "end": 1281.300000011921
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1281.6000000238419,
+              "end": 1281.6000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1281.6000000238419,
+              "end": 1284.6000000238419
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1281.6000000238419,
+              "end": 1281.6000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1281.6000000238419,
+              "end": 1284.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1285.1000000238419,
+              "end": 1285.1000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1285.1000000238419,
+              "end": 1285.1000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1285.1000000238419,
+              "end": 1285.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1285.199999988079,
+              "end": 1285.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1285.199999988079,
+              "end": 1285.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1285.199999988079,
+              "end": 1285.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1285.199999988079,
+              "end": 1285.199999988079
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1285.199999988079,
+              "end": 1285.300000011921
+            },
+            {
+              "name": "submit",
+              "start": 1293.9000000357628,
+              "end": 1293.9000000357628
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1226.699999988079,
+          "canvasPresentMs": 219.69999998807907,
+          "firstContentfulPaintMs": 240,
+          "loadMs": 325.9000000357628,
+          "ttfbMs": 130.69999998807907,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 353.4000000357628,
+              "duration": 826
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1177.800000011921,
+              "end": 1186.6000000238419
+            },
+            {
+              "name": "requestDevice",
+              "start": 1186.6000000238419,
+              "end": 1193.6000000238419
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1193.9000000357628,
+              "end": 1194
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1194,
+              "end": 1197
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1194,
+              "end": 1194.1000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1194.1000000238419,
+              "end": 1197.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1197.5,
+              "end": 1197.5
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1197.5,
+              "end": 1197.6000000238419
+            },
+            {
+              "name": "submit",
+              "start": 1206.4000000357628,
+              "end": 1206.4000000357628
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1180.300000011921,
+          "canvasPresentMs": 210.4000000357628,
+          "firstContentfulPaintMs": 236,
+          "loadMs": 279,
+          "ttfbMs": 125,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 306.69999998807907,
+              "duration": 823
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1128,
+              "end": 1139.4000000357628
+            },
+            {
+              "name": "requestDevice",
+              "start": 1139.4000000357628,
+              "end": 1144.199999988079
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1144.6000000238419,
+              "end": 1144.6000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1144.6000000238419,
+              "end": 1147.699999988079
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1144.6000000238419,
+              "end": 1144.6000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1144.6000000238419,
+              "end": 1148.1000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1148.300000011921,
+              "end": 1148.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1148.4000000357628,
+              "end": 1148.4000000357628
+            },
+            {
+              "name": "submit",
+              "start": 1157.699999988079,
+              "end": 1157.800000011921
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1174.800000011921,
+          "canvasPresentMs": 224.60000002384186,
+          "firstContentfulPaintMs": 272,
+          "loadMs": 274.2000000476837,
+          "ttfbMs": 131.5,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 292.9000000357628,
+              "duration": 825
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1116.6000000238419,
+              "end": 1132
+            },
+            {
+              "name": "requestDevice",
+              "start": 1132,
+              "end": 1136.9000000357628
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1137.1000000238419,
+              "end": 1137.1000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1137.1000000238419,
+              "end": 1140.5
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1137.1000000238419,
+              "end": 1137.1000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1137.1000000238419,
+              "end": 1140.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1140.800000011921,
+              "end": 1140.800000011921
+            },
+            {
+              "name": "submit",
+              "start": 1149.4000000357628,
+              "end": 1149.5
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "label": "Local, before",
+      "url": "http://localhost:3100",
+      "profile": "desktop",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "runs": [
+        {
+          "firstGpuFrameMs": 3168.5,
+          "canvasPresentMs": 180,
+          "firstContentfulPaintMs": 228,
+          "loadMs": 235.5999999642372,
+          "ttfbMs": 124.59999996423721,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 254,
+              "duration": 833
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1085.199999988079,
+              "end": 1105.5
+            },
+            {
+              "name": "requestDevice",
+              "start": 1105.5999999642372,
+              "end": 1108.0999999642372
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1108.3999999761581,
+              "end": 1108.3999999761581
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1108.3999999761581,
+              "end": 1111.7999999523163
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1108.5,
+              "end": 1108.5
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1108.5,
+              "end": 1112.0999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1112.2999999523163,
+              "end": 1112.2999999523163
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1112.2999999523163,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1112.3999999761581,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1112.3999999761581,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1112.3999999761581,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1112.3999999761581,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1112.3999999761581,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1112.3999999761581,
+              "end": 1112.3999999761581
+            },
+            {
+              "name": "submit",
+              "start": 1122,
+              "end": 1122
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1091.4000000357628,
+          "canvasPresentMs": 111.5,
+          "firstContentfulPaintMs": 140,
+          "loadMs": 180,
+          "ttfbMs": 78.40000003576279,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 206.60000002384186,
+              "duration": 827
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1031.2000000476837,
+              "end": 1040.1000000238419
+            },
+            {
+              "name": "requestDevice",
+              "start": 1040.1000000238419,
+              "end": 1046.9000000357628
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1047.300000011921,
+              "end": 1047.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1047.4000000357628,
+              "end": 1053.5
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1047.4000000357628,
+              "end": 1047.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1047.4000000357628,
+              "end": 1055.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1056,
+              "end": 1056
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1056,
+              "end": 1056
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1056,
+              "end": 1056
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1056.1000000238419,
+              "end": 1056.1000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1056.1000000238419,
+              "end": 1056.1000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1056.1000000238419,
+              "end": 1056.1000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1056.1000000238419,
+              "end": 1056.1000000238419
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1056.1000000238419,
+              "end": 1056.1000000238419
+            },
+            {
+              "name": "submit",
+              "start": 1078.300000011921,
+              "end": 1078.300000011921
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1082.6000000238419,
+          "canvasPresentMs": 117.10000002384186,
+          "firstContentfulPaintMs": 156,
+          "loadMs": 183.60000002384186,
+          "ttfbMs": 78.5,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 203.10000002384186,
+              "duration": 828
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1029.300000011921,
+              "end": 1038.1000000238419
+            },
+            {
+              "name": "requestDevice",
+              "start": 1038.1000000238419,
+              "end": 1044
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1044.300000011921,
+              "end": 1044.5
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1044.5,
+              "end": 1048.800000011921
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1044.5,
+              "end": 1044.5
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1044.5,
+              "end": 1048.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1048.8999999761581,
+              "end": 1048.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1048.8999999761581,
+              "end": 1048.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1049,
+              "end": 1049
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1049,
+              "end": 1049
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1049,
+              "end": 1049
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1049,
+              "end": 1049
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1049,
+              "end": 1049
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1049,
+              "end": 1049.1000000238419
+            },
+            {
+              "name": "submit",
+              "start": 1059.199999988079,
+              "end": 1059.199999988079
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1083.3999999761581,
+          "canvasPresentMs": 120.69999998807907,
+          "firstContentfulPaintMs": 156,
+          "loadMs": 182,
+          "ttfbMs": 79.39999997615814,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 210.5,
+              "duration": 828
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1036.8999999761581,
+              "end": 1045.3999999761581
+            },
+            {
+              "name": "requestDevice",
+              "start": 1045.3999999761581,
+              "end": 1051.0999999642372
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1051.5,
+              "end": 1051.5999999642372
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1051.5999999642372,
+              "end": 1056
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1051.5999999642372,
+              "end": 1051.5999999642372
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1051.5999999642372,
+              "end": 1056.0999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1056.199999988079,
+              "end": 1056.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1056.199999988079,
+              "end": 1056.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1056.199999988079,
+              "end": 1056.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1056.199999988079,
+              "end": 1056.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1056.300000011921,
+              "end": 1056.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1056.300000011921,
+              "end": 1056.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1056.300000011921,
+              "end": 1056.300000011921
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1056.300000011921,
+              "end": 1056.300000011921
+            },
+            {
+              "name": "submit",
+              "start": 1065.3999999761581,
+              "end": 1065.5
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1085.699999988079,
+          "canvasPresentMs": 117.69999998807907,
+          "firstContentfulPaintMs": 160,
+          "loadMs": 177.5999999642372,
+          "ttfbMs": 76.5,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 205.80000001192093,
+              "duration": 827
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 1030.800000011921,
+              "end": 1042.5
+            },
+            {
+              "name": "requestDevice",
+              "start": 1042.5999999642372,
+              "end": 1043.699999988079
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 1044,
+              "end": 1044.0999999642372
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1044.0999999642372,
+              "end": 1050.300000011921
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 1044.0999999642372,
+              "end": 1044.0999999642372
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 1044.0999999642372,
+              "end": 1050.3999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 1050.5,
+              "end": 1050.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 1050.5,
+              "end": 1050.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 1050.5999999642372,
+              "end": 1050.5999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 1050.5999999642372,
+              "end": 1050.5999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 1050.5999999642372,
+              "end": 1050.5999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 1050.5999999642372,
+              "end": 1050.5999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 1050.5999999642372,
+              "end": 1050.5999999642372
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 1050.5999999642372,
+              "end": 1050.5999999642372
+            },
+            {
+              "name": "submit",
+              "start": 1060.300000011921,
+              "end": 1060.300000011921
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "label": "Local, optimized",
+      "url": "http://localhost:3101",
+      "profile": "desktop",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "runs": [
+        {
+          "firstGpuFrameMs": 325.10000002384186,
+          "canvasPresentMs": 120.39999997615814,
+          "firstContentfulPaintMs": 148,
+          "loadMs": 180.60000002384186,
+          "ttfbMs": 77.19999998807907,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 214.69999998807907,
+              "end": 284.69999998807907
+            },
+            {
+              "name": "requestDevice",
+              "start": 284.80000001192093,
+              "end": 285.60000002384186
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 285.89999997615814,
+              "end": 285.89999997615814
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 285.89999997615814,
+              "end": 291.10000002384186
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 286,
+              "end": 286
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 286,
+              "end": 291.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 291.30000001192093,
+              "end": 291.30000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 291.30000001192093,
+              "end": 291.30000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 291.30000001192093,
+              "end": 291.30000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 291.39999997615814,
+              "end": 291.39999997615814
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 291.39999997615814,
+              "end": 291.39999997615814
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 291.39999997615814,
+              "end": 291.39999997615814
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 291.39999997615814,
+              "end": 291.39999997615814
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 291.39999997615814,
+              "end": 291.5
+            },
+            {
+              "name": "submit",
+              "start": 301.5,
+              "end": 301.5
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 326.0999999642372,
+          "canvasPresentMs": 115.80000001192093,
+          "firstContentfulPaintMs": 156,
+          "loadMs": 175.5999999642372,
+          "ttfbMs": 76.30000001192093,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 209,
+              "end": 284.19999998807907
+            },
+            {
+              "name": "requestDevice",
+              "start": 284.30000001192093,
+              "end": 286.5999999642372
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 286.89999997615814,
+              "end": 287
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 287,
+              "end": 293.5999999642372
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 287,
+              "end": 287
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 287.0999999642372,
+              "end": 293.5999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 293.69999998807907,
+              "end": 293.80000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 293.80000001192093,
+              "end": 293.80000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 293.80000001192093,
+              "end": 293.80000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 293.80000001192093,
+              "end": 293.80000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 293.89999997615814,
+              "end": 293.89999997615814
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 293.89999997615814,
+              "end": 293.89999997615814
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 293.89999997615814,
+              "end": 293.89999997615814
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 293.89999997615814,
+              "end": 293.89999997615814
+            },
+            {
+              "name": "submit",
+              "start": 303.5,
+              "end": 303.5999999642372
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 345.4000000357628,
+          "canvasPresentMs": 115.90000003576279,
+          "firstContentfulPaintMs": 136,
+          "loadMs": 215.5,
+          "ttfbMs": 77.10000002384186,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 222.10000002384186,
+              "end": 303.80000001192093
+            },
+            {
+              "name": "requestDevice",
+              "start": 303.9000000357628,
+              "end": 306.10000002384186
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 306.4000000357628,
+              "end": 306.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 306.4000000357628,
+              "end": 313.80000001192093
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 306.4000000357628,
+              "end": 306.5
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 306.5,
+              "end": 313.80000001192093
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 313.9000000357628,
+              "end": 313.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 313.9000000357628,
+              "end": 313.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 313.9000000357628,
+              "end": 313.9000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 313.9000000357628,
+              "end": 314
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 314,
+              "end": 314
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 314,
+              "end": 314
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 314,
+              "end": 314
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 314,
+              "end": 314.10000002384186
+            },
+            {
+              "name": "submit",
+              "start": 323.30000001192093,
+              "end": 323.30000001192093
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 328.10000002384186,
+          "canvasPresentMs": 118.40000003576279,
+          "firstContentfulPaintMs": 148,
+          "loadMs": 177.9000000357628,
+          "ttfbMs": 77.69999998807907,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 212.10000002384186,
+              "end": 286.30000001192093
+            },
+            {
+              "name": "requestDevice",
+              "start": 286.30000001192093,
+              "end": 290.69999998807907
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 291,
+              "end": 291
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 291,
+              "end": 297
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 291.10000002384186,
+              "end": 291.10000002384186
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 291.10000002384186,
+              "end": 297
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 297.19999998807907,
+              "end": 297.19999998807907
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 297.19999998807907,
+              "end": 297.4000000357628
+            },
+            {
+              "name": "submit",
+              "start": 306.4000000357628,
+              "end": 306.4000000357628
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 319.5,
+          "canvasPresentMs": 117.19999998807907,
+          "firstContentfulPaintMs": 156,
+          "loadMs": 183.4000000357628,
+          "ttfbMs": 78,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 210.10000002384186,
+              "end": 280.19999998807907
+            },
+            {
+              "name": "requestDevice",
+              "start": 280.30000001192093,
+              "end": 281
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 281.30000001192093,
+              "end": 281.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 281.4000000357628,
+              "end": 286.19999998807907
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 281.4000000357628,
+              "end": 281.4000000357628
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 281.4000000357628,
+              "end": 286.19999998807907
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 286.4000000357628,
+              "end": 286.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 286.5,
+              "end": 286.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 286.5,
+              "end": 286.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 286.5,
+              "end": 286.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 286.5,
+              "end": 286.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 286.5,
+              "end": 286.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 286.5,
+              "end": 286.5
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 286.5,
+              "end": 286.60000002384186
+            },
+            {
+              "name": "submit",
+              "start": 296.80000001192093,
+              "end": 296.9000000357628
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        }
+      ]
+    },
+    {
+      "label": "Live, before",
+      "url": "https://tomd.sh",
+      "profile": "throttled",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "runs": [
+        {
+          "firstGpuFrameMs": 4384.300000011921,
+          "canvasPresentMs": 381,
+          "firstContentfulPaintMs": 488,
+          "loadMs": 726.4000000357628,
+          "ttfbMs": 134.9000000357628,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 545.1000000238419,
+              "duration": 160
+            },
+            {
+              "start": 864.5,
+              "duration": 3394
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 4253.5,
+              "end": 4276.400000035763
+            },
+            {
+              "name": "requestDevice",
+              "start": 4276.800000011921,
+              "end": 4301.100000023842
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 4302.700000047684,
+              "end": 4302.800000011921
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4302.800000011921,
+              "end": 4309
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 4302.800000011921,
+              "end": 4302.800000011921
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4302.800000011921,
+              "end": 4309
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 4309.100000023842,
+              "end": 4309.700000047684
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 4309.700000047684,
+              "end": 4309.700000047684
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 4309.700000047684,
+              "end": 4309.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 4309.800000011921,
+              "end": 4309.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 4309.800000011921,
+              "end": 4309.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 4309.800000011921,
+              "end": 4309.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 4309.800000011921,
+              "end": 4309.800000011921
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 4309.800000011921,
+              "end": 4309.900000035763
+            },
+            {
+              "name": "submit",
+              "start": 4344.5,
+              "end": 4344.5
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 4376.900000035763,
+          "canvasPresentMs": 368.7000000476837,
+          "firstContentfulPaintMs": 480,
+          "loadMs": 714.3000000119209,
+          "ttfbMs": 131.5,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 540.7000000476837,
+              "duration": 151
+            },
+            {
+              "start": 847.7000000476837,
+              "duration": 3388
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 4232.400000035763,
+              "end": 4253.900000035763
+            },
+            {
+              "name": "requestDevice",
+              "start": 4253.900000035763,
+              "end": 4282.700000047684
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 4283.600000023842,
+              "end": 4283.600000023842
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4283.600000023842,
+              "end": 4288.900000035763
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 4283.600000023842,
+              "end": 4283.600000023842
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4283.600000023842,
+              "end": 4288.900000035763
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 4289.700000047684,
+              "end": 4289.700000047684
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 4289.700000047684,
+              "end": 4289.700000047684
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 4289.700000047684,
+              "end": 4289.700000047684
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 4289.800000011921,
+              "end": 4289.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 4289.800000011921,
+              "end": 4289.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 4289.800000011921,
+              "end": 4289.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 4289.800000011921,
+              "end": 4289.800000011921
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 4289.800000011921,
+              "end": 4289.900000035763
+            },
+            {
+              "name": "submit",
+              "start": 4326.100000023842,
+              "end": 4326.100000023842
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 4608.400000035763,
+          "canvasPresentMs": 412,
+          "firstContentfulPaintMs": 532,
+          "loadMs": 755,
+          "ttfbMs": 170.60000002384186,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 581.4000000357628,
+              "duration": 152
+            },
+            {
+              "start": 888.4000000357628,
+              "duration": 3536
+            },
+            {
+              "start": 4505.800000011921,
+              "duration": 52
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 4413.600000023842,
+              "end": 4458.800000011921
+            },
+            {
+              "name": "requestDevice",
+              "start": 4458.800000011921,
+              "end": 4495.800000011921
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 4497.5,
+              "end": 4498.100000023842
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4498.100000023842,
+              "end": 4505.800000011921
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 4498.100000023842,
+              "end": 4498.100000023842
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4498.100000023842,
+              "end": 4505.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 4506.600000023842,
+              "end": 4506.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 4506.600000023842,
+              "end": 4506.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 4506.600000023842,
+              "end": 4506.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 4506.600000023842,
+              "end": 4506.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 4506.600000023842,
+              "end": 4506.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 4506.600000023842,
+              "end": 4506.699999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 4506.699999988079,
+              "end": 4506.699999988079
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 4506.699999988079,
+              "end": 4507.400000035763
+            },
+            {
+              "name": "submit",
+              "start": 4551.100000023842,
+              "end": 4551.199999988079
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "label": "Local, before",
+      "url": "http://localhost:3100",
+      "profile": "throttled",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "runs": [
+        {
+          "firstGpuFrameMs": 4304.199999988079,
+          "canvasPresentMs": 262.19999998807907,
+          "firstContentfulPaintMs": 344,
+          "loadMs": 649.6999999880791,
+          "ttfbMs": 83.89999997615814,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 472.19999998807907,
+              "duration": 154
+            },
+            {
+              "start": 786.5,
+              "duration": 3381
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 4163.300000011921,
+              "end": 4184.600000023842
+            },
+            {
+              "name": "requestDevice",
+              "start": 4184.600000023842,
+              "end": 4215.800000011921
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 4216.699999988079,
+              "end": 4216.800000011921
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4216.800000011921,
+              "end": 4223.600000023842
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 4216.800000011921,
+              "end": 4216.800000011921
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4216.800000011921,
+              "end": 4223.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 4224.199999988079,
+              "end": 4224.199999988079
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 4224.199999988079,
+              "end": 4224.300000011921
+            },
+            {
+              "name": "submit",
+              "start": 4259.199999988079,
+              "end": 4259.800000011921
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 4297.899999976158,
+          "canvasPresentMs": 264.80000001192093,
+          "firstContentfulPaintMs": 344,
+          "loadMs": 651.0999999642372,
+          "ttfbMs": 77.5,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 474.19999998807907,
+              "duration": 155
+            },
+            {
+              "start": 786.0999999642372,
+              "duration": 3373
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 4154.899999976158,
+              "end": 4175.199999988079
+            },
+            {
+              "name": "requestDevice",
+              "start": 4175.300000011921,
+              "end": 4203
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 4204,
+              "end": 4204
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4204,
+              "end": 4210.5
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 4204,
+              "end": 4204
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4204,
+              "end": 4210.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 4210.800000011921,
+              "end": 4210.800000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 4210.800000011921,
+              "end": 4211.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 4211.300000011921,
+              "end": 4211.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 4211.300000011921,
+              "end": 4211.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 4211.300000011921,
+              "end": 4211.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 4211.300000011921,
+              "end": 4211.399999976158
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 4211.399999976158,
+              "end": 4211.399999976158
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 4211.599999964237,
+              "end": 4211.599999964237
+            },
+            {
+              "name": "submit",
+              "start": 4245.800000011921,
+              "end": 4245.899999976158
+            }
+          ],
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 4293,
+          "canvasPresentMs": 264.2000000476837,
+          "firstContentfulPaintMs": 352,
+          "loadMs": 650.7000000476837,
+          "ttfbMs": 76.60000002384186,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 473.9000000357628,
+              "duration": 154
+            },
+            {
+              "start": 784.5,
+              "duration": 3365
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 4144.900000035763,
+              "end": 4165.700000047684
+            },
+            {
+              "name": "requestDevice",
+              "start": 4166.5,
+              "end": 4198.900000035763
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 4199.600000023842,
+              "end": 4199.600000023842
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4199.600000023842,
+              "end": 4205.700000047684
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 4199.600000023842,
+              "end": 4199.600000023842
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 4199.600000023842,
+              "end": 4206.300000011921
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 4206.5,
+              "end": 4206.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 4206.5,
+              "end": 4206.5
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 4206.600000023842,
+              "end": 4206.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 4206.600000023842,
+              "end": 4206.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 4206.600000023842,
+              "end": 4206.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 4206.600000023842,
+              "end": 4206.600000023842
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 4206.600000023842,
+              "end": 4206.600000023842
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 4206.600000023842,
+              "end": 4207.400000035763
+            },
+            {
+              "name": "submit",
+              "start": 4243.600000023842,
+              "end": 4243.600000023842
+            }
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "label": "Local, optimized",
+      "url": "http://localhost:3101",
+      "profile": "throttled",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "runs": [
+        {
+          "firstGpuFrameMs": 969.6999999880791,
+          "canvasPresentMs": 256.5999999642372,
+          "firstContentfulPaintMs": 336,
+          "loadMs": 653.5,
+          "ttfbMs": 77.30000001192093,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 473.5,
+              "duration": 154
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 817.0999999642372,
+              "end": 882.6999999880791
+            },
+            {
+              "name": "requestDevice",
+              "start": 883.1999999880791,
+              "end": 887.6999999880791
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 888.5,
+              "end": 888.5999999642372
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 888.6999999880791,
+              "end": 892.6999999880791
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 888.6999999880791,
+              "end": 888.6999999880791
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 888.6999999880791,
+              "end": 893.3000000119209
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 893.8999999761581,
+              "end": 893.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 893.8999999761581,
+              "end": 893.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 894,
+              "end": 894
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 894,
+              "end": 894.0999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 894.0999999642372,
+              "end": 894.0999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 894.0999999642372,
+              "end": 894.0999999642372
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 894.0999999642372,
+              "end": 894.0999999642372
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 894.0999999642372,
+              "end": 894.0999999642372
+            },
+            {
+              "name": "submit",
+              "start": 929.3999999761581,
+              "end": 929.3999999761581
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 1032.8999999761581,
+          "canvasPresentMs": 273.19999998807907,
+          "firstContentfulPaintMs": 364,
+          "loadMs": 685.2999999523163,
+          "ttfbMs": 79.19999998807907,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 487.89999997615814,
+              "duration": 168
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 869.2999999523163,
+              "end": 937
+            },
+            {
+              "name": "requestDevice",
+              "start": 937.8999999761581,
+              "end": 941.2999999523163
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 942.6999999880791,
+              "end": 943.1999999880791
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 943.2999999523163,
+              "end": 946.5
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 943.2999999523163,
+              "end": 943.2999999523163
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 943.2999999523163,
+              "end": 947.2999999523163
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 947.6999999880791,
+              "end": 947.7999999523163
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 947.7999999523163,
+              "end": 947.7999999523163
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 947.7999999523163,
+              "end": 947.7999999523163
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 947.8999999761581,
+              "end": 947.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 947.8999999761581,
+              "end": 947.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 947.8999999761581,
+              "end": 947.8999999761581
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 947.8999999761581,
+              "end": 947.8999999761581
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 948.5,
+              "end": 948.5
+            },
+            {
+              "name": "submit",
+              "start": 987.2999999523163,
+              "end": 988.0999999642372
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        },
+        {
+          "firstGpuFrameMs": 993.6000000238419,
+          "canvasPresentMs": 271.80000001192093,
+          "firstContentfulPaintMs": 360,
+          "loadMs": 682.7000000476837,
+          "ttfbMs": 80.30000001192093,
+          "canvasSize": {
+            "width": 2880,
+            "height": 1800
+          },
+          "longTasks": [
+            {
+              "start": 486.60000002384186,
+              "duration": 165
+            }
+          ],
+          "gpuEvents": [
+            {
+              "name": "requestAdapter",
+              "start": 846,
+              "end": 910.8000000119209
+            },
+            {
+              "name": "requestDevice",
+              "start": 910.9000000357628,
+              "end": 915.7000000476837
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Fluid simulation WGSL",
+              "start": 917.2000000476837,
+              "end": 917.2000000476837
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 917.2000000476837,
+              "end": 920.6000000238419
+            },
+            {
+              "name": "createShaderModule",
+              "label": "Blue-noise fluid WGSL",
+              "start": 917.6000000238419,
+              "end": 917.6000000238419
+            },
+            {
+              "name": "getCompilationInfo",
+              "start": 917.6000000238419,
+              "end": 921.4000000357628
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Initialize fluid",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Clear fluid scalar field",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Resample fluid state",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Advect fluid",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Measure fluid divergence",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Solve fluid pressure",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createComputePipeline",
+              "label": "Project fluid velocity",
+              "start": 921.6000000238419,
+              "end": 921.6000000238419
+            },
+            {
+              "name": "createRenderPipeline",
+              "label": "Blue-noise fluid display",
+              "start": 922.4000000357628,
+              "end": 922.4000000357628
+            },
+            {
+              "name": "submit",
+              "start": 957.1000000238419,
+              "end": 957.2000000476837
+            }
+          ],
+          "adapter": {
+            "vendor": "intel",
+            "architecture": "gen-9",
+            "device": "",
+            "description": "",
+            "isFallbackAdapter": false
+          },
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "visualSampling": {
+    "method": "Screenshots of the canvas below y=200 CSS pixels; count pixels differing from background. Samples about 370 ms apart.",
+    "runs": [
+      {
+        "url": "https://tomd.sh",
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "times": [
+          {
+            "ms": 1224,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 1601,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 1974,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 2336,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 2705,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 3071,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 3439,
+            "different": 456,
+            "percent": 0.05
+          },
+          {
+            "ms": 3804,
+            "different": 1900,
+            "percent": 0.19
+          },
+          {
+            "ms": 4172,
+            "different": 4056,
+            "percent": 0.4
+          },
+          {
+            "ms": 4535,
+            "different": 6596,
+            "percent": 0.65
+          },
+          {
+            "ms": 4905,
+            "different": 9584,
+            "percent": 0.95
+          },
+          {
+            "ms": 5272,
+            "different": 12656,
+            "percent": 1.26
+          },
+          {
+            "ms": 5638,
+            "different": 15668,
+            "percent": 1.55
+          },
+          {
+            "ms": 6007,
+            "different": 18824,
+            "percent": 1.87
+          },
+          {
+            "ms": 6374,
+            "different": 21856,
+            "percent": 2.17
+          },
+          {
+            "ms": 6744,
+            "different": 25116,
+            "percent": 2.49
+          },
+          {
+            "ms": 7126,
+            "different": 28148,
+            "percent": 2.79
+          },
+          {
+            "ms": 7641,
+            "different": 31744,
+            "percent": 3.15
+          },
+          {
+            "ms": 8010,
+            "different": 34332,
+            "percent": 3.41
+          },
+          {
+            "ms": 8393,
+            "different": 36532,
+            "percent": 3.62
+          },
+          {
+            "ms": 8777,
+            "different": 38336,
+            "percent": 3.8
+          },
+          {
+            "ms": 9160,
+            "different": 40408,
+            "percent": 4.01
+          }
+        ]
+      },
+      {
+        "url": "http://localhost:3101",
+        "adapter": {
+          "vendor": "intel",
+          "architecture": "gen-9",
+          "device": "",
+          "description": "",
+          "isFallbackAdapter": false
+        },
+        "times": [
+          {
+            "ms": 393,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 775,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 1142,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 1509,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 1873,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 2238,
+            "different": 0,
+            "percent": 0
+          },
+          {
+            "ms": 2609,
+            "different": 440,
+            "percent": 0.04
+          },
+          {
+            "ms": 2973,
+            "different": 1888,
+            "percent": 0.19
+          },
+          {
+            "ms": 3341,
+            "different": 4036,
+            "percent": 0.4
+          },
+          {
+            "ms": 3705,
+            "different": 6552,
+            "percent": 0.65
+          },
+          {
+            "ms": 4079,
+            "different": 9564,
+            "percent": 0.95
+          },
+          {
+            "ms": 4440,
+            "different": 12616,
+            "percent": 1.25
+          },
+          {
+            "ms": 4808,
+            "different": 15620,
+            "percent": 1.55
+          },
+          {
+            "ms": 5174,
+            "different": 18812,
+            "percent": 1.87
+          },
+          {
+            "ms": 5548,
+            "different": 21984,
+            "percent": 2.18
+          },
+          {
+            "ms": 5931,
+            "different": 25232,
+            "percent": 2.5
+          },
+          {
+            "ms": 6313,
+            "different": 28216,
+            "percent": 2.8
+          },
+          {
+            "ms": 6829,
+            "different": 32040,
+            "percent": 3.18
+          },
+          {
+            "ms": 7214,
+            "different": 34524,
+            "percent": 3.43
+          },
+          {
+            "ms": 7597,
+            "different": 36684,
+            "percent": 3.64
+          },
+          {
+            "ms": 7980,
+            "different": 38500,
+            "percent": 3.82
+          },
+          {
+            "ms": 8364,
+            "different": 40460,
+            "percent": 4.01
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "method": {
+    "coverageLevels": [0.02, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.98],
+    "lowFrequencyPower": "Mean power at 0 < radial frequency < 0.08 cycles/cell, normalized to white-noise variance N*p*(1-p).",
+    "adjacentPairsPerCell": "Horizontal and vertical minority-color neighbor pairs with toroidal wrapping, divided by tile area.",
+    "solid2x2PerCell": "All-minority 2x2 blocks with toroidal wrapping, divided by tile area.",
+    "blurVariance": "Variance after a wrap-mode Gaussian blur with sigma=4."
+  },
+  "selected": "sigma1-256",
+  "candidates": {
+    "old-128": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.3337782176381842,
+        "blurVariance": 3.145885990463507e-5
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.17690744863566446,
+        "blurVariance": 3.9645801594351054e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.15204655312928284,
+        "blurVariance": 5.7316474655865154e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 0.02703857421875,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.09527793375935521,
+        "blurVariance": 9.205992077262622e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.31451416015625,
+        "solid2x2PerCell": 0.00042724609375,
+        "lowFrequencyPower": 0.06192135716157827,
+        "blurVariance": 7.05750390881345e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.0279541015625,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.10365611941586667,
+        "blurVariance": 9.28741543889848e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.19226374990824377,
+        "blurVariance": 8.302459187191417e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.19190398044560017,
+        "blurVariance": 4.5564612143434364e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.3927098293619088,
+        "blurVariance": 3.426966565362149e-5
+      }
+    ],
+    "old-256": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.33140019946476285,
+        "blurVariance": 2.794354841461185e-5
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.18301692107346534,
+        "blurVariance": 4.042596108536596e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.1637615040820775,
+        "blurVariance": 6.791282084087796e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 0.0287933349609375,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.10025807735727482,
+        "blurVariance": 8.808547548572544e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.314453125,
+        "solid2x2PerCell": 0.0006103515625,
+        "lowFrequencyPower": 0.06373753053300323,
+        "blurVariance": 7.680239785940325e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.0285491943359375,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.10286003530706976,
+        "blurVariance": 9.398265523069309e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.16198503422530686,
+        "blurVariance": 6.79791377924458e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.18673158294583395,
+        "blurVariance": 4.3991246916467625e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.340475089614283,
+        "blurVariance": 2.9475590115426642e-5
+      }
+    ],
+    "more-256": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.23344659218579614,
+        "blurVariance": 2.0511666598036543e-5
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.09792567148945082,
+        "blurVariance": 2.1773208241224835e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.0895314227360253,
+        "blurVariance": 3.5371997941528266e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 4.57763671875e-5,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.052477376044480745,
+        "blurVariance": 4.800943637415967e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.2157135009765625,
+        "solid2x2PerCell": 0.0004119873046875,
+        "lowFrequencyPower": 0.018318751168818936,
+        "blurVariance": 2.1911602444950826e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.0001373291015625,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.05160896504052644,
+        "blurVariance": 4.604439518161433e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.08267047032562262,
+        "blurVariance": 3.5526829571807676e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.10355900104336609,
+        "blurVariance": 2.240308949346668e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.2320356673722709,
+        "blurVariance": 2.07876314868422e-5
+      }
+    ],
+    "new-256": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.12672047137033476,
+        "blurVariance": 9.554813336438669e-6
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.07066256458887248,
+        "blurVariance": 1.4130748800444968e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.04079817635102981,
+        "blurVariance": 1.5966652505970604e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 0.0379791259765625,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.01950910200583342,
+        "blurVariance": 1.715785884112328e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.3696441650390625,
+        "solid2x2PerCell": 0.0019073486328125,
+        "lowFrequencyPower": 0.016461432490056264,
+        "blurVariance": 1.851303021637975e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.0395050048828125,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.021495386581076185,
+        "blurVariance": 1.831397220371199e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.04260756497704964,
+        "blurVariance": 1.6914137159167576e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.07108490324725208,
+        "blurVariance": 1.3897312744207533e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.1352335639642306,
+        "blurVariance": 9.437089057905633e-6
+      }
+    ],
+    "sigma1-256": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.13161048083021887,
+        "blurVariance": 9.983325095608595e-6
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.08689644757674705,
+        "blurVariance": 1.6856351761828273e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.058798086357990116,
+        "blurVariance": 2.460941548567968e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 0.0081939697265625,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.03410725666890547,
+        "blurVariance": 3.090452061214495e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.2606201171875,
+        "solid2x2PerCell": 0.0001373291015625,
+        "lowFrequencyPower": 0.023347660984584448,
+        "blurVariance": 2.7564601875361212e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.0059051513671875,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.03415169990643175,
+        "blurVariance": 3.091525666200542e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.054147297733665084,
+        "blurVariance": 2.3310086964075324e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.08702991447945194,
+        "blurVariance": 1.8081922534624327e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.141154154675999,
+        "blurVariance": 1.0791535074664054e-5
+      }
+    ],
+    "sigma1.1-256": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.13102962841619428,
+        "blurVariance": 9.975497603736985e-6
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.08651125114578903,
+        "blurVariance": 1.5956337480695138e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.05744117120351308,
+        "blurVariance": 2.3293491733849137e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 0.0174102783203125,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.0291462752415461,
+        "blurVariance": 2.476602938031036e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.299530029296875,
+        "solid2x2PerCell": 0.0001373291015625,
+        "lowFrequencyPower": 0.02201519806200295,
+        "blurVariance": 2.677598231912125e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.0152587890625,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.03173596339955572,
+        "blurVariance": 2.891560510648628e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.0578945059168441,
+        "blurVariance": 2.3749481345667452e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.08342838534588437,
+        "blurVariance": 1.8889624957982895e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.14232298281526343,
+        "blurVariance": 1.0395984581182544e-5
+      }
+    ],
+    "sigma1.25-256": [
+      {
+        "coverage": 0.02,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.13050227848197243,
+        "blurVariance": 9.308075409772822e-6
+      },
+      {
+        "coverage": 0.05,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.07992297659928092,
+        "blurVariance": 1.5505221566090875e-5
+      },
+      {
+        "coverage": 0.1,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.049219203036926264,
+        "blurVariance": 2.1314238172623516e-5
+      },
+      {
+        "coverage": 0.25,
+        "adjacentPairsPerCell": 0.0233917236328125,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.025646264622594395,
+        "blurVariance": 2.124800209399512e-5
+      },
+      {
+        "coverage": 0.5,
+        "adjacentPairsPerCell": 0.3296051025390625,
+        "solid2x2PerCell": 0.000335693359375,
+        "lowFrequencyPower": 0.021542000769456737,
+        "blurVariance": 2.5456464548016274e-5
+      },
+      {
+        "coverage": 0.75,
+        "adjacentPairsPerCell": 0.023681640625,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.028731310314821033,
+        "blurVariance": 2.5299263492647307e-5
+      },
+      {
+        "coverage": 0.9,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.04924940957166874,
+        "blurVariance": 2.0210515346926088e-5
+      },
+      {
+        "coverage": 0.95,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.07811207101210692,
+        "blurVariance": 1.696249424908164e-5
+      },
+      {
+        "coverage": 0.98,
+        "adjacentPairsPerCell": 0.0,
+        "solid2x2PerCell": 0.0,
+        "lowFrequencyPower": 0.13816556627648438,
+        "blurVariance": 1.0073649352324427e-5
+      }
+    ]
+  }
+}

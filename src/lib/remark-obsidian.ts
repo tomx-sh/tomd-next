@@ -13,8 +13,12 @@ type MarkdownNode = {
 const obsidianSyntaxPattern =
   /(!?)\[\[([^\]|]+)(?:\|([^\]]+))?\]\]|(?<![\p{L}\p{N}_-])(#[\p{L}\p{N}_-]+(?:\/[\p{L}\p{N}_-]+)*)/gu;
 
+const relativeVaultImagePattern = /^(?:\.{1,2}\/)*images\//;
+
 function imageUrl(target: string) {
-  const normalizedTarget = target.replace(/^\.?\/?images\//, "");
+  const normalizedTarget = target
+    .replace(/^\//, "")
+    .replace(relativeVaultImagePattern, "");
   return `/obsidian-images/${normalizedTarget
     .split("/")
     .map((segment) => encodeURIComponent(segment))
@@ -105,6 +109,10 @@ function transformTextNode(node: MarkdownNode) {
 }
 
 function transformObsidianSyntax(node: MarkdownNode) {
+  if (node.type === "image" && node.url) {
+    node.url = node.url.replace(relativeVaultImagePattern, "/obsidian-images/");
+  }
+
   if (node.type === "obsidianTag" || !node.children) {
     return;
   }

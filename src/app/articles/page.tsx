@@ -1,7 +1,6 @@
 import path from "node:path";
 import type { Metadata } from "next";
 import { ArticleGraph } from "@/components/article-graph";
-import { LocalizedDate } from "@/components/localized-date";
 import { StyledLink } from "@/components/styled-link";
 import { Badge } from "@/components/ui/badge";
 import { buildArticleGraph, getArticleTags } from "@/lib/article-graph";
@@ -64,21 +63,12 @@ export default async function ArticlesPage() {
         {/* <h1 className="font-[650] text-4xl leading-[1.2] tracking-[-0.025em]">
           Articles
         </h1> */}
-        <ul className="grid list-none grid-cols-[auto_minmax(0,1fr)_auto] gap-x-2">
+        <ul className="grid list-none grid-cols-[minmax(0,1fr)_auto] gap-x-2">
           {articles.map((article) => (
             <li
-              className="col-span-3 grid grid-cols-subgrid items-baseline"
+              className="col-span-2 grid grid-cols-subgrid items-baseline"
               key={article.slug}
             >
-              {article.created ? (
-                <LocalizedDate
-                  className="font-mono text-sm opacity-60"
-                  date={article.created.toISOString()}
-                  format="numeric"
-                />
-              ) : (
-                <span aria-hidden="true" />
-              )}
               <StyledLink
                 className="min-w-0 truncate"
                 href={`/articles/${article.slug}`}
@@ -88,7 +78,7 @@ export default async function ArticlesPage() {
               </StyledLink>
               {article.tags[0] ? (
                 <Badge
-                  className="justify-self-start font-mono"
+                  className="h-6 justify-self-start font-mono text-sm"
                   variant="secondary"
                 >
                   #{article.tags[0]}

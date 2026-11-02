@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDownIcon, ChevronRightIcon, DownloadIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import {
@@ -12,8 +13,30 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function CvHeader() {
+  const [copyStatus, setCopyStatus] = useState("");
+
+  useEffect(() => {
+    if (!copyStatus) return;
+
+    const timeout = setTimeout(() => setCopyStatus(""), 3000);
+    return () => clearTimeout(timeout);
+  }, [copyStatus]);
+
+  async function copyCommand() {
+    setCopyStatus("");
+    try {
+      await navigator.clipboard.writeText("curl cv.tomd.sh");
+      setCopyStatus("Command copied!");
+    } catch {
+      setCopyStatus("Could not copy command. Please try again.");
+    }
+  }
+
   return (
-    <header className="flex justify-end p-3 print:hidden">
+    <header className="flex items-center justify-end gap-3 p-3 print:hidden">
+      <span role="status" className="text-sm text-muted-foreground">
+        {copyStatus}
+      </span>
       <ButtonGroup aria-label="Resume downloads">
         <Button
           variant="outline"
@@ -46,7 +69,7 @@ export function CvHeader() {
               </DropdownMenuItem>
               <DropdownMenuItem
                 aria-label="Copy terminal command: curl cv.tomd.sh"
-                onClick={() => navigator.clipboard.writeText("curl cv.tomd.sh")}
+                onClick={copyCommand}
               >
                 <ChevronRightIcon className="translate-y-px" />
                 <code className="font-mono">curl cv.tomd.sh</code>

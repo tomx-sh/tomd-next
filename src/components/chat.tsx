@@ -8,6 +8,8 @@ import {
   CircleAlertIcon,
   CircleCheckIcon,
   CpuIcon,
+  LightbulbIcon,
+  LightbulbOffIcon,
   PlusIcon,
   SquareIcon,
 } from "lucide-react";
@@ -37,7 +39,6 @@ import {
   InputGroupButton,
   InputGroupTextarea,
 } from "@/components/ui/input-group";
-import { Label } from "@/components/ui/label";
 import {
   Message,
   MessageContent,
@@ -52,7 +53,7 @@ import {
   MessageScrollerViewport,
 } from "@/components/ui/message-scroller";
 import { Spinner } from "@/components/ui/spinner";
-import { Switch } from "@/components/ui/switch";
+import { Toggle } from "@/components/ui/toggle";
 import {
   Trace,
   TraceCollapsible,
@@ -389,27 +390,27 @@ export function Chat() {
               rows={2}
               className="max-h-36 text-base"
             />
-            <InputGroupAddon
-              align="block-end"
-              onClick={(event) => {
-                if (event.target === event.currentTarget)
-                  inputRef.current?.focus();
-              }}
-            >
-              <div className="flex items-center gap-2">
-                <Switch
-                  id="chat-reasoning"
-                  checked={reasoning}
-                  onCheckedChange={setReasoning}
-                />
-                <Label
-                  htmlFor="chat-reasoning"
-                  title="Applies to the next reply"
-                >
-                  Reasoning{" "}
-                  <span aria-hidden="true">{reasoning ? "On" : "Off"}</span>
-                </Label>
-              </div>
+            <InputGroupAddon align="block-end">
+              <Toggle
+                type="button"
+                variant="outline"
+                pressed={reasoning}
+                onPressedChange={setReasoning}
+                className={
+                  reasoning ? undefined : "bg-background hover:bg-background"
+                }
+                title="Applies to the next reply"
+              >
+                {reasoning ? (
+                  <LightbulbIcon aria-hidden="true" data-icon="inline-start" />
+                ) : (
+                  <LightbulbOffIcon
+                    aria-hidden="true"
+                    data-icon="inline-start"
+                  />
+                )}
+                Reasoning
+              </Toggle>
               <span className="me-auto hidden sm:inline">
                 Shift + Enter for a new line
               </span>

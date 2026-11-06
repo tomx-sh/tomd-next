@@ -19,6 +19,8 @@ export async function POST(request: Request) {
   if (!messages || latest?.role !== "user" || !getMessageText(latest).trim()) {
     return new Response("Invalid conversation.", { status: 400 });
   }
+  const reasoning =
+    typeof body?.reasoning === "boolean" ? body.reasoning : undefined;
 
   const apiKey = process.env.CHAT_API_KEY?.trim();
   if (!apiKey) {
@@ -41,6 +43,10 @@ export async function POST(request: Request) {
   const result = streamText({
     model: provider.chatModel(CHAT_MODEL),
     messages: await convertToModelMessages(transcript),
+    providerOptions:
+      reasoning === undefined
+        ? undefined
+        : { ollama: { reasoningEffort: reasoning ? "medium" : "none" } },
     abortSignal: request.signal,
     maxRetries: 0,
   });
@@ -48,7 +54,7 @@ export async function POST(request: Request) {
   return createUIMessageStreamResponse({
     stream: toUIMessageStream({
       stream: result.stream,
-      sendReasoning: true,
+      sendReasoning: reasoning !== false,
       onError: () => "Unable to get a reply from Gemma. Please try again.",
     }),
   });

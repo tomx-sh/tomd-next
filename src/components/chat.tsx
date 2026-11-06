@@ -5,6 +5,7 @@ import type { UIMessage } from "ai";
 import {
   ArrowLeftIcon,
   ArrowUpIcon,
+  BrainIcon,
   CircleAlertIcon,
   CircleCheckIcon,
   CpuIcon,
@@ -51,6 +52,7 @@ import {
   MessageScrollerViewport,
 } from "@/components/ui/message-scroller";
 import { Spinner } from "@/components/ui/spinner";
+import { Toggle } from "@/components/ui/toggle";
 import {
   Trace,
   TraceCollapsible,
@@ -205,6 +207,7 @@ export function Chat() {
     regenerate,
   } = useChat({ onFinish: ({ messages }) => saveChatMessages(messages) });
   const [input, setInput] = useState("");
+  const [reasoning, setReasoning] = useState(true);
   const [restored, setRestored] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const busy = status === "submitted" || status === "streaming";
@@ -263,7 +266,7 @@ export function Chat() {
       return;
     }
     setInput("");
-    void sendMessage({ text });
+    void sendMessage({ text }, { body: { reasoning } });
   }
 
   return (
@@ -353,7 +356,7 @@ export function Chat() {
                 type="button"
                 variant="outline"
                 size="sm"
-                onClick={() => void regenerate()}
+                onClick={() => void regenerate({ body: { reasoning } })}
               >
                 Try again
               </Button>
@@ -387,6 +390,16 @@ export function Chat() {
               className="max-h-36 text-base"
             />
             <InputGroupAddon align="block-end">
+              <Toggle
+                type="button"
+                variant="outline"
+                pressed={reasoning}
+                onPressedChange={setReasoning}
+                disabled={busy}
+              >
+                <BrainIcon data-icon="inline-start" />
+                Reasoning
+              </Toggle>
               <span className="me-auto hidden sm:inline">
                 Shift + Enter for a new line
               </span>

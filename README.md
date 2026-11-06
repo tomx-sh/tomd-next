@@ -43,12 +43,12 @@ render the latest local content. There is no separate PDF generation command.
 
 ## Development
 
-`/chat` is a minimal streaming chat with `gemma4:e2b-it-qat` at
-`https://chat.tomd.sh/v1`. Set `CHAT_API_KEY` in `.env` (and in your hosting
-environment for production). `/api/chat` adds the key as a Bearer token on the
-server and proxies Chat Completions to avoid browser CORS requirements. The key
-is never sent to the browser. History is saved in localStorage;
-`/clear` resets it and Ctrl+C cancels a reply.
+`/chat` uses shadcn AI Elements and the AI SDK to stream replies from
+`gemma4:e2b-it-qat` at `https://chat.tomd.sh/v1`. Set `CHAT_API_KEY` in
+`.env.local` and in your production hosting environment. The API route uses the
+key on the server and streams replies and reasoning to the browser. Chat
+history stays in localStorage. **New chat** or `/clear` resets it. The stop
+button or Ctrl+C cancels a reply.
 
 Development syncs from a local Obsidian vault, including changes that have not
 been committed or pushed yet.

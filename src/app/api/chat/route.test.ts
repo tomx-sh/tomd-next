@@ -1,38 +1,40 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { CHAT_BASE_URL, CHAT_MODEL } from "@/lib/chat";
 import { POST } from "./route";
 
-test("requires a server API key and authenticates the upstream stream", async () => {
+test("requires a server key and streams the Gemma response in the AI SDK format", async () => {
   const originalFetch = globalThis.fetch;
   const originalKey = process.env.CHAT_API_KEY;
-  const messages = [{ role: "user", content: "Hello" }];
   const request = () =>
     new Request("http://localhost/api/chat", {
       method: "POST",
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify({
+        messages: [
+          { id: "1", role: "user", parts: [{ type: "text", text: "Hello" }] },
+        ],
+      }),
     });
-  const stream =
-    'data: {"choices":[{"delta":{"reasoning":"Let me think."}}]}\n\n' +
-    'data: {"choices":[{"delta":{"content":"Hello"}}]}\n\n';
   let called = false;
 
   try {
     globalThis.fetch = (async (url, init) => {
       called = true;
-      assert.equal(url, `${CHAT_BASE_URL}/chat/completions`);
+      assert.equal(url, "https://chat.tomd.sh/v1/chat/completions");
       assert.equal(
         new Headers(init?.headers).get("Authorization"),
         "Bearer test-chat-key",
       );
       assert.deepEqual(JSON.parse(String(init?.body)), {
-        model: CHAT_MODEL,
-        messages,
+        model: "gemma4:e2b-it-qat",
+        messages: [{ role: "user", content: "Hello" }],
         stream: true,
       });
-      return new Response(stream, {
-        headers: { "Content-Type": "text/event-stream" },
-      });
+      return new Response(
+        'data: {"choices":[{"delta":{"reasoning":"Let me think."}}]}\n\n' +
+          'data: {"choices":[{"delta":{"content":"Hello"},"finish_reason":"stop"}]}\n\n' +
+          "data: [DONE]\n\n",
+        { headers: { "Content-Type": "text/event-stream" } },
+      );
     }) as typeof fetch;
 
     delete process.env.CHAT_API_KEY;
@@ -41,10 +43,13 @@ test("requires a server API key and authenticates the upstream stream", async ()
 
     process.env.CHAT_API_KEY = "test-chat-key";
     const response = await POST(request());
-    assert.equal(called, true);
     assert.equal(response.status, 200);
-    assert.equal(await response.text(), stream);
+    assert.equal(response.headers.get("x-vercel-ai-ui-message-stream"), "v1");
     assert.equal(response.headers.has("Authorization"), false);
+    const stream = await response.text();
+    assert.match(stream, /"type":"reasoning-delta".*"delta":"Let me think\."/);
+    assert.match(stream, /"type":"text-delta".*"delta":"Hello"/);
+    assert.equal(called, true);
   } finally {
     globalThis.fetch = originalFetch;
     if (originalKey === undefined) delete process.env.CHAT_API_KEY;

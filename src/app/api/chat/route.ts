@@ -1,19 +1,22 @@
-import { CHAT_BASE_URL, CHAT_MODEL, isChatMessage } from "@/lib/chat";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import {
+  convertToModelMessages,
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from "ai";
+import { getMessageText, validateChatMessages } from "@/lib/chat";
 
 export const maxDuration = 300;
 
+const CHAT_BASE_URL = "https://chat.tomd.sh/v1";
+const CHAT_MODEL = "gemma4:e2b-it-qat";
+
 export async function POST(request: Request) {
-  let messages: unknown;
-  try {
-    messages = (await request.json())?.messages;
-    if (
-      !Array.isArray(messages) ||
-      !messages.length ||
-      !messages.every(isChatMessage)
-    ) {
-      return new Response("Invalid conversation.", { status: 400 });
-    }
-  } catch {
+  const body = await request.json().catch(() => null);
+  const messages = await validateChatMessages(body?.messages);
+  const latest = messages?.at(-1);
+  if (!messages || latest?.role !== "user" || !getMessageText(latest).trim()) {
     return new Response("Invalid conversation.", { status: 400 });
   }
 
@@ -22,25 +25,31 @@ export async function POST(request: Request) {
     return new Response("Chat provider is not configured.", { status: 500 });
   }
 
-  try {
-    const response = await fetch(`${CHAT_BASE_URL}/chat/completions`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({ model: CHAT_MODEL, messages, stream: true }),
-      signal: request.signal,
-    });
-    return new Response(response.body, {
-      status: response.status,
-      headers: {
-        "Content-Type":
-          response.headers.get("Content-Type") ?? "text/event-stream",
-        "Cache-Control": "no-store",
-      },
-    });
-  } catch {
-    return new Response("Unable to reach the model provider.", { status: 502 });
-  }
+  const provider = createOpenAICompatible({
+    name: "ollama",
+    baseURL: CHAT_BASE_URL,
+    apiKey,
+  });
+
+  // Gemma only needs the visible transcript, including after a partial reply.
+  const transcript = messages.flatMap((message) => {
+    const text = getMessageText(message);
+    return text.trim()
+      ? [{ role: message.role, parts: [{ type: "text" as const, text }] }]
+      : [];
+  });
+  const result = streamText({
+    model: provider.chatModel(CHAT_MODEL),
+    messages: await convertToModelMessages(transcript),
+    abortSignal: request.signal,
+    maxRetries: 0,
+  });
+
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({
+      stream: result.stream,
+      sendReasoning: true,
+      onError: () => "Unable to get a reply from Gemma. Please try again.",
+    }),
+  });
 }

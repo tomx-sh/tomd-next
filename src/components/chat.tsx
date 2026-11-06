@@ -1,192 +1,423 @@
-// biome-ignore-all lint/suspicious/noArrayIndexKey: Transcript rows only append or reset; existing rows never move.
-
 "use client";
 
-import { type FormEvent, useEffect, useRef, useState } from "react";
-import { type ChatMessage, isChatMessage, readChatStream } from "@/lib/chat";
+import { useChat } from "@ai-sdk/react";
+import type { UIMessage } from "ai";
+import {
+  ArrowLeftIcon,
+  ArrowUpIcon,
+  CircleAlertIcon,
+  CircleCheckIcon,
+  CpuIcon,
+  PlusIcon,
+  SquareIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { Streamdown } from "streamdown";
+import { MarkdownPre } from "@/components/markdown-code-block";
+import {
+  Alert,
+  AlertAction,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Bubble, BubbleContent } from "@/components/ui/bubble";
+import { Button } from "@/components/ui/button";
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+} from "@/components/ui/empty";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupTextarea,
+} from "@/components/ui/input-group";
+import {
+  Message,
+  MessageContent,
+  MessageHeader,
+} from "@/components/ui/message";
+import {
+  MessageScroller,
+  MessageScrollerButton,
+  MessageScrollerContent,
+  MessageScrollerItem,
+  MessageScrollerProvider,
+  MessageScrollerViewport,
+} from "@/components/ui/message-scroller";
+import { Spinner } from "@/components/ui/spinner";
+import {
+  Trace,
+  TraceCollapsible,
+  TraceCollapsibleContent,
+  TraceCollapsibleTrigger,
+  TraceIcon,
+  TraceLine,
+  TraceTitle,
+} from "@/components/ui/trace";
+import { getMessageText, loadChatMessages, saveChatMessages } from "@/lib/chat";
 
-const STORAGE_KEY = "tty-chat";
+const suggestions = [
+  "Explain how a Raspberry Pi runs a language model",
+  "Show me a useful shell command",
+  "Give me a weekend coding project",
+];
 
-function save(messages: ChatMessage[]) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-  } catch {}
+function ChatWelcome({
+  onSend,
+  disabled,
+}: {
+  onSend: (text: string) => void;
+  disabled: boolean;
+}) {
+  return (
+    <Empty>
+      <EmptyHeader>
+        <EmptyMedia variant="icon">
+          <CpuIcon />
+        </EmptyMedia>
+        <h2 className="text-3xl font-semibold tracking-tight">
+          Chat with Gemma
+        </h2>
+        <EmptyDescription>
+          A small language model running on a Raspberry Pi in my home lab.
+        </EmptyDescription>
+      </EmptyHeader>
+      <EmptyContent>
+        {suggestions.map((suggestion) => (
+          <Button
+            key={suggestion}
+            type="button"
+            variant="outline"
+            size="lg"
+            disabled={disabled}
+            onClick={() => onSend(suggestion)}
+          >
+            {suggestion}
+          </Button>
+        ))}
+      </EmptyContent>
+    </Empty>
+  );
+}
+
+function ChatReasoning({ text, running }: { text: string; running: boolean }) {
+  const [open, setOpen] = useState<boolean>();
+
+  return (
+    <Trace>
+      <TraceCollapsible open={open ?? running} onOpenChange={setOpen}>
+        <TraceCollapsibleTrigger>
+          <TraceLine status={running ? "running" : undefined}>
+            <TraceIcon>
+              {running ? (
+                <Spinner
+                  aria-hidden="true"
+                  className="motion-reduce:animate-none"
+                />
+              ) : (
+                <CircleCheckIcon />
+              )}
+            </TraceIcon>
+            <TraceTitle>{running ? "Thinking…" : "Reasoning"}</TraceTitle>
+          </TraceLine>
+        </TraceCollapsibleTrigger>
+        <TraceCollapsibleContent className="whitespace-pre-wrap">
+          {text}
+        </TraceCollapsibleContent>
+      </TraceCollapsible>
+    </Trace>
+  );
+}
+
+function ChatTurn({
+  message,
+  streaming,
+}: {
+  message: UIMessage;
+  streaming: boolean;
+}) {
+  const text = getMessageText(message);
+  if (message.role === "user") {
+    return (
+      <Message align="end">
+        <MessageContent>
+          <MessageHeader>You</MessageHeader>
+          <Bubble align="end" variant="muted">
+            <BubbleContent className="whitespace-pre-wrap">
+              {text}
+            </BubbleContent>
+          </Bubble>
+        </MessageContent>
+      </Message>
+    );
+  }
+
+  const reasoning = message.parts.filter((part) => part.type === "reasoning");
+  const thoughts = reasoning.map((part) => part.text).join("\n\n");
+  if (!text && !thoughts) return null;
+
+  return (
+    <Message>
+      <MessageContent>
+        <span className="font-medium text-muted-foreground">Gemma</span>
+        {thoughts && (
+          <ChatReasoning
+            text={thoughts}
+            running={
+              streaming && reasoning.some((part) => part.state === "streaming")
+            }
+          />
+        )}
+        {text && (
+          <Streamdown
+            className="typeset min-w-0 text-base"
+            isAnimating={streaming}
+            parseIncompleteMarkdown={streaming}
+            components={{
+              pre: ({ children }) => <MarkdownPre>{children}</MarkdownPre>,
+            }}
+            disallowedElements={["img"]}
+            skipHtml
+          >
+            {text}
+          </Streamdown>
+        )}
+      </MessageContent>
+    </Message>
+  );
 }
 
 export function Chat() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const abortRef = useRef<AbortController | null>(null);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const {
+    messages,
+    setMessages,
+    status,
+    error,
+    clearError,
+    sendMessage,
+    stop,
+    regenerate,
+  } = useChat({ onFinish: ({ messages }) => saveChatMessages(messages) });
   const [input, setInput] = useState("");
-  const [reply, setReply] = useState("");
-  const [reasoning, setReasoning] = useState("");
-  const [notice, setNotice] = useState("");
-  const [busy, setBusy] = useState(false);
+  const [restored, setRestored] = useState(false);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const busy = status === "submitted" || status === "streaming";
+  const lastMessage = messages.at(-1);
+  const waiting =
+    busy &&
+    (lastMessage?.role !== "assistant" ||
+      !lastMessage.parts.some(
+        (part) =>
+          (part.type === "text" || part.type === "reasoning") && part.text,
+      ));
 
   useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
-      if (Array.isArray(saved) && saved.every(isChatMessage))
-        setMessages(saved);
-    } catch {}
-    const cancel = (event: KeyboardEvent) => {
+    let active = true;
+    void loadChatMessages().then((saved) => {
+      if (!active) return;
+      setMessages(saved);
+      setRestored(true);
+    });
+    return () => {
+      active = false;
+    };
+  }, [setMessages]);
+
+  useEffect(() => {
+    if (!busy) return;
+
+    function handleCancel(event: KeyboardEvent) {
       if (
         event.ctrlKey &&
         event.key.toLowerCase() === "c" &&
-        abortRef.current
+        !window.getSelection()?.toString()
       ) {
         event.preventDefault();
-        abortRef.current.abort();
+        void stop();
       }
-    };
-    document.addEventListener("keydown", cancel);
-    return () => {
-      document.removeEventListener("keydown", cancel);
-      abortRef.current?.abort();
-    };
-  }, []);
+    }
 
-  useEffect(() => {
-    if (!busy) inputRef.current?.focus();
-  }, [busy]);
+    document.addEventListener("keydown", handleCancel);
+    return () => document.removeEventListener("keydown", handleCancel);
+  }, [busy, stop]);
 
-  useEffect(() => {
-    window.scrollTo(0, document.documentElement.scrollHeight);
-  });
-
-  async function send(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const text = input.trim();
-    if (!text || abortRef.current) return;
+  function reset() {
+    setMessages([]);
+    saveChatMessages([]);
+    clearError();
     setInput("");
-    setNotice("");
+    inputRef.current?.focus();
+  }
+
+  function send(value: string) {
+    const text = value.trim();
+    if (!restored || busy || !text) return;
     if (text === "/clear") {
-      setMessages([]);
-      save([]);
+      reset();
       return;
     }
-
-    const history: ChatMessage[] = [
-      ...messages,
-      { role: "user", content: text },
-    ];
-    const controller = new AbortController();
-    abortRef.current = controller;
-    setMessages(history);
-    setBusy(true);
-    let answer = "";
-    let thinking = "";
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: history.map(({ role, content }) => ({ role, content })),
-        }),
-        signal: controller.signal,
-      });
-      for await (const delta of readChatStream(response)) {
-        if (delta.type === "reasoning") {
-          thinking += delta.text;
-          setReasoning(thinking);
-        } else {
-          answer += delta.text;
-          setReply(answer);
-        }
-      }
-      if (!answer) throw new Error("Empty reply.");
-    } catch (error) {
-      setNotice(
-        controller.signal.aborted
-          ? "^C"
-          : `[error] ${error instanceof Error ? error.message : "Unable to send message."}`,
-      );
-    } finally {
-      const next: ChatMessage[] =
-        answer || thinking
-          ? [
-              ...history,
-              {
-                role: "assistant",
-                content: answer,
-                ...(thinking ? { reasoning: thinking } : {}),
-              },
-            ]
-          : messages;
-      setMessages(next);
-      save(next);
-      setReply("");
-      setReasoning("");
-      setBusy(false);
-      abortRef.current = null;
-    }
+    setInput("");
+    void sendMessage({ text });
   }
 
   return (
-    <main className="w-full">
-      <div
-        className="min-h-dvh whitespace-pre-wrap p-4 font-mono text-sm leading-relaxed text-muted-foreground"
-        onPointerUp={() => {
-          if (!window.getSelection()?.toString()) inputRef.current?.focus();
-        }}
-      >
-        <div role="log" aria-label="Conversation" aria-busy={busy}>
-          <div className="mb-4 font-bold text-foreground">
-            Hi! I am a small Gemma 4 model running on a home lab Raspberry Pi.
-          </div>
-          {messages.map((message, index) => (
-            <div
-              key={`${index}-${message.role}`}
-              className={message.role === "user" ? "text-foreground" : "mb-4"}
+    <main className="flex h-dvh min-h-0 flex-col">
+      <header className="shrink-0 border-b">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+          <div className="flex items-center gap-3">
+            <Button
+              render={<Link href="/" />}
+              nativeButton={false}
+              variant="ghost"
+              size="icon"
+              aria-label="Home"
             >
-              {message.role === "user" ? (
-                `>>> ${message.content}`
-              ) : (
-                <>
-                  {message.reasoning && (
-                    <div className="mb-2 text-muted-foreground/70">
-                      {message.reasoning}
-                    </div>
-                  )}
-                  <div className="font-bold text-foreground">
-                    {message.content}
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-          {busy && (
-            <div className="mb-4">
-              {!reply && !reasoning && (
-                <div className="text-muted-foreground/70">
-                  <span aria-hidden="true" className="chat-spinner" />{" "}
-                  <span className="shimmer">Thinking...</span>
-                </div>
-              )}
-              {reasoning && (
-                <div className="mb-2 text-muted-foreground/70">{reasoning}</div>
-              )}
-              {reply && (
-                <div className="font-bold text-foreground">{reply}</div>
-              )}
-            </div>
-          )}
-          {notice && <div className="mb-4">{notice}</div>}
+              <ArrowLeftIcon />
+            </Button>
+            <h1 className="font-semibold">Chat</h1>
+            <Badge variant="secondary">Gemma 4</Badge>
+          </div>
+          <Button
+            type="button"
+            variant="outline"
+            disabled={!restored || busy || messages.length === 0}
+            onClick={reset}
+          >
+            <PlusIcon data-icon="inline-start" />
+            New chat
+          </Button>
         </div>
-        {!busy && (
-          <form onSubmit={send} className="flex text-foreground">
-            <span aria-hidden="true">{">>> "}</span>
-            <input
+      </header>
+
+      {messages.length === 0 ? (
+        <div className="flex min-h-0 flex-1 overflow-y-auto">
+          <ChatWelcome onSend={send} disabled={!restored} />
+        </div>
+      ) : (
+        <div className="min-h-0 flex-1">
+          <MessageScrollerProvider
+            autoScroll
+            defaultScrollPosition="last-anchor"
+          >
+            <MessageScroller>
+              <MessageScrollerViewport>
+                <MessageScrollerContent
+                  aria-label="Conversation"
+                  className="mx-auto max-w-3xl px-4 py-6 sm:px-6"
+                >
+                  {messages.map((message) => (
+                    <MessageScrollerItem
+                      key={message.id}
+                      messageId={message.id}
+                      scrollAnchor={message.role === "user"}
+                    >
+                      <ChatTurn
+                        message={message}
+                        streaming={busy && message.id === lastMessage?.id}
+                      />
+                    </MessageScrollerItem>
+                  ))}
+                  {waiting && (
+                    <MessageScrollerItem>
+                      <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Spinner
+                          aria-hidden="true"
+                          className="motion-reduce:animate-none"
+                        />
+                        Waiting for Gemma…
+                      </span>
+                    </MessageScrollerItem>
+                  )}
+                </MessageScrollerContent>
+              </MessageScrollerViewport>
+              <MessageScrollerButton />
+            </MessageScroller>
+          </MessageScrollerProvider>
+        </div>
+      )}
+
+      <div className="mx-auto w-full max-w-3xl shrink-0 space-y-2 px-4 pt-2 pb-4 sm:px-6">
+        {error && (
+          <Alert variant="destructive">
+            <CircleAlertIcon />
+            <AlertTitle>Gemma couldn’t reply</AlertTitle>
+            <AlertDescription>{error.message}</AlertDescription>
+            <AlertAction>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => void regenerate()}
+              >
+                Try again
+              </Button>
+            </AlertAction>
+          </Alert>
+        )}
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            send(input);
+          }}
+        >
+          <InputGroup>
+            <InputGroupTextarea
               ref={inputRef}
               aria-label="Message"
-              autoComplete="off"
-              placeholder="Send a message (/clear to reset)"
+              placeholder="Message Gemma"
               value={input}
               onChange={(event) => setInput(event.target.value)}
-              className="min-w-0 flex-1 border-0 bg-transparent p-0 text-foreground outline-none placeholder:text-muted-foreground"
+              onKeyDown={(event) => {
+                if (
+                  event.key === "Enter" &&
+                  !event.shiftKey &&
+                  !event.nativeEvent.isComposing
+                ) {
+                  event.preventDefault();
+                  event.currentTarget.form?.requestSubmit();
+                }
+              }}
+              rows={2}
+              className="max-h-36 text-base"
             />
-          </form>
-        )}
+            <InputGroupAddon align="block-end">
+              <span className="me-auto hidden sm:inline">
+                Shift + Enter for a new line
+              </span>
+              {busy ? (
+                <InputGroupButton
+                  size="icon-sm"
+                  variant="outline"
+                  className="ms-auto"
+                  aria-label="Stop response"
+                  onClick={() => void stop()}
+                >
+                  <SquareIcon />
+                </InputGroupButton>
+              ) : (
+                <InputGroupButton
+                  type="submit"
+                  size="icon-sm"
+                  variant="default"
+                  className="ms-auto"
+                  aria-label="Send message"
+                  disabled={!restored || !input.trim()}
+                >
+                  <ArrowUpIcon />
+                </InputGroupButton>
+              )}
+            </InputGroupAddon>
+          </InputGroup>
+        </form>
+        <p className="text-center text-xs text-muted-foreground">
+          History is saved in this browser.
+        </p>
       </div>
     </main>
   );

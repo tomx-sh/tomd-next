@@ -66,8 +66,8 @@ import {
 import { getMessageText, loadChatMessages, saveChatMessages } from "@/lib/chat";
 
 const suggestions = [
-  "Explain how a Raspberry Pi runs a language model",
   "Show me a useful shell command",
+  "How to run a small local LLM on a Raspberry Pi?",
   "Give me a weekend coding project",
 ];
 
